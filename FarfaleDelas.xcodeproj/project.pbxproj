@@ -11,6 +11,7 @@
 		17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BD2A1FD51E0035662B /* ContentView.swift */; };
 		17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
 		17E479C32A1FD51F0035662B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479C22A1FD51F0035662B /* Preview Assets.xcassets */; };
+		4721B4522A1FECB000C73A9C /* ButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4512A1FECB000C73A9C /* ButtonIcon.swift */; };
 		475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		17E479BF2A1FD51F0035662B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17E479C22A1FD51F0035662B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FarfaleDelas.entitlements; sourceTree = "<group>"; };
+		4721B4512A1FECB000C73A9C /* ButtonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIcon.swift; sourceTree = "<group>"; };
 		475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,7 @@
 				17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */,
 				475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */,
 				17E479BD2A1FD51E0035662B /* ContentView.swift */,
+				4721B4512A1FECB000C73A9C /* ButtonIcon.swift */,
 				17E479BF2A1FD51F0035662B /* Assets.xcassets */,
 				17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */,
 				17E479C12A1FD51F0035662B /* Preview Content */,
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4721B4522A1FECB000C73A9C /* ButtonIcon.swift in Sources */,
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
 				475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
