@@ -21,7 +21,7 @@ struct CardInformation {
 
 struct CardView: View {
     @State var info: CardInformation
-    @State var isOpen: Bool = false
+    @State var isOpen: Bool = true
 
     
     var body: some View {
@@ -36,57 +36,60 @@ struct CardView: View {
 
 extension CardView {
     var openCard: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                toggleButton
-                TextField(
-                  "Hint Text",
-                  text: $info.atividadeText,
-                  onEditingChanged: { changed in
-                    //acao quando editar o texto
-                  },
-                  onCommit: {
-                      isOpen.toggle()
-                  }
-                )
-                .frame(width: 500)
-                .padding()
-
-                Button("Delete", action: {
-                    // deletar card da lista de informacoes
-                })
-            }
+        ZStack {
+            Rectangle()
+                .foregroundColor(.gray)
             
-            HStack {
-                VStack {
-                    Text("Duração: \(info.duration)")
-                    Picker("", selection: $info.duration) {
-                        ForEach(info.timeBoxes, id: \.self) {
-                                       Text($0)
-                                   }
-                               }
-                            .frame(width: 100)
-                               .pickerStyle(.menu)
+            VStack(alignment: .leading) {
+                HStack {
+                    toggleButton
+                    TextField(
+                      "Insira o nome",
+                      text: $info.atividadeText,
+                      onEditingChanged: { changed in
+                        //acao quando editar o texto
+                      },
+                      onCommit: {
+                          isOpen.toggle()
+                      }
+                    )
+                    .frame(width: 300)
+                    .padding()
+
+                    Button("Delete", action: {
+                        // deletar card da lista de informacoes
+                    })
                 }
-                VStack {
-                    Text("Cor")
-                    Picker("", selection: $info.setColor) {
-                        ForEach(info.colors, id: \.self) {
-                                       Text($0)
+                
+                HStack(alignment: .center, spacing: 120) {
+                        Picker("Duração", selection: $info.duration) {
+                            ForEach(info.timeBoxes, id: \.self) {
+                                           Text($0)
+                                       }
                                    }
-                               }
-                               .frame(width: 100)
-                               .pickerStyle(.menu)
+                                .frame(width: 140)
+                                   .pickerStyle(.menu)
+                        Picker("Cor:", selection: $info.setColor) {
+                            ForEach(info.colors, id: \.self) {
+                                           Text($0)
+                                       }
+                                   }
+                                   .frame(width: 200)
+                                   .pickerStyle(.menu)
                 }
             }
         }
     }
     
     var closedCard: some View {
-        HStack {
-            toggleButton
-            Text(info.atividadeText)
-                .frame(width: 500)
+        ZStack {
+            Rectangle()
+                .foregroundColor(.gray)
+                HStack(spacing: 20) {
+                toggleButton
+                Text(info.atividadeText)
+                    .frame(width: 300)
+            }
         }
     }
 }
