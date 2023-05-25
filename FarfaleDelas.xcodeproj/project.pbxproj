@@ -11,6 +11,7 @@
 		17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BD2A1FD51E0035662B /* ContentView.swift */; };
 		17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
 		17E479C32A1FD51F0035662B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479C22A1FD51F0035662B /* Preview Assets.xcassets */; };
+		475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		17E479BF2A1FD51F0035662B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17E479C22A1FD51F0035662B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FarfaleDelas.entitlements; sourceTree = "<group>"; };
+		475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */,
+				475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */,
 				17E479BD2A1FD51E0035662B /* ContentView.swift */,
 				17E479BF2A1FD51F0035662B /* Assets.xcassets */,
 				17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
+				475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,10 +274,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = 749Q737TF5;
+				DEVELOPMENT_TEAM = 5M8NVJZA75;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,10 +302,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = 749Q737TF5;
+				DEVELOPMENT_TEAM = 5M8NVJZA75;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
