@@ -11,7 +11,7 @@ import SwiftUI
 struct FarfaleDelasApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CardView(info: CardInformation())
         }
     }
 }
