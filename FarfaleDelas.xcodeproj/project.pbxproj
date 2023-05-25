@@ -11,6 +11,8 @@
 		17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BD2A1FD51E0035662B /* ContentView.swift */; };
 		17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
 		17E479C32A1FD51F0035662B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479C22A1FD51F0035662B /* Preview Assets.xcassets */; };
+		17E479CB2A1FD8AB0035662B /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479CA2A1FD8AB0035662B /* ClockView.swift */; };
+		17E479CF2A1FD8C60035662B /* ClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479CE2A1FD8C60035662B /* ClockViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		17E479BF2A1FD51F0035662B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17E479C22A1FD51F0035662B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FarfaleDelas.entitlements; sourceTree = "<group>"; };
+		17E479CA2A1FD8AB0035662B /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		17E479CE2A1FD8C60035662B /* ClockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */,
 				17E479BD2A1FD51E0035662B /* ContentView.swift */,
+				17E479CA2A1FD8AB0035662B /* ClockView.swift */,
+				17E479CE2A1FD8C60035662B /* ClockViewModel.swift */,
 				17E479BF2A1FD51F0035662B /* Assets.xcassets */,
 				17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */,
 				17E479C12A1FD51F0035662B /* Preview Content */,
@@ -140,7 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
+				17E479CB2A1FD8AB0035662B /* ClockView.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
+				17E479CF2A1FD8C60035662B /* ClockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
