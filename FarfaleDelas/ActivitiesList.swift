@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ActivitiesList: View {
     
-    @State var activitiesList: [CardView] = [CardView(), CardView(), CardView()]
+    @State var activitiesList: [CardView] = [CardView(), CardView(), CardView(), CardView(), CardView(), CardView(), CardView(), CardView(), CardView(), CardView()]
     
     var body: some View {
         VStack{
@@ -22,9 +22,9 @@ struct ActivitiesList: View {
                 }
             }
             .padding()
-            Spacer()
             if activitiesList.isEmpty{
-                Text("Essa tela ta vazia bota uns troço ai na moral :(")
+                Spacer()
+                Text("Essa tela ta vazia bota uns troço ai na moral :(").foregroundColor(.black)
             }else{
                 ForEach(activitiesList, id: \.self){ activityView in
                     activityView
@@ -32,7 +32,7 @@ struct ActivitiesList: View {
             }
             Spacer()
         }.background(.white)
-            .frame(width: 415)
+            .frame(width: 430, height: 596)
     }
 }
 
@@ -43,7 +43,7 @@ struct CardView: View, Hashable {
     var body: some View {
         ZStack{
             Rectangle()
-                .frame(width: 120, height: 30)
+                .frame(width: 420, height: 44) //grande é 88
                 .foregroundColor(.red)
         }
     }
