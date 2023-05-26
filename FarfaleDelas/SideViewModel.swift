@@ -1,5 +1,5 @@
 //
-//  ClockViewModel.swift
+//  SideViewModel.swift
 //  FarfaleDelas
 //
 //  Created by Lucas Migge de Barros on 25/05/23.
@@ -7,7 +7,12 @@
 
 import Foundation
 
-class ClockViewModel: ObservableObject {
+class SideViewModel: ObservableObject {
+    enum State {
+        case idle, playing, paused
+    }
+    
+   @Published var state: State = .idle
     
     private var totalTime: Double
     private var timer: Timer?
@@ -29,7 +34,7 @@ class ClockViewModel: ObservableObject {
     }
     
     
-    init(totalTime: Double = 5) {
+    init(totalTime: Double = 180) {
         self.totalTime = totalTime
         startTimer()
     }
@@ -44,6 +49,5 @@ class ClockViewModel: ObservableObject {
             }
         }
     }
-    
     
 }

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ClockView: View {
     
-    @StateObject var viewModel: ClockViewModel = ClockViewModel()
+    var timePassedRatio: Float
+    var remainingTime: String
 
     
     var body: some View {
@@ -22,13 +23,13 @@ struct ClockView: View {
                 
                 // Setor circular que se expande
                 Circle()
-                    .trim(from: 0, to: CGFloat(viewModel.timeRatio))
+                    .trim(from: 0, to: CGFloat(timePassedRatio))
                     .stroke(Color.blue, style: StrokeStyle(lineWidth: 10, lineCap: .round))
                     .rotationEffect(.degrees(-90))
-                    .animation(.linear(duration: 1), value: viewModel.secondsPassed)
+                    .animation(.linear(duration: 1), value: timePassedRatio)
                 
                 
-                Text(viewModel.timeFormatted)
+                Text(remainingTime)
                     .font(.largeTitle)
                     .foregroundColor(.black)
             }
@@ -40,6 +41,6 @@ struct ClockView: View {
 }
 struct ClockView_Previews: PreviewProvider {
     static var previews: some View {
-        ClockView()
+        ClockView(timePassedRatio: 0.5, remainingTime: "16:20")
     }
 }
