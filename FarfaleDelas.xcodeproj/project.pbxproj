@@ -47,9 +47,9 @@
 			isa = PBXGroup;
 			children = (
 				17BFF7792A20361000349993 /* SideViewModel.swift */,
+				174410482A1FEBB900995EFB /* SideView.swift */,
 				17BFF77B2A20461200349993 /* CommonButtonView.swift */,
 				17E479CA2A1FD8AB0035662B /* ClockView.swift */,
-				174410482A1FEBB900995EFB /* SideView.swift */,
 			);
 			path = SideView;
 			sourceTree = "<group>";

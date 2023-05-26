@@ -44,7 +44,7 @@ struct SideView: View {
             
             
             ClockView(timePassedRatio: viewModel.timeRatio,
-                      remainingTime: viewModel.timeFormatted)
+                      remainingTime: viewModel.timeRemainingFormatted)
             .frame(width: 200, height: 200)
             
             
@@ -54,7 +54,7 @@ struct SideView: View {
             
             
             VStack(spacing: 10) {
-                Text("23:12")
+                Text(viewModel.currentTimeWithAddedSeconds())
                 
                 Text("Término Estimado")
             }

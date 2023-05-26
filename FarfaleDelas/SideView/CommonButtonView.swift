@@ -32,9 +32,19 @@ struct CommonButtonView: View {
     
     
     var body: some View {
-        Button(label) {
+        Button {
             action()
+        } label: {
+            Text(label)
+                .font(.headline)
+                .frame(width: 125, height: 40)
+                .background(Color.pink)
+                .cornerRadius(15)
+
+
         }
+        .buttonStyle(.plain)
+
     }
 }
 

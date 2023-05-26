@@ -24,14 +24,13 @@ struct ClockView: View {
                 // Setor circular que se expande
                 Circle()
                     .trim(from: 0, to: CGFloat(timePassedRatio))
-                    .stroke(Color.blue, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                    .stroke(Color.pink, style: StrokeStyle(lineWidth: 10, lineCap: .round))
                     .rotationEffect(.degrees(-90))
                     .animation(.linear(duration: 1), value: timePassedRatio)
                 
                 
                 Text(remainingTime)
                     .font(.largeTitle)
-                    .foregroundColor(.black)
             }
             
         }
