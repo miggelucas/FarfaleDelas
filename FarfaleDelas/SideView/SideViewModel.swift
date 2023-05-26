@@ -12,17 +12,18 @@ class SideViewModel: ObservableObject {
         case idle, playing, paused
     }
     
-    @Published var state: State = .idle
-    @Published var secondsPassed: Double = 0 // Tempo inicial em segundos
-    
     private var totalTime: Double
     private var timer: Timer?
     
+    @Published var state: State = .idle
+    @Published var secondsPassed: Double = 0 // Tempo inicial em segundos
+    @Published var currentTaskName: String
 
+    
     var timeRemaining: Double {
         totalTime - secondsPassed
     }
-    
+
     var timeRemainingFormatted: String {
         let minutes = Int(timeRemaining) / 60
         let seconds = Int(timeRemaining) % 60
@@ -34,8 +35,10 @@ class SideViewModel: ObservableObject {
     }
     
     
-    init(totalTime: Double = 180) {
+    init(totalTime: Double = 180,
+         currentTask: String = "Nome da Atividade Atual") {
         self.totalTime = totalTime
+        self.currentTaskName = currentTask
         startTimer()
     }
     
@@ -61,6 +64,11 @@ class SideViewModel: ObservableObject {
         formatter.dateFormat = "HH:mm"
         
         return formatter.string(from: estimatedTime)
+    }
+    
+    
+    func settingButtonPressed() {
+        
     }
     
 }

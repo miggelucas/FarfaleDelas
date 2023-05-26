@@ -19,7 +19,7 @@ struct SideView: View {
             // top
             VStack {
                 ZStack {
-                    Text("Infos")
+                    Text("Timer")
                         .font(.title)
                     
                     Spacer()
@@ -29,7 +29,7 @@ struct SideView: View {
                         Spacer()
                         
                         Button {
-                            //viewModel.settingsPressed()
+                            viewModel.settingButtonPressed()
                         } label: {
                             Image(systemName: "gear")
                         }
@@ -41,22 +41,24 @@ struct SideView: View {
                 
             }
             
-            
-            
-            ClockView(timePassedRatio: viewModel.timeRatio,
-                      remainingTime: viewModel.timeRemainingFormatted)
-            .frame(width: 200, height: 200)
-            
-            
-            
-            Text("Current Task")
-                .font(.headline)
+            // Clock and Task Name
+            VStack {
+                ClockView(timePassedRatio: viewModel.timeRatio,
+                          remainingTime: viewModel.timeRemainingFormatted)
+                .frame(width: 200, height: 200)
+                
+                
+                
+                Text(viewModel.currentTaskName)
+                    .font(.headline)
+            }
             
             
             VStack(spacing: 10) {
                 Text(viewModel.currentTimeWithAddedSeconds())
+                    .font(.title)
                 
-                Text("Término Estimado")
+                Text("termino Estimado")
             }
             
             
@@ -90,7 +92,11 @@ struct SideView: View {
                 }
                 
             }
+            
+            Spacer()
+            
         }
+        .padding(.top, 30)
         .frame(width: 300, height: 900)
     }
 }
