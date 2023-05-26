@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DEE846A2A214446003BA0F8 /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE84692A214446003BA0F8 /* ColorConstant.swift */; };
 		17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */; };
 		17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BD2A1FD51E0035662B /* ContentView.swift */; };
 		17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DEE84692A214446003BA0F8 /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
 		17E479B82A1FD51E0035662B /* FarfaleDelas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarfaleDelas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarfaleDelasApp.swift; sourceTree = "<group>"; };
 		17E479BD2A1FD51E0035662B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +37,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DEE84642A214356003BA0F8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0DEE84662A214378003BA0F8 /* Modules */,
+				0DEE84652A21436B003BA0F8 /* Components */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0DEE84652A21436B003BA0F8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0DEE84662A214378003BA0F8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0DEE846D2A21459E003BA0F8 /* StatusBar */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0DEE84682A214427003BA0F8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0DEE84692A214446003BA0F8 /* ColorConstant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0DEE846B2A2144E8003BA0F8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		0DEE846C2A21451A003BA0F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */,
+				17E479BD2A1FD51E0035662B /* ContentView.swift */,
+				17E479BF2A1FD51F0035662B /* Assets.xcassets */,
+				17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0DEE846D2A21459E003BA0F8 /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */,
+			);
+			path = StatusBar;
+			sourceTree = "<group>";
+		};
 		17E479AF2A1FD51E0035662B = {
 			isa = PBXGroup;
 			children = (
@@ -54,11 +114,10 @@
 		17E479BA2A1FD51E0035662B /* FarfaleDelas */ = {
 			isa = PBXGroup;
 			children = (
-				17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */,
-				475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */,
-				17E479BD2A1FD51E0035662B /* ContentView.swift */,
-				17E479BF2A1FD51F0035662B /* Assets.xcassets */,
-				17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */,
+				0DEE846C2A21451A003BA0F8 /* Resources */,
+				0DEE846B2A2144E8003BA0F8 /* Managers */,
+				0DEE84682A214427003BA0F8 /* Constants */,
+				0DEE84642A214356003BA0F8 /* UI */,
 				17E479C12A1FD51F0035662B /* Preview Content */,
 			);
 			path = FarfaleDelas;
@@ -143,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
+				0DEE846A2A214446003BA0F8 /* ColorConstant.swift in Sources */,
 				475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
 			);
@@ -274,7 +334,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = 5M8NVJZA75;
+				DEVELOPMENT_TEAM = 4UVYB4V5UN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -302,7 +362,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = 5M8NVJZA75;
+				DEVELOPMENT_TEAM = 4UVYB4V5UN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
