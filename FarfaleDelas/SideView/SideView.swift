@@ -44,7 +44,9 @@ struct SideView: View {
             // Clock and Task Name
             VStack {
                 ClockView(timePassedRatio: viewModel.timeRatio,
-                          remainingTime: viewModel.timeRemainingFormatted)
+                          remainingTime: viewModel.timeRemainingFormatted,
+                          strokeColor: viewModel.taskColor
+                )
                 .frame(width: 200, height: 200)
                 
                 
@@ -65,26 +67,28 @@ struct SideView: View {
             VStack{
                 switch viewModel.state {
                 case .idle:
-                    CommonButtonView(style: .Start) {
+                    CommonButtonView(style: .Start, buttonColor: viewModel.taskColor) {
                         viewModel.startButtonPressed()
                     }
                     
                 case .playing:
                     if viewModel.clockRunning {
-                        CommonButtonView(style: .Pause) {
+                        CommonButtonView(style: .Pause, buttonColor: viewModel.taskColor) {
                             viewModel.pauseButtonPressed()
                         }
                     } else {
-                        CommonButtonView(style: .Resume) {
+                        CommonButtonView(style: .Resume, buttonColor: viewModel.taskColor) {
                             viewModel.resumeButtonPressed()
                         }
                     }
                     
     
-                    CommonButtonView(style: .Skip) {
+                    CommonButtonView(style: .Skip, buttonColor: viewModel.taskColor) {
                         
                         
                     }
+                    
+                    
                     
                 }
                 

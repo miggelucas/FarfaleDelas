@@ -13,8 +13,15 @@ struct CommonButtonView: View {
     }
     
     let style: Style
+    let buttonColor: Color
     let action: () -> Void
     
+    init(style: Style, buttonColor: Color = .pink, action: @escaping () -> Void) {
+        self.style = style
+        self.buttonColor = buttonColor
+        self.action = action
+    }
+
     var label: String {
         switch style {
         case .Start:
@@ -32,24 +39,42 @@ struct CommonButtonView: View {
     
     
     var body: some View {
-        Button {
-            action()
-        } label: {
-            Text(label)
-                .font(.headline)
-                .frame(width: 125, height: 40)
-                .background(Color.pink)
-                .cornerRadius(15)
-
-
+        if style == .Skip || style == .Done {
+            Button {
+                action()
+            } label: {
+                Text(label)
+                    .font(.headline)
+                    .fontWeight(.regular)
+                    .frame(width: 125, height: 40)
+                    .background(buttonColor)
+                    .cornerRadius(15)
+                
+            }
+            .buttonStyle(.plain)
+            
+        } else {
+            Button {
+                action()
+            } label: {
+                Text(label)
+                    .font(.headline)
+                    .fontWeight(.black)
+                    .frame(width: 125, height: 40)
+                    .background(buttonColor)
+                    .cornerRadius(15)
+                
+            }
+            .buttonStyle(.plain)
         }
-        .buttonStyle(.plain)
+        
+        
 
     }
 }
 
 struct CommonButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CommonButtonView(style: .Done, action: {})
+        CommonButtonView(style: .Done, buttonColor: .pink, action: {})
     }
 }

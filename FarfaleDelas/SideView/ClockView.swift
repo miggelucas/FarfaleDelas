@@ -11,6 +11,7 @@ struct ClockView: View {
     
     var timePassedRatio: Float
     var remainingTime: String
+    var strokeColor: Color
 
     
     var body: some View {
@@ -24,7 +25,7 @@ struct ClockView: View {
                 // Setor circular que se expande
                 Circle()
                     .trim(from: 0, to: CGFloat(timePassedRatio))
-                    .stroke(Color.pink, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                    .stroke(strokeColor, style: StrokeStyle(lineWidth: 10, lineCap: .round))
                     .rotationEffect(.degrees(-90))
                     .animation(.linear(duration: 1), value: timePassedRatio)
                 
@@ -40,6 +41,6 @@ struct ClockView: View {
 }
 struct ClockView_Previews: PreviewProvider {
     static var previews: some View {
-        ClockView(timePassedRatio: 0.5, remainingTime: "16:20")
+        ClockView(timePassedRatio: 0.5, remainingTime: "16:20", strokeColor: .pink)
     }
 }

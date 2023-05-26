@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class SideViewModel: ObservableObject {
     enum State {
@@ -27,6 +28,22 @@ class SideViewModel: ObservableObject {
     
     var taskTimeDuration: Double {
         Double(cardInfo.duration) ?? Double(99)
+    }
+    
+    var taskColor: Color {
+        switch cardInfo.setColor {
+            
+        case "Red":
+            return .red
+        case "Green":
+            return .green
+        case "Blue":
+            return .blue
+        case "yellow":
+            return .yellow
+        default:
+            return .pink
+        }
     }
     
     var timeRemaining: Double {
@@ -69,6 +86,7 @@ class SideViewModel: ObservableObject {
             } else {
                 clockRunning = false
             }
+
         }
     }
     
