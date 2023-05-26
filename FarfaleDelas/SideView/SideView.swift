@@ -9,33 +9,44 @@ import SwiftUI
 
 
 struct SideView: View {
-
+    
     @StateObject var viewModel: SideViewModel = SideViewModel()
-
+    
     
     var body: some View {
         VStack(spacing: 50) {
-            HStack {
-                Spacer()
-                
-                Text("Infos")
-                    .font(.headline)
-                
-                
-                Button {
-                    //viewModel.settingsPressed()
-                } label: {
-                    Image(systemName: "gear")
+            
+            // top
+            VStack {
+                ZStack {
+                    Text("Infos")
+                        .font(.title)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        
+                        Spacer()
+                        
+                        Button {
+                            //viewModel.settingsPressed()
+                        } label: {
+                            Image(systemName: "gear")
+                        }
+                        
+                        
+                    }.padding(.horizontal)
+                    
                 }
                 
-            
             }
-            .padding(.horizontal)
+            
+            
             
             ClockView(timePassedRatio: viewModel.timeRatio,
                       remainingTime: viewModel.timeFormatted)
-                .frame(width: 200, height: 200)
-                
+            .frame(width: 200, height: 200)
+            
             
             
             Text("Current Task")
@@ -52,27 +63,27 @@ struct SideView: View {
             VStack{
                 switch viewModel.state {
                 case .idle:
-                    Button("Iniciar") {
+                    CommonButtonView(style: .Start) {
                         viewModel.state = .playing
                     }
                     
                 case .playing:
-                    Button("Pausar") {
+                    CommonButtonView(style: .Pause) {
                         viewModel.state = .paused
                     }
                     
-                    Button("Próximo") {
+                    CommonButtonView(style: .Skip) {
                         
                         
                     }
                     
                 case .paused:
-                    Button("Retomar") {
+                    CommonButtonView(style: .Resume) {
                         viewModel.state = .playing
                         
                     }
                     
-                    Button("Próximo") {
+                    CommonButtonView(style: .Skip) {
                         
                         
                     }
