@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ActivitiesList: View {
     
-    @State var activitiesList: [CardView] = []
+    @State var activitiesList: [CardView] = [CardView(info: CardInformation()), CardView(info: CardInformation())]
     
     var body: some View {
         VStack{
@@ -23,7 +23,7 @@ struct ActivitiesList: View {
                 HStack{
                     Spacer()
                     ButtonIcon(buttonType: .add) {
-                        activitiesList.append(CardView())
+                        activitiesList.append(CardView(info: CardInformation()))
                     }
                 }.padding()
             }
@@ -31,28 +31,16 @@ struct ActivitiesList: View {
                 Spacer()
                 Text("Essa tela ta vazia bota uns troço ai na moral :(").foregroundColor(.black)
             }else{
-                ForEach(activitiesList, id: \.self){ activityView in
+                ForEach(activitiesList, id: \.id){ activityView in
                     activityView
                 }
             }
             Spacer()
-        }.background(.white)
+        }.background(.black)
             .frame(width: 430, height: 596)
     }
 }
 
-struct CardView: View, Hashable {
-    
-    let id = UUID()
-    
-    var body: some View {
-        ZStack{
-            Rectangle()
-                .frame(width: 420, height: 44) //grande é 88
-                .foregroundColor(.red)
-        }
-    }
-}
 
 struct ActivitiesList_Previews: PreviewProvider {
     static var previews: some View {
