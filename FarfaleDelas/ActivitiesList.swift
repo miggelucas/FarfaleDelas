@@ -9,19 +9,24 @@ import SwiftUI
 
 struct ActivitiesList: View {
     
-    @State var activitiesList: [CardView] = [CardView(), CardView(), CardView(), CardView(), CardView(), CardView(), CardView(), CardView(), CardView(), CardView()]
+    @State var activitiesList: [CardView] = []
     
     var body: some View {
         VStack{
-            HStack{
-                Spacer()
-                Text("Suas Atividades").foregroundColor(.black)
-                Spacer()
-                ButtonIcon(buttonType: .add) {
-                    
+            ZStack {
+                HStack{
+                    Spacer()
+                    Text("Suas Atividades").foregroundColor(.black)
+                    Spacer()
                 }
+                .padding()
+                HStack{
+                    Spacer()
+                    ButtonIcon(buttonType: .add) {
+                        activitiesList.append(CardView())
+                    }
+                }.padding()
             }
-            .padding()
             if activitiesList.isEmpty{
                 Spacer()
                 Text("Essa tela ta vazia bota uns troço ai na moral :(").foregroundColor(.black)

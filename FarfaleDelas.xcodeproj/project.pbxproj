@@ -62,9 +62,9 @@
 				475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */,
 				17E479BD2A1FD51E0035662B /* ContentView.swift */,
 				4721B4512A1FECB000C73A9C /* ButtonIcon.swift */,
+				4721B4532A1FED8A00C73A9C /* ActivitiesList.swift */,
 				17E479BF2A1FD51F0035662B /* Assets.xcassets */,
 				17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */,
-				4721B4532A1FED8A00C73A9C /* ActivitiesList.swift */,
 				17E479C12A1FD51F0035662B /* Preview Content */,
 			);
 			path = FarfaleDelas;
