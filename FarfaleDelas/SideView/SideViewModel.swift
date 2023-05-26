@@ -92,13 +92,17 @@ class SideViewModel: ObservableObject {
     }
     
     func pauseButtonPressed() {
-        stopTimer()
+
         clockRunning = false
     }
     
     func resumeButtonPressed() {
-        state = .playing
         clockRunning = true
+    }
+    
+    func doneButtonPressed() {
+        state = .idle
+        clockRunning
     }
     
     func settingButtonPressed() {
