@@ -55,7 +55,7 @@ struct SideView: View {
             
             
             VStack(spacing: 10) {
-                Text(viewModel.currentTimeWithAddedSeconds())
+                Text(viewModel.estimatedDoneTime)
                     .font(.title)
                 
                 Text("termino Estimado")
@@ -66,29 +66,26 @@ struct SideView: View {
                 switch viewModel.state {
                 case .idle:
                     CommonButtonView(style: .Start) {
-                        viewModel.state = .playing
+                        viewModel.startButtonPressed()
                     }
                     
                 case .playing:
-                    CommonButtonView(style: .Pause) {
-                        viewModel.state = .paused
+                    if viewModel.clockRunning {
+                        CommonButtonView(style: .Pause) {
+                            viewModel.pauseButtonPressed()
+                        }
+                    } else {
+                        CommonButtonView(style: .Resume) {
+                            viewModel.resumeButtonPressed()
+                        }
                     }
                     
+    
                     CommonButtonView(style: .Skip) {
                         
                         
                     }
                     
-                case .paused:
-                    CommonButtonView(style: .Resume) {
-                        viewModel.state = .playing
-                        
-                    }
-                    
-                    CommonButtonView(style: .Skip) {
-                        
-                        
-                    }
                 }
                 
             }

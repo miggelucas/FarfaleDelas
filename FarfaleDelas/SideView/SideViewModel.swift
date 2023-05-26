@@ -9,21 +9,23 @@ import Foundation
 
 class SideViewModel: ObservableObject {
     enum State {
-        case idle, playing, paused
+        case idle, playing
     }
     
+
     private var totalTime: Double
     private var timer: Timer?
     
     @Published var state: State = .idle
     @Published var secondsPassed: Double = 0 // Tempo inicial em segundos
     @Published var currentTaskName: String
-
+    @Published var clockRunning: Bool = false
+    @Published private var currentTime: Date = Date()
     
     var timeRemaining: Double {
         totalTime - secondsPassed
     }
-
+    
     var timeRemainingFormatted: String {
         let minutes = Int(timeRemaining) / 60
         let seconds = Int(timeRemaining) % 60
@@ -34,6 +36,14 @@ class SideViewModel: ObservableObject {
         Float(secondsPassed) / Float(totalTime)
     }
     
+    var estimatedDoneTime: String {
+        currentTimeWithAddedSeconds()
+    }
+    
+    private var estimatedTime: Date {
+        currentTime.addingTimeInterval(timeRemaining)
+    }
+    
     
     init(totalTime: Double = 180,
          currentTask: String = "Nome da Atividade Atual") {
@@ -42,23 +52,32 @@ class SideViewModel: ObservableObject {
         startTimer()
     }
     
+    
+    
     private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-            if self.timeRemaining > 0 {
-                self.secondsPassed += 1
-            } else {
-                stopTimer()
+            
+            currentTime = Date()
+            
+            if clockRunning {
+                if self.timeRemaining > 0 {
+                    self.secondsPassed += 1
+                } else {
+                    
+                    clockRunning = false
+                }
             }
+            
         }
     }
     
     private func stopTimer() {
         self.timer?.invalidate()
     }
+ 
     
-    func currentTimeWithAddedSeconds() -> String {
-        let estimatedTime = Date().addingTimeInterval(totalTime)
+    private func currentTimeWithAddedSeconds() -> String {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
@@ -66,6 +85,21 @@ class SideViewModel: ObservableObject {
         return formatter.string(from: estimatedTime)
     }
     
+    
+    func startButtonPressed() {
+        state = .playing
+        clockRunning = true
+    }
+    
+    func pauseButtonPressed() {
+        stopTimer()
+        clockRunning = false
+    }
+    
+    func resumeButtonPressed() {
+        state = .playing
+        clockRunning = true
+    }
     
     func settingButtonPressed() {
         
