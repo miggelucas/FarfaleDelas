@@ -12,18 +12,25 @@ class SideViewModel: ObservableObject {
         case idle, playing
     }
     
-
-    private var totalTime: Double
     private var timer: Timer?
     
     @Published var state: State = .idle
     @Published var secondsPassed: Double = 0 // Tempo inicial em segundos
-    @Published var currentTaskName: String
     @Published var clockRunning: Bool = false
     @Published private var currentTime: Date = Date()
     
+    @Published private var cardInfo: CardInformation
+    
+    var currentTaskName: String {
+        cardInfo.atividadeText
+    }
+    
+    var taskTimeDuration: Double {
+        Double(cardInfo.duration) ?? Double(99)
+    }
+    
     var timeRemaining: Double {
-        totalTime - secondsPassed
+        taskTimeDuration - secondsPassed
     }
     
     var timeRemainingFormatted: String {
@@ -33,22 +40,18 @@ class SideViewModel: ObservableObject {
     }
     
     var timeRatio: Float {
-        Float(secondsPassed) / Float(totalTime)
+        Float(secondsPassed) / Float(taskTimeDuration)
     }
     
     var estimatedDoneTime: String {
         currentTimeWithAddedSeconds()
     }
     
-    private var estimatedTime: Date {
-        currentTime.addingTimeInterval(timeRemaining)
-    }
-    
     
     init(totalTime: Double = 180,
-         currentTask: String = "Nome da Atividade Atual") {
-        self.totalTime = totalTime
-        self.currentTaskName = currentTask
+         currentTask: String = "Nome da Atividade Atual",
+         cardInfo: CardInformation = CardInformation()) {
+        self.cardInfo = CardInformation()
         startTimer()
     }
     
@@ -79,10 +82,12 @@ class SideViewModel: ObservableObject {
     
     private func currentTimeWithAddedSeconds() -> String {
         
+        let estimatedDoneTime = currentTime.addingTimeInterval(timeRemaining)
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         
-        return formatter.string(from: estimatedTime)
+        return formatter.string(from: estimatedDoneTime)
     }
     
     
@@ -92,7 +97,6 @@ class SideViewModel: ObservableObject {
     }
     
     func pauseButtonPressed() {
-
         clockRunning = false
     }
     
@@ -102,7 +106,7 @@ class SideViewModel: ObservableObject {
     
     func doneButtonPressed() {
         state = .idle
-        clockRunning
+        clockRunning = false
     }
     
     func settingButtonPressed() {
