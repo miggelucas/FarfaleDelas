@@ -15,6 +15,11 @@
 		17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
 		17E479C32A1FD51F0035662B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479C22A1FD51F0035662B /* Preview Assets.xcassets */; };
 		17E479CB2A1FD8AB0035662B /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479CA2A1FD8AB0035662B /* ClockView.swift */; };
+		4721B4522A1FECB000C73A9C /* ButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4512A1FECB000C73A9C /* ButtonIcon.swift */; };
+		4721B4542A1FED8A00C73A9C /* ActivitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4532A1FED8A00C73A9C /* ActivitiesList.swift */; };
+		4721B4772A21251600C73A9C /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4762A21251600C73A9C /* CardInformation.swift */; };
+		4721B4792A21256600C73A9C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4782A21256600C73A9C /* CardView.swift */; };
+		4721B4682A21222000C73A9C /* Cards components in Resources */ = {isa = PBXBuildFile; fileRef = 4721B4672A21222000C73A9C /* Cards components */; };
 		475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +34,11 @@
 		17E479C22A1FD51F0035662B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FarfaleDelas.entitlements; sourceTree = "<group>"; };
 		17E479CA2A1FD8AB0035662B /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		4721B4512A1FECB000C73A9C /* ButtonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIcon.swift; sourceTree = "<group>"; };
+		4721B4532A1FED8A00C73A9C /* ActivitiesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesList.swift; sourceTree = "<group>"; };
+		4721B4762A21251600C73A9C /* CardInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
+		4721B4782A21256600C73A9C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		4721B4672A21222000C73A9C /* Cards components */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Cards components"; sourceTree = "<group>"; };
 		475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,10 +83,15 @@
 		17E479BA2A1FD51E0035662B /* FarfaleDelas */ = {
 			isa = PBXGroup;
 			children = (
+				4721B4672A21222000C73A9C /* Cards components */,
 				17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */,
+				4721B4762A21251600C73A9C /* CardInformation.swift */,
+				4721B4782A21256600C73A9C /* CardView.swift */,
 				475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */,
 				17E479BD2A1FD51E0035662B /* ContentView.swift */,
 				17BFF77D2A20485900349993 /* SideView */,
+				4721B4512A1FECB000C73A9C /* ButtonIcon.swift */,
+				4721B4532A1FED8A00C73A9C /* ActivitiesList.swift */,
 				17E479BF2A1FD51F0035662B /* Assets.xcassets */,
 				17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */,
 				17E479C12A1FD51F0035662B /* Preview Content */,
@@ -150,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4721B4682A21222000C73A9C /* Cards components in Resources */,
 				17E479C32A1FD51F0035662B /* Preview Assets.xcassets in Resources */,
 				17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */,
 			);
@@ -162,8 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4721B4792A21256600C73A9C /* CardView.swift in Sources */,
+				4721B4522A1FECB000C73A9C /* ButtonIcon.swift in Sources */,
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
 				17E479CB2A1FD8AB0035662B /* ClockView.swift in Sources */,
+				4721B4772A21251600C73A9C /* CardInformation.swift in Sources */,
+				4721B4542A1FED8A00C73A9C /* ActivitiesList.swift in Sources */,
 				475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */,
 				174410492A1FEBB900995EFB /* SideView.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
