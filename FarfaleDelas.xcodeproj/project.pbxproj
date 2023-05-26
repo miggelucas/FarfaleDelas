@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DEE846A2A214446003BA0F8 /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE84692A214446003BA0F8 /* ColorConstant.swift */; };
+		0DEE846F2A21473B003BA0F8 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE846E2A21473B003BA0F8 /* StateManager.swift */; };
 		17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */; };
 		17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BD2A1FD51E0035662B /* ContentView.swift */; };
 		17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		0DEE84692A214446003BA0F8 /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
+		0DEE846E2A21473B003BA0F8 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		17E479B82A1FD51E0035662B /* FarfaleDelas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarfaleDelas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarfaleDelasApp.swift; sourceTree = "<group>"; };
 		17E479BD2A1FD51E0035662B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		0DEE846B2A2144E8003BA0F8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				0DEE846E2A21473B003BA0F8 /* StateManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
 				0DEE846A2A214446003BA0F8 /* ColorConstant.swift in Sources */,
 				475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */,
+				0DEE846F2A21473B003BA0F8 /* StateManager.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
