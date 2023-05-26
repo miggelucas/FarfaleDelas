@@ -15,7 +15,10 @@
 		4721B4542A1FED8A00C73A9C /* ActivitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4532A1FED8A00C73A9C /* ActivitiesList.swift */; };
 		4721B4772A21251600C73A9C /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4762A21251600C73A9C /* CardInformation.swift */; };
 		4721B4792A21256600C73A9C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4782A21256600C73A9C /* CardView.swift */; };
-		4721B4682A21222000C73A9C /* Cards components in Resources */ = {isa = PBXBuildFile; fileRef = 4721B4672A21222000C73A9C /* Cards components */; };
+		4721B47E2A212A6600C73A9C /* CardView+ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B47B2A212A6600C73A9C /* CardView+ToggleButton.swift */; };
+		4721B47F2A212A6600C73A9C /* CardView+ClosedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B47D2A212A6600C73A9C /* CardView+ClosedCardView.swift */; };
+		4721B4802A212A6600C73A9C /* CardInformation+Personalizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B47C2A212A6600C73A9C /* CardInformation+Personalizations.swift */; };
+		4721B4812A212A6600C73A9C /* CardView+OpenCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B47A2A212A6500C73A9C /* CardView+OpenCardView.swift */; };
 		475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +33,10 @@
 		4721B4532A1FED8A00C73A9C /* ActivitiesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesList.swift; sourceTree = "<group>"; };
 		4721B4762A21251600C73A9C /* CardInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
 		4721B4782A21256600C73A9C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		4721B4672A21222000C73A9C /* Cards components */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Cards components"; sourceTree = "<group>"; };
+		4721B47A2A212A6500C73A9C /* CardView+OpenCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+OpenCardView.swift"; sourceTree = "<group>"; };
+		4721B47B2A212A6600C73A9C /* CardView+ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+ToggleButton.swift"; sourceTree = "<group>"; };
+		4721B47C2A212A6600C73A9C /* CardInformation+Personalizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardInformation+Personalizations.swift"; sourceTree = "<group>"; };
+		4721B47D2A212A6600C73A9C /* CardView+ClosedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+ClosedCardView.swift"; sourceTree = "<group>"; };
 		475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,9 +70,12 @@
 		17E479BA2A1FD51E0035662B /* FarfaleDelas */ = {
 			isa = PBXGroup;
 			children = (
-				4721B4672A21222000C73A9C /* Cards components */,
 				17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */,
 				4721B4762A21251600C73A9C /* CardInformation.swift */,
+				4721B47C2A212A6600C73A9C /* CardInformation+Personalizations.swift */,
+				4721B47D2A212A6600C73A9C /* CardView+ClosedCardView.swift */,
+				4721B47A2A212A6500C73A9C /* CardView+OpenCardView.swift */,
+				4721B47B2A212A6600C73A9C /* CardView+ToggleButton.swift */,
 				4721B4782A21256600C73A9C /* CardView.swift */,
 				475DBB2E2A1FE32A00E05409 /* StatusBarController.swift */,
 				17E479BD2A1FD51E0035662B /* ContentView.swift */,
@@ -145,7 +154,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4721B4682A21222000C73A9C /* Cards components in Resources */,
 				17E479C32A1FD51F0035662B /* Preview Assets.xcassets in Resources */,
 				17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */,
 			);
@@ -160,11 +168,15 @@
 			files = (
 				4721B4792A21256600C73A9C /* CardView.swift in Sources */,
 				4721B4522A1FECB000C73A9C /* ButtonIcon.swift in Sources */,
+				4721B4812A212A6600C73A9C /* CardView+OpenCardView.swift in Sources */,
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
 				4721B4772A21251600C73A9C /* CardInformation.swift in Sources */,
+				4721B47E2A212A6600C73A9C /* CardView+ToggleButton.swift in Sources */,
 				4721B4542A1FED8A00C73A9C /* ActivitiesList.swift in Sources */,
+				4721B47F2A212A6600C73A9C /* CardView+ClosedCardView.swift in Sources */,
 				475DBB2F2A1FE32A00E05409 /* StatusBarController.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
+				4721B4802A212A6600C73A9C /* CardInformation+Personalizations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

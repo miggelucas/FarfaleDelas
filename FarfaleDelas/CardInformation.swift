@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct CardInformation {
+struct CardInformation: Identifiable{
+    
+    let id = UUID()
+    
     var atividadeText: String = "Nome da atividade"
     var duration: String = "30"
     var setColor: String = "Green"

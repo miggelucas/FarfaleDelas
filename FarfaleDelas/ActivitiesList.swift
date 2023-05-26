@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct ActivitiesList: View {
     
-    @State var activitiesList: [CardView] = [CardView(info: CardInformation()), CardView(info: CardInformation())]
+    @State var activitiesList: [CardInformation] = [CardInformation(), CardInformation(), ]
+    @State var draggedItem: String?
     
     var body: some View {
         VStack{
@@ -23,7 +25,7 @@ struct ActivitiesList: View {
                 HStack{
                     Spacer()
                     ButtonIcon(buttonType: .add) {
-                        activitiesList.append(CardView(info: CardInformation()))
+                        activitiesList.append(CardInformation())
                     }
                 }.padding()
             }
@@ -31,15 +33,30 @@ struct ActivitiesList: View {
                 Spacer()
                 Text("Essa tela ta vazia bota uns troço ai na moral :(").foregroundColor(.black)
             }else{
-                ForEach(activitiesList, id: \.id){ activityView in
-                    activityView
+                List{
+                    ForEach(activitiesList, id: \.id){ activityInfo in
+                        HStack{
+                            Text("::")
+                            CardView(info: activityInfo){
+                                activitiesList.removeAll{
+                                    $0.id == activityInfo.id
+                                }
+                            }
+                        }
+                    }.onMove(perform: move)
                 }
+                
             }
             Spacer()
-        }.background(.black)
+        }.background(.gray)
             .frame(width: 430, height: 596)
     }
+    func move(from source: IndexSet, to destination: Int) {
+        activitiesList.move(fromOffsets: source, toOffset: destination )
+      }
 }
+
+
 
 
 struct ActivitiesList_Previews: PreviewProvider {

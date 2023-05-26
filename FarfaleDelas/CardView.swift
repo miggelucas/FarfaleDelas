@@ -7,21 +7,15 @@
 
 import SwiftUI
 
-struct CardView: View, Hashable {
-    
-    static func == (lhs: CardView, rhs: CardView) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+struct CardView: View{
+   
     
     
     let id = UUID()
     @State var info: CardInformation
     @State var isOpen: Bool = false
 
+    let actionForDeleteButton: ()->()
 
     var body: some View {
         if isOpen {
@@ -48,12 +42,13 @@ extension CardView {
                       isOpen.toggle()
                   }
                 )
-                .frame(width: 500)
-                .padding()
+                .frame(width: 200)
+                .padding(.horizontal)
 
-                Button("Delete", action: {
-                    // deletar card da lista de informacoes
+                Button("Delete",role: .destructive, action: {
+                    actionForDeleteButton()
                 })
+            
             }
 
             HStack {
@@ -85,7 +80,7 @@ extension CardView {
         HStack {
             toggleButton
             Text(info.atividadeText)
-                .frame(width: 500)
+                .frame(width: 300)
         }
     }
 }
@@ -94,13 +89,15 @@ extension CardView {
     var toggleButton: some View {
         Button("Toggle", action: {
             isOpen.toggle()
-        })
+        }).foregroundColor(.white)
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(info: CardInformation())
+        CardView(info: CardInformation()){
+            
+        }
     }
 }
 
