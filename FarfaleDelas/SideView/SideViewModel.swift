@@ -48,37 +48,34 @@ class SideViewModel: ObservableObject {
     }
     
     
-    init(totalTime: Double = 180,
-         currentTask: String = "Nome da Atividade Atual",
-         cardInfo: CardInformation = CardInformation()) {
+    init(cardInfo: CardInformation = CardInformation()) {
         self.cardInfo = CardInformation()
         startTimer()
     }
-    
     
     
     private func startTimer() {
         self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             
+            // updates time
             currentTime = Date()
             
-            if clockRunning {
-                if self.timeRemaining > 0 {
-                    self.secondsPassed += 1
-                } else {
-                    
-                    clockRunning = false
-                }
-            }
             
+            if !clockRunning { return }
+            
+            if self.timeRemaining > 0 {
+                self.secondsPassed += 1
+            } else {
+                clockRunning = false
+            }
         }
     }
     
     private func stopTimer() {
         self.timer?.invalidate()
     }
- 
+    
     
     private func currentTimeWithAddedSeconds() -> String {
         
