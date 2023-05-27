@@ -8,6 +8,23 @@
 import Foundation
 import SwiftUI
 
+protocol CardInformationProtocol {
+    var atividadeText: String { get set }
+    var duration: String { get set }
+    var setColor: String { get set }
+    
+}
+
+struct DummyCardInformation: CardInformationProtocol {
+    var atividadeText: String = "Nome da atividade"
+    
+    var duration: String = "30"
+    
+    var setColor: String = "Green"
+    
+    
+}
+
 class SideViewModel: ObservableObject {
     enum State {
         case idle, playing
@@ -20,7 +37,7 @@ class SideViewModel: ObservableObject {
     @Published var clockRunning: Bool = false
     @Published private var currentTime: Date = Date()
     
-    @Published private var cardInfo: CardInformation
+    @Published private var cardInfo: CardInformationProtocol
     
     var currentTaskName: String {
         cardInfo.atividadeText
@@ -65,8 +82,8 @@ class SideViewModel: ObservableObject {
     }
     
     
-    init(cardInfo: CardInformation = CardInformation()) {
-        self.cardInfo = CardInformation()
+    init(cardInfo: CardInformationProtocol = DummyCardInformation()) {
+        self.cardInfo = cardInfo
         startTimer()
     }
     
@@ -86,7 +103,7 @@ class SideViewModel: ObservableObject {
             } else {
                 clockRunning = false
             }
-
+            
         }
     }
     
