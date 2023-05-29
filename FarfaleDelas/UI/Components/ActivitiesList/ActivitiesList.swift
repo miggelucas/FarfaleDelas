@@ -15,7 +15,7 @@ struct ActivitiesList: View {
     let actionButtonAdd: ()->()
     
     var body: some View {
-        VStack{
+        VStack(spacing: 0){
             ZStack {
                 HStack{
                     Spacer()
@@ -30,6 +30,7 @@ struct ActivitiesList: View {
                     }
                 }.padding()
             }
+            Rectangle().foregroundColor(.black).frame(width: 395, height: 1)
             if activitiesList.isEmpty{
                 Spacer()
                 VStack{
@@ -38,7 +39,7 @@ struct ActivitiesList: View {
                 }
                 
             }else{
-                LazyVStack{
+                List{
                     ForEach(activitiesList, id: \.id){ activityInfo in
                         HStack{
                             Text("::")
@@ -49,12 +50,12 @@ struct ActivitiesList: View {
                             }
                         }.foregroundColor(.black)
                     }.onMove(perform: move)
-                }
+                }.listStyle(.plain).scrollContentBackground(.hidden)
                 
             }
             Spacer()
         }.background(.white)
-            .frame(width: 430, height: 596)
+            .frame(width: 460, height: 596)
     }
     func move(from source: IndexSet, to destination: Int) {
         activitiesList.move(fromOffsets: source, toOffset: destination )

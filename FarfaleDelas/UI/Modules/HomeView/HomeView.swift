@@ -9,12 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var viewModel = ActivitiesListViewModel()
+    @StateObject var activitiesViewModel = ActivitiesListViewModel()
     
     var body: some View {
-        ActivitiesList(activitiesList: $viewModel.cards){
-            viewModel.addCardInformation()
-        }.preferredColorScheme(.dark)
+        HStack(spacing: 0){
+            ActivitiesList(activitiesList: $activitiesViewModel.cards){
+                activitiesViewModel.addCardInformation()
+            }
+            Rectangle().frame(width: 173, height: 596).foregroundColor(.black)
+        }
     }
 }
 
