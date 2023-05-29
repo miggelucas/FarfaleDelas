@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct FarfaleDelasApp: App {
-
+    
     var body: some Scene {
         WindowGroup{
-            ContentView()
+//            ContentView()
+            SideView()
         }
     }
 }

@@ -46,13 +46,7 @@ struct CommonButtonView: View {
             Button {
                 action()
             } label: {
-                Text(label)
-                    .font(.headline)
-                    .fontWeight(.regular)
-                    .frame(width: 136, height: 36)
-                    .buttonBorderShape(.roundedRectangle)
-                    .shadow(color: .black, radius: 2, y: 1)
-                
+               fillStyleLabel
             }
             .buttonStyle(.plain)
             
@@ -60,13 +54,7 @@ struct CommonButtonView: View {
             Button {
                 action()
             } label: {
-                Text(label)
-                    .font(.headline)
-                    .fontWeight(.black)
-                    .frame(width: 136, height: 36)
-                    .background(buttonColor)
-                    .cornerRadius(10)
-                    .shadow(color: .black, radius: 2, y: 1)
+               borderdStyleLabel
                 
             }
             .buttonStyle(.plain)
@@ -75,11 +63,34 @@ struct CommonButtonView: View {
         
 
     }
+    
+    private var fillStyleLabel: some View {
+        Text(label)
+            .font(.headline)
+            .fontWeight(.regular)
+            .frame(width: 136, height: 36)
+            .buttonBorderShape(.roundedRectangle)
+            .shadow(color: .black, radius: 2, y: 1)
+        
+    }
+    
+    
+    private var borderdStyleLabel: some View {
+        Text(label)
+            .font(.headline)
+            .fontWeight(.black)
+            .frame(width: 136, height: 36)
+            .background(buttonColor)
+            .cornerRadius(10)
+            .shadow(color: .black, radius: 2, y: 1)
+    }
+    
+
 }
 
 struct CommonButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CommonButtonView(style: .Skip, buttonColor: .pink, action: {})
+        CommonButtonView(style: .Start, buttonColor: .pink, action: {})
             .padding(50)
     }
 }

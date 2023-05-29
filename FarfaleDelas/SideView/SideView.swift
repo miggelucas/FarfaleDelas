@@ -10,16 +10,16 @@ import SwiftUI
 
 struct SideView: View {
     
-    @StateObject var viewModel: SideViewModel = SideViewModel()
+    @ObservedObject var viewModel: SideViewModel = SideViewModel()
     
     
     var body: some View {
         VStack(spacing: 50) {
-        
+            
             timeAndSettingsHeader
             
             clockAndTask
-
+            
             VStack(spacing: 10) {
                 Text(viewModel.estimatedDoneTime)
                     .font(.title)
@@ -29,37 +29,24 @@ struct SideView: View {
             
             
             VStack{
-                switch viewModel.state {
-                case .idle:
-                    CommonButtonView(style: .Start, buttonColor: viewModel.taskColor) {
-                        viewModel.startButtonPressed()
-                    }
-                    
-                case .playing:
-                    if viewModel.clockRunning {
-                        CommonButtonView(style: .Pause, buttonColor: viewModel.taskColor) {
-                            viewModel.pauseButtonPressed()
-                        }
-                    } else {
-                        CommonButtonView(style: .Resume, buttonColor: viewModel.taskColor) {
-                            viewModel.resumeButtonPressed()
-                        }
-                    }
-                    
-    
-                    CommonButtonView(style: .Skip, buttonColor: viewModel.taskColor) {
-                        
+                
+                CommonButtonView(style: viewModel.topCommomButtonStyle) {
+//                    topCommomButtonPressed()
+                }
+                
+                if viewModel.state == .playing {
+                    CommonButtonView(style: viewModel.bottonCommonButtonStyle) {
                         
                     }
                 }
                 
+                
             }
-            
             Spacer()
-            
         }
         .padding(.top, 30)
         .frame(width: 300, height: 900)
+        
     }
     
     
@@ -110,6 +97,10 @@ struct SideView: View {
         
     }
 }
+
+
+
+
 
 struct SideView_Previews: PreviewProvider {
     static var previews: some View {

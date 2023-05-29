@@ -17,7 +17,7 @@ protocol CardInformationProtocol {
 }
 
 struct DummyCardInformation: CardInformationProtocol {
-    var taskName: String = "Nome da atividade"
+    var taskName: String = "Nome da atividade legal"
     var taskDescription: String = "Detalhe da atividade Lorem ipsum dolor sit amet consectetur."
     var duration: String = "30"
     var setColor: String = "Green"
@@ -29,14 +29,18 @@ class SideViewModel: ObservableObject {
         case idle, playing
     }
     
-    private var timer: Timer?
+    @StateObject var clock: Clock = Clock()
     
     @Published var state: State = .idle
-    @Published var secondsPassed: Double = 0 // Tempo inicial em segundos
-    @Published var clockRunning: Bool = false
-    @Published private var currentTime: Date = Date()
-    
+
     @Published private var cardInfo: CardInformationProtocol
+    
+    
+    init(cardInfo: CardInformationProtocol = DummyCardInformation()) {
+        self.cardInfo = cardInfo
+        self.clock.timerDuration = taskTimeDuration
+
+    }
     
     var currentTaskName: String {
         cardInfo.taskName
@@ -48,6 +52,14 @@ class SideViewModel: ObservableObject {
     
     var taskTimeDuration: Double {
         Double(cardInfo.duration) ?? Double(99)
+    }
+    
+    var timeRatio: Float {
+        clock.timeRatio
+    }
+    
+    var timeRemainingFormatted: String {
+        clock.timeRemainingFormatted
     }
     
     var taskColor: Color {
@@ -66,71 +78,18 @@ class SideViewModel: ObservableObject {
         }
     }
     
-    var timeRemaining: Double {
-        taskTimeDuration - secondsPassed
-    }
-    
-    var timeRemainingFormatted: String {
-        let minutes = Int(timeRemaining) / 60
-        let seconds = Int(timeRemaining) % 60
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
-    
-    var timeRatio: Float {
-        Float(secondsPassed) / Float(taskTimeDuration)
-    }
-    
+        
     var estimatedDoneTime: String {
-        currentTimeWithAddedSeconds()
+        clock.currentTimeWithAddedSeconds()
     }
     
     
-    init(cardInfo: CardInformationProtocol = DummyCardInformation()) {
-        self.cardInfo = cardInfo
-        startTimer()
-    }
-    
-    
-    private func startTimer() {
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-            guard let self = self else { return }
-            
-            // updates time
-            currentTime = Date()
-            
-            
-            if !clockRunning { return }
-            
-            if self.timeRemaining > 0 {
-                self.secondsPassed += 1
-            } else {
-                clockRunning = false
-            }
-            
-        }
-    }
-    
-    private func stopTimer() {
-        self.timer?.invalidate()
-    }
-    
-    
-    private func currentTimeWithAddedSeconds() -> String {
-        
-        let estimatedDoneTime = currentTime.addingTimeInterval(timeRemaining)
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        
-        return formatter.string(from: estimatedDoneTime)
-    }
-    
-    var CommomButtonStyle: CommonButtonView.Style {
+    var topCommomButtonStyle: CommonButtonView.Style {
         switch state {
         case .idle:
             return .Start
         case .playing:
-            if clockRunning {
+            if clock.isRunning {
                 return .Pause
             } else {
                 return .Resume
@@ -139,23 +98,33 @@ class SideViewModel: ObservableObject {
         }
     }
         
+    var bottonCommonButtonStyle: CommonButtonView.Style {
+        switch state {
+        case .idle:
+            return .Done
+            
+        case .playing:
+            return .Start
+        }
+        
+    }
     
     func startButtonPressed() {
         state = .playing
-        clockRunning = true
+        clock.isRunning = true
     }
     
     func pauseButtonPressed() {
-        clockRunning = false
+        clock.isRunning = false
     }
     
     func resumeButtonPressed() {
-        clockRunning = true
+        clock.isRunning = true
     }
     
     func doneButtonPressed() {
         state = .idle
-        clockRunning = false
+        clock.isRunning = false
     }
     
     func settingButtonPressed() {
