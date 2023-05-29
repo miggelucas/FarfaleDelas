@@ -10,13 +10,16 @@
 		17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */; };
 		17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
 		17E479C32A1FD51F0035662B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479C22A1FD51F0035662B /* Preview Assets.xcassets */; };
+		D489671B2A252D290061A739 /* CardView+CardHeaderComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D489671A2A252D290061A739 /* CardView+CardHeaderComponents.swift */; };
+		D489671D2A25365B0061A739 /* CardView+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D489671C2A25365B0061A739 /* CardView+Functions.swift */; };
+		D489671F2A253E040061A739 /* CardRoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D489671E2A253E040061A739 /* CardRoundedShape.swift */; };
+		D48967222A2541970061A739 /* CardView+Strip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48967212A2541970061A739 /* CardView+Strip.swift */; };
 		D4E23EA62A1FE6A40097F8B7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E23EA52A1FE6A40097F8B7 /* CardView.swift */; };
 		D4E23EA82A204E2D0097F8B7 /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E23EA72A204E2D0097F8B7 /* CardInformation.swift */; };
 		D4E23EAA2A204E500097F8B7 /* CardView+CardDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E23EA92A204E500097F8B7 /* CardView+CardDescriptionView.swift */; };
 		D4E23EAC2A204E930097F8B7 /* CardView+CardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E23EAB2A204E930097F8B7 /* CardView+CardHeaderView.swift */; };
 		D4E23EB02A20539F0097F8B7 /* CardView+ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E23EAF2A20539F0097F8B7 /* CardView+ToggleButton.swift */; };
-		D4E23EB62A212C3B0097F8B7 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E23EB52A212C3B0097F8B7 /* TextFieldView.swift */; };
-		D4E23EB82A2131D90097F8B7 /* CardView+FontFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E23EB72A2131D90097F8B7 /* CardView+FontFormatter.swift */; };
+		D4E23EB82A2131D90097F8B7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E23EB72A2131D90097F8B7 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,13 +28,16 @@
 		17E479BF2A1FD51F0035662B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17E479C22A1FD51F0035662B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FarfaleDelas.entitlements; sourceTree = "<group>"; };
+		D489671A2A252D290061A739 /* CardView+CardHeaderComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+CardHeaderComponents.swift"; sourceTree = "<group>"; };
+		D489671C2A25365B0061A739 /* CardView+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Functions.swift"; sourceTree = "<group>"; };
+		D489671E2A253E040061A739 /* CardRoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRoundedShape.swift; sourceTree = "<group>"; };
+		D48967212A2541970061A739 /* CardView+Strip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Strip.swift"; sourceTree = "<group>"; };
 		D4E23EA52A1FE6A40097F8B7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D4E23EA72A204E2D0097F8B7 /* CardInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
 		D4E23EA92A204E500097F8B7 /* CardView+CardDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+CardDescriptionView.swift"; sourceTree = "<group>"; };
 		D4E23EAB2A204E930097F8B7 /* CardView+CardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+CardHeaderView.swift"; sourceTree = "<group>"; };
 		D4E23EAF2A20539F0097F8B7 /* CardView+ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+ToggleButton.swift"; sourceTree = "<group>"; };
-		D4E23EB52A212C3B0097F8B7 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
-		D4E23EB72A2131D90097F8B7 /* CardView+FontFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+FontFormatter.swift"; sourceTree = "<group>"; };
+		D4E23EB72A2131D90097F8B7 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */,
+				D4E23EB72A2131D90097F8B7 /* Fonts.swift */,
 				D4E23EA72A204E2D0097F8B7 /* CardInformation.swift */,
-				D4E23EA52A1FE6A40097F8B7 /* CardView.swift */,
-				D4E23EAB2A204E930097F8B7 /* CardView+CardHeaderView.swift */,
-				D4E23EA92A204E500097F8B7 /* CardView+CardDescriptionView.swift */,
-				D4E23EB72A2131D90097F8B7 /* CardView+FontFormatter.swift */,
-				D4E23EAF2A20539F0097F8B7 /* CardView+ToggleButton.swift */,
-				D4E23EB52A212C3B0097F8B7 /* TextFieldView.swift */,
+				D48967202A253E340061A739 /* CardView */,
 				17E479BF2A1FD51F0035662B /* Assets.xcassets */,
 				17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */,
 				17E479C12A1FD51F0035662B /* Preview Content */,
@@ -85,6 +87,21 @@
 				17E479C22A1FD51F0035662B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D48967202A253E340061A739 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				D4E23EA52A1FE6A40097F8B7 /* CardView.swift */,
+				D48967212A2541970061A739 /* CardView+Strip.swift */,
+				D489671C2A25365B0061A739 /* CardView+Functions.swift */,
+				D4E23EAF2A20539F0097F8B7 /* CardView+ToggleButton.swift */,
+				D4E23EAB2A204E930097F8B7 /* CardView+CardHeaderView.swift */,
+				D489671A2A252D290061A739 /* CardView+CardHeaderComponents.swift */,
+				D4E23EA92A204E500097F8B7 /* CardView+CardDescriptionView.swift */,
+				D489671E2A253E040061A739 /* CardRoundedShape.swift */,
+			);
+			name = CardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,13 +175,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4E23EA82A204E2D0097F8B7 /* CardInformation.swift in Sources */,
+				D489671F2A253E040061A739 /* CardRoundedShape.swift in Sources */,
 				D4E23EA62A1FE6A40097F8B7 /* CardView.swift in Sources */,
-				D4E23EB82A2131D90097F8B7 /* CardView+FontFormatter.swift in Sources */,
+				D4E23EB82A2131D90097F8B7 /* Fonts.swift in Sources */,
 				D4E23EB02A20539F0097F8B7 /* CardView+ToggleButton.swift in Sources */,
-				D4E23EB62A212C3B0097F8B7 /* TextFieldView.swift in Sources */,
+				D489671D2A25365B0061A739 /* CardView+Functions.swift in Sources */,
 				D4E23EAC2A204E930097F8B7 /* CardView+CardHeaderView.swift in Sources */,
 				D4E23EAA2A204E500097F8B7 /* CardView+CardDescriptionView.swift in Sources */,
+				D48967222A2541970061A739 /* CardView+Strip.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
+				D489671B2A252D290061A739 /* CardView+CardHeaderComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,42 +8,45 @@
 import Foundation
 import SwiftUI
 
+
+
+
+
 struct CardView: View {
     @State var info: CardInformation
-    @State var isOpen: Bool = true
-    @State var editingTitle: Bool = true
     
+    @State var isOpen: Bool = true // toggla pra abrir e fechar card
+    @State var isHovered: Bool = false // altera cor do strip
+    
+    @State var editingTitle: Bool = false // titulo esta sendo editado?
+    @State var editingDesc: Bool = false // desc esta sendo editada?
+
     @State var eta: Date = .now
     
-    func calculateETA() -> some View {
-        var updateEta: Date = .now.addingTimeInterval(Double(info.duration)! * 60)
-        var etaDisplay: some View {
-            Text("\(updateEta, formatter: dateFormatter)")
-                .font(getFont(.cardInfo))
-        }
-        eta = updateEta
-        return etaDisplay
-    }
-
-        
-    var dateFormatter: DateFormatter = {
-        var formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter
-    }()
-    
+    let actionForDeleteButton: () -> ()
     
     var body: some View {
-        ZStack(alignment: .top) {
-            Rectangle()
-                .cornerRadius(16)
-                .foregroundColor(info.setColor)
-            HStack {
-                toggleButton
-                cardHeaderView
+            ZStack(alignment: .center) {
+                HStack(spacing: spacingA ) {
+                    leftStrip
+                    HStack(spacing: 20) {
+                        toggleButton
+                        cardHeaderView
+                    }
+                }.offset(x: -12)
+                cardDescriptionView
+                    .offset(x: -54, y: isOpen ? 20 : 0)
             }
-            cardDescriptionView
-                .offset(x: -74, y: isOpen ? 52 : 0)
-        }.frame(width: 420, height: isOpen ? 104.78 : 0)
+            .onHover { hover in
+                            isHovered = hover
+                        }
+            .frame(width: 379, height: isOpen ? 105 : 50)
+            .background(CardRoundedShape(tl: 0, tr: 10, bl: 10, br: 10).fill(Color.white))
     }
+    
+    
+    private var spacingA: CGFloat {
+        return isOpen ? 8 : 14
+    }
+    
 }

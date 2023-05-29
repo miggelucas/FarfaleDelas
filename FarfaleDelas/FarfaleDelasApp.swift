@@ -12,7 +12,7 @@ struct FarfaleDelasApp: App {
     var body: some Scene {
         WindowGroup {
             
-            CardView(info: CardInformation())
+            CardView(info: CardInformation(), actionForDeleteButton: {})
         }
     }
 }

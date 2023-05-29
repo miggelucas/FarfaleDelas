@@ -18,8 +18,9 @@ extension CardView {
             VStack {
                 Text(isOpen ? "􀆈" : "􀆊")
                     .foregroundColor(.black)
-            }.frame(width: 60, height: 44)
-        }).buttonStyle(.plain)
+            }.frame(width: isOpen ? 14 : 8, height: isOpen ? 8 : 14)
+        })
+        .buttonStyle(.plain)
         
     }
 }

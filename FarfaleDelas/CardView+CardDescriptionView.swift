@@ -8,28 +8,43 @@
 import Foundation
 import SwiftUI
 
+extension NSTextView {
+    open override var frame: CGRect {
+        didSet {
+            insertionPointColor = .black
+        }
+    }
+}
+
 extension CardView {
     // Card Aberto
     
     var cardDescriptionView: some View {
-            VStack(alignment: .leading, spacing: 0.38) {
-                Text("Descrição da atividade")
-                
+            VStack(alignment: .leading) {
                 TextEditor(text: $info.description)
+                    .lineSpacing(4.0)
+                    .foregroundColor(Color.black)
                     .scrollContentBackground(.hidden)
-                    .background(.clear)
-                    .lineLimit(2...6)
+                    .onTapGesture {
+                        editingDesc = true
+                                if info.description == "\nDescrição da atividade" {
+                                    info.description = ""
+                                }
+                              }
+                    .onHover { hover in
+                            editingDesc = hover
+                                }
+                    .background(
+                        Rectangle()
+                            .stroke(Color.purple, lineWidth: 2)
+                            .opacity((editingDesc) ? 0.4 : 0.0)
+                    )                    .lineLimit(...6)
                     .frame(width: 180, height: 40)
-                    .border(.gray, width: 0.4)
-                    .opacity(0.4)
                     .cornerRadius(4)
-                    .foregroundColor(.black)
 
-                    
             }
-            .foregroundColor(.black)
             .font(getFont(.cardInfoSmall))
-        .opacity(isOpen ? 1.0 : 0.0)
+            .opacity(isOpen ? 1.0 : 0.0)
 //        .frame(maxWidth: 420)
     }
 }
