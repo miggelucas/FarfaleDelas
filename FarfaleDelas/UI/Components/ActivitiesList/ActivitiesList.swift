@@ -10,8 +10,9 @@ import UniformTypeIdentifiers
 
 struct ActivitiesList: View {
     
-    @State var activitiesList: [CardInformation] = []
+    @Binding var activitiesList: [CardInformation]
     @State var draggedItem: String?
+    let actionButtonAdd: ()->()
     
     var body: some View {
         VStack{
@@ -25,7 +26,7 @@ struct ActivitiesList: View {
                 HStack{
                     Spacer()
                     ButtonIcon(buttonType: .add) {
-                        activitiesList.append(CardInformation())
+                        actionButtonAdd()
                     }
                 }.padding()
             }
@@ -65,6 +66,8 @@ struct ActivitiesList: View {
 
 struct ActivitiesList_Previews: PreviewProvider {
     static var previews: some View {
-        ActivitiesList()
+        ActivitiesList(activitiesList: .constant([])){
+            
+        }
     }
 }
