@@ -12,10 +12,10 @@ struct ActivitiesList: View {
     
     @Binding var activitiesList: [CardInformation]
     @State var draggedItem: String?
-    let actionButtonAdd: ()->()
+    let actionButtonAdd: (_ type: String)->()
     
     var body: some View {
-        VStack(spacing: 0){
+        VStack(alignment: .center){
             ZStack {
                 HStack{
                     Spacer()
@@ -26,7 +26,7 @@ struct ActivitiesList: View {
                 HStack{
                     Spacer()
                     ButtonIcon(buttonType: .add) {
-                        actionButtonAdd()
+                        actionButtonAdd("activity")
                     }
                 }.padding()
             }
@@ -39,18 +39,29 @@ struct ActivitiesList: View {
                 }
                 
             }else{
-                List{
-                    ForEach(activitiesList, id: \.id){ activityInfo in
-                        HStack{
-                            Text("::")
-                            CardView(info: activityInfo){
-                                activitiesList.removeAll{
-                                    $0.id == activityInfo.id
+                HStack {
+                    List{
+                        ForEach(activitiesList, id: \.id){ activityInfo in
+                            HStack(alignment: .top){
+                                Spacer()
+                                Image("dragIcon")
+                                CardView(info: activityInfo){
+                                    activitiesList.removeAll{
+                                        $0.id == activityInfo.id
+                                    }
                                 }
+                                Spacer()
+                            }.foregroundColor(.black)
+                        }.onMove(perform: move)
+                        HStack {
+                            Spacer()
+                            PauseButton(){
+                                actionButtonAdd("pause")
                             }
-                        }.foregroundColor(.black)
-                    }.onMove(perform: move)
-                }.listStyle(.plain).scrollContentBackground(.hidden)
+                            Spacer()
+                        }
+                    }.listStyle(.plain).scrollContentBackground(.hidden)
+                }
                 
             }
             Spacer()
@@ -67,7 +78,7 @@ struct ActivitiesList: View {
 
 struct ActivitiesList_Previews: PreviewProvider {
     static var previews: some View {
-        ActivitiesList(activitiesList: .constant([])){
+        ActivitiesList(activitiesList: .constant([CardInformation()])){type in 
             
         }
     }

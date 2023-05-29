@@ -11,9 +11,15 @@ final class ActivitiesListViewModel:  ObservableObject {
     
     @Published var cards: [CardInformation] = []
     
-    
-    func addCardInformation(){
-        cards.append(CardInformation())
-        print("rodou")
+    //func addCardInformation(type: CardType){
+    func addCardInformation(type: String){
+        switch type{
+        case "activity":
+            cards.append(CardInformation())
+        case "pause":
+            cards.append(CardInformation(atividadeText: "PAUSA"))
+        default:
+            cards.append(CardInformation())
+        }
     }
 }

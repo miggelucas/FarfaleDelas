@@ -25,6 +25,7 @@
 		47D703C82A25268700B2A359 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703C72A25268700B2A359 /* StatusBarController.swift */; };
 		47D703CC2A25287900B2A359 /* ActivitiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703CB2A25287900B2A359 /* ActivitiesListViewModel.swift */; };
 		47D703CE2A2529E900B2A359 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703CD2A2529E900B2A359 /* HomeView.swift */; };
+		47D703D12A25340A00B2A359 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703D02A25340A00B2A359 /* PauseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		47D703C72A25268700B2A359 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		47D703CB2A25287900B2A359 /* ActivitiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewModel.swift; sourceTree = "<group>"; };
 		47D703CD2A2529E900B2A359 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		47D703D02A25340A00B2A359 /* PauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		0DEE84652A21436B003BA0F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				47D703CF2A2533F700B2A359 /* PauseButton */,
 				47D703C62A25260700B2A359 /* ActivitiesList */,
 				47D703C32A25256C00B2A359 /* CardView */,
 				47D703C22A25252F00B2A359 /* ButtonIcon */,
@@ -223,6 +226,14 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
+		47D703CF2A2533F700B2A359 /* PauseButton */ = {
+			isa = PBXGroup;
+			children = (
+				47D703D02A25340A00B2A359 /* PauseButton.swift */,
+			);
+			path = PauseButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +308,7 @@
 				47D703C82A25268700B2A359 /* StatusBarController.swift in Sources */,
 				4721B4522A1FECB000C73A9C /* ButtonIcon.swift in Sources */,
 				4721B4812A212A6600C73A9C /* CardView+OpenCardView.swift in Sources */,
+				47D703D12A25340A00B2A359 /* PauseButton.swift in Sources */,
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
 				4721B4772A21251600C73A9C /* CardInformation.swift in Sources */,
 				4721B47E2A212A6600C73A9C /* CardView+ToggleButton.swift in Sources */,

@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct CardView: View{
-   
-    
-    
-    let id = UUID()
+ 
     @State var info: CardInformation
     @State var isOpen: Bool = false
 
@@ -80,7 +77,7 @@ extension CardView {
         HStack {
             toggleButton
             Text(info.atividadeText)
-                .frame(width: 300)
+                .frame(width: 309)
         }
     }
 }
