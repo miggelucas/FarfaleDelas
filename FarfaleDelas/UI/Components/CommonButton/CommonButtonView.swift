@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CommonButtonView: View {
     enum Style {
-        case Start, Pause, Resume, Skip, Done
+        case Start, Pause, Resume, Skip, Done, LetsBegin
     }
     
     let style: Style
@@ -34,7 +34,10 @@ struct CommonButtonView: View {
             return "Próximo"
         case .Done:
             return "Concluir"
+        case .LetsBegin:
+            return "Vamos Começar!"
         }
+        
     }
     
     
@@ -46,9 +49,9 @@ struct CommonButtonView: View {
                 Text(label)
                     .font(.headline)
                     .fontWeight(.regular)
-                    .frame(width: 125, height: 40)
-                    .background(buttonColor)
-                    .cornerRadius(15)
+                    .frame(width: 136, height: 36)
+                    .buttonBorderShape(.roundedRectangle)
+                    .shadow(color: .black, radius: 2, y: 1)
                 
             }
             .buttonStyle(.plain)
@@ -60,9 +63,10 @@ struct CommonButtonView: View {
                 Text(label)
                     .font(.headline)
                     .fontWeight(.black)
-                    .frame(width: 125, height: 40)
+                    .frame(width: 136, height: 36)
                     .background(buttonColor)
-                    .cornerRadius(15)
+                    .cornerRadius(10)
+                    .shadow(color: .black, radius: 2, y: 1)
                 
             }
             .buttonStyle(.plain)
@@ -75,6 +79,7 @@ struct CommonButtonView: View {
 
 struct CommonButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CommonButtonView(style: .Done, buttonColor: .pink, action: {})
+        CommonButtonView(style: .Skip, buttonColor: .pink, action: {})
+            .padding(50)
     }
 }

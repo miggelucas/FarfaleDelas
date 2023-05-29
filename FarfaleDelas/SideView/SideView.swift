@@ -15,52 +15,16 @@ struct SideView: View {
     
     var body: some View {
         VStack(spacing: 50) {
+        
+            timeAndSettingsHeader
             
-            // top
-            VStack {
-                ZStack {
-                    Text("Timer")
-                        .font(.title)
-                    
-                    Spacer()
-                    
-                    HStack {
-                        
-                        Spacer()
-                        
-                        Button {
-                            viewModel.settingButtonPressed()
-                        } label: {
-                            Image(systemName: "gear")
-                        }
-                        
-                        
-                    }.padding(.horizontal)
-                    
-                }
-                
-            }
-            
-            // Clock and Task Name
-            VStack {
-                ClockView(timePassedRatio: viewModel.timeRatio,
-                          remainingTime: viewModel.timeRemainingFormatted,
-                          strokeColor: viewModel.taskColor
-                )
-                .frame(width: 200, height: 200)
-                
-                
-                
-                Text(viewModel.currentTaskName)
-                    .font(.headline)
-            }
-            
-            
+            clockAndTask
+
             VStack(spacing: 10) {
                 Text(viewModel.estimatedDoneTime)
                     .font(.title)
                 
-                Text("termino Estimado")
+                Text("Término Estimado")
             }
             
             
@@ -87,9 +51,6 @@ struct SideView: View {
                         
                         
                     }
-                    
-                    
-                    
                 }
                 
             }
@@ -99,6 +60,54 @@ struct SideView: View {
         }
         .padding(.top, 30)
         .frame(width: 300, height: 900)
+    }
+    
+    
+    private var clockAndTask: some View {
+        VStack {
+            ClockView(timePassedRatio: viewModel.timeRatio,
+                      remainingTime: viewModel.timeRemainingFormatted,
+                      strokeColor: viewModel.taskColor
+            )
+            .frame(width: 105, height: 105)
+            .padding(.bottom, 16)
+            
+            
+            
+            Text(viewModel.currentTaskName)
+                .font(.headline)
+                .padding(.bottom, 8)
+            
+            Text(viewModel.currentTaskDescription)
+                .font(.headline)
+                .padding(.horizontal)
+        }
+    }
+    
+    private var timeAndSettingsHeader: some View {
+        VStack {
+            ZStack {
+                Text("Informações")
+                    .font(.title)
+                
+                Spacer()
+                
+                HStack {
+                    
+                    Spacer()
+                    
+                    Button {
+                        viewModel.settingButtonPressed()
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                    
+                }.padding(.horizontal)
+                
+            }
+            
+        }
+        
     }
 }
 

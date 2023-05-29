@@ -9,19 +9,18 @@ import Foundation
 import SwiftUI
 
 protocol CardInformationProtocol {
-    var atividadeText: String { get set }
+    var taskName: String { get set }
+    var taskDescription: String { get set }
     var duration: String { get set }
     var setColor: String { get set }
     
 }
 
 struct DummyCardInformation: CardInformationProtocol {
-    var atividadeText: String = "Nome da atividade"
-    
+    var taskName: String = "Nome da atividade"
+    var taskDescription: String = "Detalhe da atividade Lorem ipsum dolor sit amet consectetur."
     var duration: String = "30"
-    
     var setColor: String = "Green"
-    
     
 }
 
@@ -40,7 +39,11 @@ class SideViewModel: ObservableObject {
     @Published private var cardInfo: CardInformationProtocol
     
     var currentTaskName: String {
-        cardInfo.atividadeText
+        cardInfo.taskName
+    }
+    
+    var currentTaskDescription: String {
+        cardInfo.taskDescription
     }
     
     var taskTimeDuration: Double {
@@ -122,6 +125,20 @@ class SideViewModel: ObservableObject {
         return formatter.string(from: estimatedDoneTime)
     }
     
+    var CommomButtonStyle: CommonButtonView.Style {
+        switch state {
+        case .idle:
+            return .Start
+        case .playing:
+            if clockRunning {
+                return .Pause
+            } else {
+                return .Resume
+            }
+            
+        }
+    }
+        
     
     func startButtonPressed() {
         state = .playing
