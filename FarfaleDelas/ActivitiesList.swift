@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 
 struct ActivitiesList: View {
     
-    @State var activitiesList: [CardInformation] = [CardInformation(), CardInformation(), ]
+    @State var activitiesList: [CardInformation] = []
     @State var draggedItem: String?
     
     var body: some View {
@@ -31,9 +31,13 @@ struct ActivitiesList: View {
             }
             if activitiesList.isEmpty{
                 Spacer()
-                Text("Essa tela ta vazia bota uns troço ai na moral :(").foregroundColor(.black)
+                VStack{
+                    Image("imageEmpty")
+                    Text("Adicione atividades usando o botão superior. Se lembre de programar pausas esporádicas no seu cronograma.").foregroundColor(.gray).frame(width: 307)
+                }
+                
             }else{
-                List{
+                LazyVStack{
                     ForEach(activitiesList, id: \.id){ activityInfo in
                         HStack{
                             Text("::")
@@ -42,13 +46,13 @@ struct ActivitiesList: View {
                                     $0.id == activityInfo.id
                                 }
                             }
-                        }
+                        }.foregroundColor(.black)
                     }.onMove(perform: move)
                 }
                 
             }
             Spacer()
-        }.background(.gray)
+        }.background(.white)
             .frame(width: 430, height: 596)
     }
     func move(from source: IndexSet, to destination: Int) {
