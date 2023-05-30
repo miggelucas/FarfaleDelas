@@ -12,58 +12,48 @@ struct SideView: View {
     
     @ObservedObject var viewModel: SideViewModel = SideViewModel()
     
-    let primaryColor: Color = .pink
+    let primaryBlackColor = Color(ColorConstant.PRIMARY_BLACK)
+    let primaryWhiteColor = Color(ColorConstant.PRIMARY_WHITE)
+    let secundaryPinkColor = Color(ColorConstant.SECONDARY_PINK)
     
     
     var body: some View {
-        VStack() {
+        
+        ZStack {
+            primaryBlackColor
             
-            timeAndSettingsHeader
-                .padding(.bottom, 32)
-            
-            clockAndTask
-                .padding(.bottom, 46)
-            
-            
-            estimatedDoneTime
-            
-            Spacer()
-            
-            VStack(spacing: 8) {
+            VStack {
                 
-                CommonButtonView(style: viewModel.topCommomButtonStyle) {
-                    viewModel.topCommomButtonPressed()
-                }
+                timeAndSettingsHeader
+                    .padding(.bottom, 32)
                 
-                if viewModel.state == .playing {
-                    CommonButtonView(style: viewModel.bottonCommonButtonStyle) {
-                        viewModel.bottonCommonButtonPressed()
-                    }
-                }
+                clockAndTask
+                    .padding(.bottom, 46)
                 
+                
+                estimatedDoneTime
+                
+                Spacer()
+                
+                genericBottonButtons
                 
             }
+            .frame(width: 133, height: 536)
         }
-        .frame(width: 133, height: 536)
         
         
     }
     
-    private var estimatedDoneTime: some View {
-        VStack(spacing: 4) {
-            Text(viewModel.estimatedDoneTime)
-                .font(.title)
-            
-            Text("Horário de Término")
-        }
-    }
+    
+    
+    
     
     private var timeAndSettingsHeader: some View {
         VStack {
             ZStack {
                 Text("Informações")
                     .font(.headline)
-                    .foregroundColor(primaryColor)
+                    .foregroundColor(primaryWhiteColor)
                 
                 
                 HStack {
@@ -74,7 +64,7 @@ struct SideView: View {
                         viewModel.settingButtonPressed()
                     } label: {
                         Image(systemName: "gear")
-                            .foregroundColor(primaryColor)
+                            .foregroundColor(secundaryPinkColor)
                     }
                     .buttonStyle(.plain)
                     
@@ -83,6 +73,7 @@ struct SideView: View {
             }
             
         }
+        
         
     }
     
@@ -98,14 +89,70 @@ struct SideView: View {
             
             
             Text(viewModel.currentTaskName)
+                .foregroundColor(primaryWhiteColor)
                 .font(.callout)
                 .padding(.bottom, 8)
             
             Text(viewModel.currentTaskDescription)
+                .foregroundColor(primaryWhiteColor)
                 .font(.caption)
                 .padding(.horizontal)
         }
         .multilineTextAlignment(.center)
+    }
+    
+    private var estimatedDoneTime: some View {
+        VStack(spacing: 4) {
+            
+            ZStack {
+                Text(viewModel.estimatedDoneTime)
+                    .foregroundColor(primaryWhiteColor)
+                    .font(.title)
+                
+                if viewModel.timePlanExceeded {
+                    Image(systemName: "exclamationmark.circle.fill")
+                        .foregroundColor(.red)
+                        .frame(width: 11, height: 11)
+                        .offset(x: 40, y: -15)
+                }
+                
+            }
+            
+            Text("Horário de Término")
+                .foregroundColor(primaryWhiteColor)
+            
+            if viewModel.timePlanExceeded {
+                Button {
+                    //                viewModel.changeTimePlan(
+                } label: {
+                    Text("Alterar tempo Planejado")
+                        .foregroundColor(secundaryPinkColor)
+                        .font(.caption)
+                        .underline()
+                }
+                .buttonStyle(.plain)
+            }
+            
+            
+        }
+    }
+    
+    
+    private var genericBottonButtons: some View {
+        VStack(spacing: 8) {
+            
+            CommonButtonView(style: viewModel.topCommomButtonStyle) {
+                viewModel.topCommomButtonPressed()
+            }
+            
+            if viewModel.state == .playing {
+                CommonButtonView(style: viewModel.bottonCommonButtonStyle) {
+                    viewModel.bottonCommonButtonPressed()
+                }
+            }
+            
+            
+        }
     }
     
 }

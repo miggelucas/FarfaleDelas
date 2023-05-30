@@ -41,6 +41,7 @@ struct ClockView: View {
                 
                 Text(remainingTime)
                     .font(.subheadline)
+                    .foregroundColor(Color(ColorConstant.PRIMARY_WHITE))
             }
             
         }

@@ -34,6 +34,7 @@ class SideViewModel: ObservableObject {
     
     @Published var state: State = .idle
     @Published var currentTime: Date = .now
+    @Published var timePlanExceeded: Bool = false
     
     @Published private var cardInfo: CardInformationProtocol
     

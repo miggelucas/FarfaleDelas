@@ -18,8 +18,9 @@ struct CommonButtonView: View {
     let buttonColor: Color
     let action: () -> Void
     
-    let primaryPinkColor: Color = .pink
-    let secundaryPinkColor: Color = .blue
+    let primaryWhiteColor = Color(ColorConstant.PRIMARY_WHITE)
+    let primaryPinkColor = Color(ColorConstant.SECONDARY_PINK)
+    let secundaryPinkColor = Color(ColorConstant.SECONDARY_PINK_HOVER)
     
     init(style: Style, buttonColor: Color = .pink, action: @escaping () -> Void) {
         self.style = style
@@ -72,6 +73,7 @@ struct CommonButtonView: View {
     
     private var fillStyleLabel: some View {
         Text(label)
+            .foregroundColor(primaryWhiteColor)
             .font(.headline)
             .fontWeight(.regular)
             .frame(width: 136, height: 36)
