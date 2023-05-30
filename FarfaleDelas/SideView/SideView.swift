@@ -12,24 +12,24 @@ struct SideView: View {
     
     @ObservedObject var viewModel: SideViewModel = SideViewModel()
     
+    let primaryColor: Color = .pink
+    
     
     var body: some View {
-        VStack(spacing: 50) {
-//            Text(viewModel.currentTime.formatted(date: .complete, time: .complete))
+        VStack() {
             
             timeAndSettingsHeader
+                .padding(.bottom, 32)
             
             clockAndTask
-            
-            VStack(spacing: 10) {
-                Text(viewModel.estimatedDoneTime)
-                    .font(.title)
-                
-                Text("Término Estimado")
-            }
+                .padding(.bottom, 46)
             
             
-            VStack{
+            estimatedDoneTime
+            
+            Spacer()
+            
+            VStack(spacing: 8) {
                 
                 CommonButtonView(style: viewModel.topCommomButtonStyle) {
                     viewModel.topCommomButtonPressed()
@@ -43,12 +43,45 @@ struct SideView: View {
                 
                 
             }
-            Spacer()
         }
-        .padding(.top, 30)
-        .frame(width: 300, height: 900)
-        .onAppear{
-//            viewModel.viewDidApper()
+        .frame(width: 133, height: 536)
+        
+        
+    }
+    
+    private var estimatedDoneTime: some View {
+        VStack(spacing: 4) {
+            Text(viewModel.estimatedDoneTime)
+                .font(.title)
+            
+            Text("Horário de Término")
+        }
+    }
+    
+    private var timeAndSettingsHeader: some View {
+        VStack {
+            ZStack {
+                Text("Informações")
+                    .font(.headline)
+                    .foregroundColor(primaryColor)
+                
+                
+                HStack {
+                    
+                    Spacer()
+                    
+                    Button {
+                        viewModel.settingButtonPressed()
+                    } label: {
+                        Image(systemName: "gear")
+                            .foregroundColor(primaryColor)
+                    }
+                    .buttonStyle(.plain)
+                    
+                }
+                
+            }
+            
         }
         
     }
@@ -64,42 +97,17 @@ struct SideView: View {
             .padding(.bottom, 16)
             
             
-            
             Text(viewModel.currentTaskName)
-                .font(.headline)
+                .font(.callout)
                 .padding(.bottom, 8)
             
             Text(viewModel.currentTaskDescription)
-                .font(.headline)
+                .font(.caption)
                 .padding(.horizontal)
         }
+        .multilineTextAlignment(.center)
     }
     
-    private var timeAndSettingsHeader: some View {
-        VStack {
-            ZStack {
-                Text("Informações")
-                    .font(.title)
-                
-                Spacer()
-                
-                HStack {
-                    
-                    Spacer()
-                    
-                    Button {
-                        viewModel.settingButtonPressed()
-                    } label: {
-                        Image(systemName: "gear")
-                    }
-                    
-                }.padding(.horizontal)
-                
-            }
-            
-        }
-        
-    }
 }
 
 
