@@ -28,8 +28,12 @@ struct SideView: View {
                     .padding(.bottom, 32)
                 
                 clockAndTask
-                    .padding(.bottom, 46)
+                    .padding(.bottom, 20)
                 
+                Rectangle()
+                    .foregroundColor(primaryWhiteColor)
+                    .frame(height: 1)
+                    .padding(.bottom, 20)
                 
                 estimatedDoneTime
                 
