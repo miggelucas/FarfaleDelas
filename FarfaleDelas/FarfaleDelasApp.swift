@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import AppKit
 
 @main
 struct FarfaleDelasApp: App {
+    
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         Settings{
             EmptyView()
@@ -17,18 +20,17 @@ struct FarfaleDelasApp: App {
     }
 }
 
-class AppDelegate: NSObject, NSApplicationDelegate{
-    static private(set) var instance: AppDelegate!
-    var popover = NSPopover.init()
-    var statusBar: StatusBarController?
+class AppDelegate: NSObject, NSApplicationDelegate {
     
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        AppDelegate.instance = self
-        popover.behavior = .transient
-        popover.animates = false
-        popover.contentSize = NSSize(width: 632, height: 596)
-        popover.contentViewController = NSHostingController(rootView: ContentView())
-        
-        statusBar = StatusBarController(popover)
+    func applicationDidFinishLaunching(_ aNotification: Notification){
+            NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
     }
+}
+
+extension AppDelegate: NSTouchBarDelegate {
+    
+//    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+//        
+//    }
+    
 }

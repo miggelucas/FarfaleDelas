@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class StatusBarController{
+class StatusBarController: NSViewController, NSTouchBarDelegate {
     private var statusBar: NSStatusBar
     private(set) var statusItem: NSStatusItem
     private(set) var popover: NSPopover
@@ -15,9 +15,12 @@ class StatusBarController{
     private var isPopoverOpen = false
     
     init(_ popover: NSPopover) {
+   
         self.popover = popover
         statusBar = .init()
         statusItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
+        
+        super.init(nibName: nil, bundle: nil)
         
         if let button = statusItem.button {
             
@@ -27,9 +30,19 @@ class StatusBarController{
             
         }
         
+
         setupEventMonitor()
         setupCmdQ()
-        
+    }
+    
+    override func makeTouchBar() -> NSTouchBar? {
+        let mainBar = NSTouchBar()
+        mainBar.delegate = self
+        return mainBar
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     @objc func showApp(sender: AnyObject){
