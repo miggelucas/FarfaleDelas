@@ -10,14 +10,14 @@ import SwiftUI
 struct CardInformation {
     // card basico
     let id = UUID()
+    var cardType = CardType.activity
+
     
     var atividadeText = getCardType(t: CardType.activity)
     var duration: String = "30"
     var setColor: Color = .pink
     var description: String = "\nDescrição da atividade"
-    
-    var cardType = CardType.activity
-        
+            
     //opcoes de cores
     let colorOptions = [Color.pink, Color.blue, Color.green, Color.yellow]
     
