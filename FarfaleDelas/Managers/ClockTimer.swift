@@ -7,29 +7,29 @@
 
 import Foundation
 
-final class ClockTimer {
+final class ClockTimer: ObservableObject {
     
-//    static var shared = ClockTimer()
+    //    static var shared = ClockTimer()
     
-    private var timer: Timer?
+    @Published private var timer: Timer?
     
     @Published var isRunning: Bool = false
     @Published var secondsPassed: Double = 0
+    @Published var currentTime: Date = .now
     
     var timerDuration: Double?
     
     init(timer: Timer? = nil) {
+        startTimer()
     }
     
     deinit {
         stopTimer()
     }
     
-    func startTimer(forDuration duration: Double) {
-        timerDuration = duration
-        isRunning = true
-        
-        timer = Timer.init(timeInterval: 1, repeats: true) { tempTimer in
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { tempTimer in        self.currentTime = .now
+            print(self.currentTime)
             
             if !self.isRunning { return }
             
@@ -56,10 +56,10 @@ final class ClockTimer {
         let minutes = Int(timeRemaining) / 60
         let seconds = Int(timeRemaining) % 60
         return String(format: "%02d:%02d", minutes, seconds)
-
+        
     }
     
-    func currentTimeWithAddedSeconds(currentTime: Date, forTaskDuration taskDuration: Double) -> String {
+    func currentTimeWithAddedSeconds(forTaskDuration taskDuration: Double) -> String {
         let timeRemaining = taskDuration - secondsPassed
         
         let estimatedDoneTime = currentTime.addingTimeInterval(timeRemaining)
@@ -76,7 +76,7 @@ final class ClockTimer {
         return Float(secondsPassed) / Float(taskDuration)
     }
     
-
+    
     
     
 }

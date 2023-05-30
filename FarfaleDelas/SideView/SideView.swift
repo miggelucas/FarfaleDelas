@@ -15,6 +15,7 @@ struct SideView: View {
     
     var body: some View {
         VStack(spacing: 50) {
+//            Text(viewModel.currentTime.formatted(date: .complete, time: .complete))
             
             timeAndSettingsHeader
             
@@ -46,6 +47,9 @@ struct SideView: View {
         }
         .padding(.top, 30)
         .frame(width: 300, height: 900)
+        .onAppear{
+//            viewModel.viewDidApper()
+        }
         
     }
     

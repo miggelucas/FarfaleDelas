@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 import SwiftUI
 
 protocol CardInformationProtocol {
@@ -29,17 +30,25 @@ class SideViewModel: ObservableObject {
         case idle, playing
     }
     
-    var clockTimer: ClockTimer = ClockTimer()
+    private var clockTimer: ClockTimer
     
     @Published var state: State = .idle
     @Published var currentTime: Date = .now
+    
     @Published private var cardInfo: CardInformationProtocol
     
-    
-    init(cardInfo: CardInformationProtocol = DummyCardInformation()) {
+    init(cardInfo: CardInformationProtocol = DummyCardInformation(), clock: ClockTimer = ClockTimer()) {
         self.cardInfo = cardInfo
+        self.clockTimer = clock
+        self.clockTimer.objectWillChange
+            .sink { [weak self] _ in
+            self?.currentTime = self?.clockTimer.currentTime ?? Date()
+        }
+            .store(in: &cancellables)
 
     }
+    
+    private var cancellables: Set<AnyCancellable> = []
     
     var currentTaskName: String {
         cardInfo.taskName
@@ -79,7 +88,7 @@ class SideViewModel: ObservableObject {
     
         
     var estimatedDoneTime: String {
-        clockTimer.currentTimeWithAddedSeconds(currentTime: currentTime, forTaskDuration: taskTimeDuration)
+        clockTimer.currentTimeWithAddedSeconds(forTaskDuration: taskTimeDuration)
     }
     
     
@@ -110,7 +119,7 @@ class SideViewModel: ObservableObject {
     
     func startButtonPressed() {
         state = .playing
-        clockTimer.startTimer(forDuration: taskTimeDuration)
+        clockTimer.isRunning = true
     }
     
     func pauseButtonPressed() {
