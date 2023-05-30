@@ -29,16 +29,15 @@ class SideViewModel: ObservableObject {
         case idle, playing
     }
     
-    @StateObject var clock: Clock = Clock()
+    var clockTimer: ClockTimer = ClockTimer()
     
     @Published var state: State = .idle
-
+    @Published var currentTime: Date = .now
     @Published private var cardInfo: CardInformationProtocol
     
     
     init(cardInfo: CardInformationProtocol = DummyCardInformation()) {
         self.cardInfo = cardInfo
-        self.clock.timerDuration = taskTimeDuration
 
     }
     
@@ -55,11 +54,11 @@ class SideViewModel: ObservableObject {
     }
     
     var timeRatio: Float {
-        clock.timeRatio
+        clockTimer.taskTimeDoneRatio(forTaskDuration: taskTimeDuration)
     }
     
     var timeRemainingFormatted: String {
-        clock.timeRemainingFormatted
+        clockTimer.timeRemainingFormatted(forTaskDuration: taskTimeDuration)
     }
     
     var taskColor: Color {
@@ -80,7 +79,7 @@ class SideViewModel: ObservableObject {
     
         
     var estimatedDoneTime: String {
-        clock.currentTimeWithAddedSeconds()
+        clockTimer.currentTimeWithAddedSeconds(currentTime: currentTime, forTaskDuration: taskTimeDuration)
     }
     
     
@@ -89,7 +88,7 @@ class SideViewModel: ObservableObject {
         case .idle:
             return .Start
         case .playing:
-            if clock.isRunning {
+            if clockTimer.isRunning {
                 return .Pause
             } else {
                 return .Resume
@@ -111,20 +110,20 @@ class SideViewModel: ObservableObject {
     
     func startButtonPressed() {
         state = .playing
-        clock.isRunning = true
+        clockTimer.startTimer(forDuration: taskTimeDuration)
     }
     
     func pauseButtonPressed() {
-        clock.isRunning = false
+//        clock.isRunning = false
     }
     
     func resumeButtonPressed() {
-        clock.isRunning = true
+//        clock.isRunning = true
     }
     
     func doneButtonPressed() {
         state = .idle
-        clock.isRunning = false
+//        clock.isRunning = false
     }
     
     func settingButtonPressed() {

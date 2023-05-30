@@ -10,8 +10,7 @@
 		0DEE846A2A214446003BA0F8 /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE84692A214446003BA0F8 /* ColorConstant.swift */; };
 		0DEE846F2A21473B003BA0F8 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE846E2A21473B003BA0F8 /* StateManager.swift */; };
 		174410492A1FEBB900995EFB /* SideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174410482A1FEBB900995EFB /* SideView.swift */; };
-		1797FCF32A25390D000E0C3E /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797FCF22A25390D000E0C3E /* Clock.swift */; };
-		1797FCF52A2546B1000E0C3E /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797FCF42A2546B1000E0C3E /* TaskManager.swift */; };
+		1797FCF32A25390D000E0C3E /* ClockTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797FCF22A25390D000E0C3E /* ClockTimer.swift */; };
 		17BFF77A2A20361000349993 /* SideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFF7792A20361000349993 /* SideViewModel.swift */; };
 		17BFF77C2A20461200349993 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFF77B2A20461200349993 /* CommonButtonView.swift */; };
 		17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */; };
@@ -25,8 +24,7 @@
 		0DEE84692A214446003BA0F8 /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
 		0DEE846E2A21473B003BA0F8 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		174410482A1FEBB900995EFB /* SideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideView.swift; sourceTree = "<group>"; };
-		1797FCF22A25390D000E0C3E /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
-		1797FCF42A2546B1000E0C3E /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
+		1797FCF22A25390D000E0C3E /* ClockTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTimer.swift; sourceTree = "<group>"; };
 		17BFF7792A20361000349993 /* SideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewModel.swift; sourceTree = "<group>"; };
 		17BFF77B2A20461200349993 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
 		17E479B82A1FD51E0035662B /* FarfaleDelas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarfaleDelas.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,8 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0DEE846E2A21473B003BA0F8 /* StateManager.swift */,
-				1797FCF22A25390D000E0C3E /* Clock.swift */,
-				1797FCF42A2546B1000E0C3E /* TaskManager.swift */,
+				1797FCF22A25390D000E0C3E /* ClockTimer.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -238,9 +235,8 @@
 			files = (
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
 				17E479CB2A1FD8AB0035662B /* ClockView.swift in Sources */,
-				1797FCF52A2546B1000E0C3E /* TaskManager.swift in Sources */,
 				174410492A1FEBB900995EFB /* SideView.swift in Sources */,
-				1797FCF32A25390D000E0C3E /* Clock.swift in Sources */,
+				1797FCF32A25390D000E0C3E /* ClockTimer.swift in Sources */,
 				0DEE846A2A214446003BA0F8 /* ColorConstant.swift in Sources */,
 				0DEE846F2A21473B003BA0F8 /* StateManager.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
