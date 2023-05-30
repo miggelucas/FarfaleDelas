@@ -32,12 +32,12 @@ struct SideView: View {
             VStack{
                 
                 CommonButtonView(style: viewModel.topCommomButtonStyle) {
-//                    topCommomButtonPressed()
+                    viewModel.topCommomButtonPressed()
                 }
                 
                 if viewModel.state == .playing {
                     CommonButtonView(style: viewModel.bottonCommonButtonStyle) {
-                        
+                        viewModel.bottonCommonButtonPressed()
                     }
                 }
                 

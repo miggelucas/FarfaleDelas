@@ -95,7 +95,7 @@ class SideViewModel: ObservableObject {
     var topCommomButtonStyle: CommonButtonView.Style {
         switch state {
         case .idle:
-            return .start
+            return .letsBegin
         case .playing:
             if clockTimer.isRunning {
                 return .pause
@@ -112,22 +112,42 @@ class SideViewModel: ObservableObject {
             return .done
             
         case .playing:
-            return .start
+            return .letsBegin
         }
         
     }
     
-    func startButtonPressed() {
+    func topCommomButtonPressed() {
+        switch state {
+        case .idle:
+            startClock()
+        case .playing:
+            if clockTimer.isRunning {
+                pauseClock()
+            } else {
+                resumeClock()
+            }
+            
+        }
+    }
+
+    func bottonCommonButtonPressed() {
+        
+    }
+    
+    
+    func startClock() {
         state = .playing
+        clockTimer.timerDuration = taskTimeDuration
         clockTimer.isRunning = true
     }
     
-    func pauseButtonPressed() {
-//        clock.isRunning = false
+    func pauseClock() {
+        clockTimer.isRunning = false
     }
     
-    func resumeButtonPressed() {
-//        clock.isRunning = true
+    func resumeClock() {
+        clockTimer.isRunning = true
     }
     
     func doneButtonPressed() {

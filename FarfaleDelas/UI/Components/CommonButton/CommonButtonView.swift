@@ -11,7 +11,7 @@ struct CommonButtonView: View {
     @State private var isHovered = false
     
     enum Style {
-        case start, pause, resume, skip, done, newList, restart, letsBegin
+        case pause, resume, skip, done, newList, restart, letsBegin
     }
     
     let style: Style
@@ -29,8 +29,6 @@ struct CommonButtonView: View {
     
     var label: String {
         switch style {
-        case .start:
-            return "Iniciar"
         case .pause:
             return "Pausar"
         case .resume:
@@ -50,9 +48,6 @@ struct CommonButtonView: View {
         
     }
     
-
-    
-    
     var body: some View {
       
         Button {
@@ -69,7 +64,7 @@ struct CommonButtonView: View {
         .buttonStyle(.plain)
         .onHover { hovered in
             isHovered = hovered
-            print(isHovered)
+            
         }
      
         
@@ -105,7 +100,7 @@ struct CommonButtonView: View {
 
 struct CommonButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CommonButtonView(style: .start, buttonColor: .pink, action: {})
+        CommonButtonView(style: .letsBegin, buttonColor: .pink, action: {})
             .padding(50)
     }
 }
