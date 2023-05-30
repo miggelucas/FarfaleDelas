@@ -12,6 +12,6 @@ extension CardView {
     var leftStrip: some View {
         CardRoundedShape(tl: 0, tr: 0, bl: 10, br: 0)
             .fill(isHovered ? Color.purple : Color.gray)
-            .frame(width: 8, height: isOpen ? 105 :  50)
+            .frame(width: 8, height: stripHeight())
     }
 }

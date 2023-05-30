@@ -20,7 +20,7 @@ extension CardView {
     // Card Aberto
     
     var cardDescriptionView: some View {
-            VStack(alignment: .leading) {
+        HStack(alignment: .bottom, spacing: 57) {
                 TextEditor(text: $info.description)
                     .lineSpacing(4.0)
                     .foregroundColor(Color.black)
@@ -37,14 +37,17 @@ extension CardView {
                     .background(
                         Rectangle()
                             .stroke(Color.purple, lineWidth: 2)
-                            .opacity((editingDesc) ? 0.4 : 0.0)
+                            .opacity((editingDesc) ? 0.4 : 0.1)
                     )                    .lineLimit(...6)
                     .frame(width: 180, height: 40)
                     .cornerRadius(4)
+                
+                Button("Delete", action: actionForDeleteButton).foregroundColor(Color.red)
+                .buttonStyle(.plain)
 
             }
             .font(getFont(.cardInfoSmall))
-            .opacity(isOpen ? 1.0 : 0.0)
+            .opacity(descriptionOpacity())
 //        .frame(maxWidth: 420)
     }
 }

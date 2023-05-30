@@ -20,9 +20,6 @@ extension CardView {
             TextField(
                 "Nomeie sua atividade",
                 text: $info.atividadeText
-//                onCommit: {
-//                    isOpen.toggle()
-//                }
             )
             .disabled(info.cardType == .pause ? true : false)
             .font(getFont(.cardInfo))
@@ -34,7 +31,6 @@ extension CardView {
                 Rectangle()
                     .stroke(editingTitle ? Color.purple : Color.clear, lineWidth: 1)
                     .frame(width: 147, height: 18)
-//                    .padding()
             )
             .frame(maxWidth: 147)
         }.frame(height:23.72)
@@ -57,7 +53,7 @@ extension CardView {
                 }
             }.frame(width: 82, height: 19)
             .labelsHidden()
-            .pickerStyle(.menu)
+            .accentColor(.purple)
         }
     }
     

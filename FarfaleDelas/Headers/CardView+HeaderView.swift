@@ -28,7 +28,7 @@ extension CardView {
                     }
                     
             }
-            .offset(y: isOpen ? -20 : 0)
+            .offset(y: headerYOffset())
             .foregroundColor(.black)
     }
     

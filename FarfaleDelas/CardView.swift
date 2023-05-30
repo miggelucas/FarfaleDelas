@@ -27,7 +27,7 @@ struct CardView: View {
     
     var body: some View {
             ZStack(alignment: .center) {
-                HStack(spacing: spacingA ) {
+                HStack(spacing: toggleSpacing()) {
                     leftStrip
                     HStack(spacing: 20) {
                         toggleButton
@@ -35,18 +35,13 @@ struct CardView: View {
                     }
                 }.offset(x: -12)
                 cardDescriptionView
-                    .offset(x: -54, y: isOpen ? 20 : 0)
+                    .offset(x: -12, y: descriptionYOffset())
             }
             .onHover { hover in
                             isHovered = hover
                         }
-            .frame(width: 379, height: isOpen ? 105 : 50)
+            .frame(width: 379, height: cardHeight())
             .background(CardRoundedShape(tl: 0, tr: 10, bl: 10, br: 10).fill(Color.white))
-    }
-    
-    
-    private var spacingA: CGFloat {
-        return isOpen ? 8 : 14
     }
     
 }
