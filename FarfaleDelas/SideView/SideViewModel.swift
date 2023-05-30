@@ -95,12 +95,12 @@ class SideViewModel: ObservableObject {
     var topCommomButtonStyle: CommonButtonView.Style {
         switch state {
         case .idle:
-            return .Start
+            return .start
         case .playing:
             if clockTimer.isRunning {
-                return .Pause
+                return .pause
             } else {
-                return .Resume
+                return .resume
             }
             
         }
@@ -109,10 +109,10 @@ class SideViewModel: ObservableObject {
     var bottonCommonButtonStyle: CommonButtonView.Style {
         switch state {
         case .idle:
-            return .Done
+            return .done
             
         case .playing:
-            return .Start
+            return .start
         }
         
     }

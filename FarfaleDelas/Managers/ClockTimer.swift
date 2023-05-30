@@ -9,8 +9,6 @@ import Foundation
 
 final class ClockTimer: ObservableObject {
     
-    //    static var shared = ClockTimer()
-    
     @Published private var timer: Timer?
     
     @Published var isRunning: Bool = false
@@ -29,7 +27,6 @@ final class ClockTimer: ObservableObject {
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { tempTimer in        self.currentTime = .now
-            print(self.currentTime)
             
             if !self.isRunning { return }
             
@@ -37,6 +34,7 @@ final class ClockTimer: ObservableObject {
             
             if timeRemaining > 0 {
                 self.secondsPassed += 1
+                print(self.secondsPassed)
             } else {
                 self.isRunning = false
                 self.timer?.invalidate()
@@ -67,7 +65,6 @@ final class ClockTimer: ObservableObject {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
         
-        print("entrou")
         return formatter.string(from: estimatedDoneTime)
     }
     

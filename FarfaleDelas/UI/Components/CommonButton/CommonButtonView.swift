@@ -8,60 +8,71 @@
 import SwiftUI
 
 struct CommonButtonView: View {
+    @State private var isHovered = false
+    
     enum Style {
-        case Start, Pause, Resume, Skip, Done, LetsBegin
+        case start, pause, resume, skip, done, newList, restart, letsBegin
     }
     
     let style: Style
     let buttonColor: Color
     let action: () -> Void
     
+    let primaryPinkColor: Color = .pink
+    let secundaryPinkColor: Color = .blue
+    
     init(style: Style, buttonColor: Color = .pink, action: @escaping () -> Void) {
         self.style = style
         self.buttonColor = buttonColor
         self.action = action
     }
-
+    
     var label: String {
         switch style {
-        case .Start:
+        case .start:
             return "Iniciar"
-        case .Pause:
+        case .pause:
             return "Pausar"
-        case .Resume:
+        case .resume:
             return "Retomar"
-        case .Skip:
+        case .skip:
             return "Próximo"
-        case .Done:
+        case .done:
             return "Concluir"
-        case .LetsBegin:
+        case .letsBegin:
             return "Vamos Começar!"
+        case .newList:
+            return "Nova Lista"
+        case .restart:
+            return "Reiniciar"
         }
+        
         
     }
     
+
+    
     
     var body: some View {
-        if style == .Skip || style == .Done {
-            Button {
-                action()
-            } label: {
-               fillStyleLabel
-            }
-            .buttonStyle(.plain)
-            
-        } else {
-            Button {
-                action()
-            } label: {
-               borderdStyleLabel
+      
+        Button {
+            action()
+        } label: {
+            if style == .skip || style == .restart {
+                borderdStyleLabel
+                
+            } else {
+                fillStyleLabel
                 
             }
-            .buttonStyle(.plain)
         }
+        .buttonStyle(.plain)
+        .onHover { hovered in
+            isHovered = hovered
+            print(isHovered)
+        }
+     
         
-        
-
     }
     
     private var fillStyleLabel: some View {
@@ -69,7 +80,8 @@ struct CommonButtonView: View {
             .font(.headline)
             .fontWeight(.regular)
             .frame(width: 136, height: 36)
-            .buttonBorderShape(.roundedRectangle)
+            .background(isHovered ? secundaryPinkColor : primaryPinkColor)
+            .cornerRadius(10)
             .shadow(color: .black, radius: 2, y: 1)
         
     }
@@ -79,18 +91,21 @@ struct CommonButtonView: View {
         Text(label)
             .font(.headline)
             .fontWeight(.black)
+            .foregroundColor(isHovered ? secundaryPinkColor : primaryPinkColor)
             .frame(width: 136, height: 36)
-            .background(buttonColor)
-            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(isHovered ? secundaryPinkColor : primaryPinkColor, lineWidth: 1)
+            )
             .shadow(color: .black, radius: 2, y: 1)
     }
     
-
+    
 }
 
 struct CommonButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CommonButtonView(style: .Start, buttonColor: .pink, action: {})
+        CommonButtonView(style: .start, buttonColor: .pink, action: {})
             .padding(50)
     }
 }
