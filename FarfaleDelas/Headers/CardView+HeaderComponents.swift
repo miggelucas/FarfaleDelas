@@ -24,6 +24,7 @@ extension CardView {
             .disabled(info.cardType == .pause ? true : false)
             .font(getFont(.cardInfo))
             .textFieldStyle(.plain)
+            .foregroundColor(editingTitle ? .black : .gray)
             .onHover { hover in
                             editingTitle = hover
                         }
