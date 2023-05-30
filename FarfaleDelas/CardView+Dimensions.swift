@@ -29,13 +29,16 @@ extension CardView {
         return isOpen ? 105 :  50
     }
     
-    func toggleIcon() -> (String, CGFloat, CGFloat) {
+    func toggleIcon() -> (Angle, CGFloat, CGFloat) {
             // text, width and height respectively
-            return (isOpen ? "􀆈" : "􀆊", isOpen ? 14 : 8.07, isOpen ? 8.07 : 14)
+        return (isOpen ? Angle(degrees: 90) : Angle(degrees: 0), isOpen ? 14 : 8.07, isOpen ? 8.07 : 14)
         }
     
     func toggleSpacing() -> CGFloat {
-        return isOpen ? 8 : 14
+        return isOpen ? 5 : 9
     }
     
+    func toggleOffset() -> CGFloat {
+        return isOpen ? -20 : 0
+    }
 }

@@ -8,10 +8,6 @@
 import Foundation
 import SwiftUI
 
-
-
-
-
 struct CardView: View {
     @State var info: CardInformation
     
@@ -20,6 +16,9 @@ struct CardView: View {
     
     @State var editingTitle: Bool = false // titulo esta sendo editado?
     @State var editingDesc: Bool = false // desc esta sendo editada?
+    
+    @State var hoveringColor: Bool = false
+    @State var editingColor: Bool = false
 
     @State var eta: Date = .now
     
@@ -29,13 +28,15 @@ struct CardView: View {
             ZStack(alignment: .center) {
                 HStack(spacing: toggleSpacing()) {
                     leftStrip
-                    HStack(spacing: 20) {
+                        .offset(x: 2)
+                    HStack(spacing: 7) {
                         toggleButton
+                            .offset(y: toggleOffset())
                         cardHeaderView
                     }
                 }.offset(x: -12)
                 cardDescriptionView
-                    .offset(x: -12, y: descriptionYOffset())
+                    .offset(x: 12, y: descriptionYOffset())
             }
             .onHover { hover in
                             isHovered = hover

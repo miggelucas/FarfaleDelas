@@ -21,6 +21,7 @@ extension CardView {
             Text("\(updateEta, formatter: dateFormatter())")
                 .font(getFont(.cardInfo))
         }
+        
         eta = updateEta
         return etaDisplay
     }

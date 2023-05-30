@@ -16,7 +16,8 @@ extension CardView {
             }
         }, label: {
             VStack {
-                Text(toggleIcon().0)
+                Text("􀆊")
+                    .rotationEffect(toggleIcon().0)
                     .foregroundColor(.black)
             }.frame(width: toggleIcon().1, height: toggleIcon().2)
         })

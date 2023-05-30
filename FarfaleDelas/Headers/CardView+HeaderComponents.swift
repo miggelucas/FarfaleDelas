@@ -40,7 +40,7 @@ extension CardView {
     
     //picker de duracao
     var activityDuration: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             Text("Tempo da atividade")
                 .font(getFont(.cardInfoSmall))
             
@@ -50,7 +50,7 @@ extension CardView {
                         .foregroundColor(.black)
                         .font(getFont(.cardInfo))
                     
-                }
+                }.offset(y: -2)
             }.frame(width: 82, height: 19)
             .labelsHidden()
             .accentColor(.purple)
@@ -72,6 +72,50 @@ extension CardView {
     }
     
     var colorPicker: some View {
-        ColorPicker("Set the background color", selection: $info.setColor, supportsOpacity: false)
+            ZStack {
+                Circle()
+                    .foregroundColor(.purple)
+                    .frame(width: 14)
+                    .opacity(hoveringColor ? 1.0 : 0.0)
+                
+                Circle()
+                    .foregroundColor(info.setColor)
+                    .frame(width: 12)
+                    .onHover { hover in
+                        hoveringColor = hover
+                    }
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.15)) {
+                            editingColor.toggle()
+                        }
+                    }
+                VStack {
+                    ForEach(info.colorOptions, id: \.self) { color in
+                        if color != info.setColor {
+                            var overlay: Bool = false
+                            
+                            Button("􀀁", action: {
+                                info.setColor = color
+                                editingColor.toggle()
+                            })
+                            .font(getFont(.cardInfo))
+                            .foregroundColor(color)
+                            .buttonStyle(.plain)
+                            .onHover {hover in
+                                overlay = hover
+                            }
+//                            .overlay(content: {
+//                                Circle()
+//                                    .foregroundColor(.black)
+//                                    .frame(width: 10)
+//                                    .opacity(overlay ? 0.8 : 0.0)
+//                            })
+                        }
+                    }
+                }
+            .offset(y: editingColor ? 22 : -10)
+            .frame(height: editingColor ? 32 : 12)
+            .opacity(editingColor ? 1.0 : 0.0)
+            }
     }
 }

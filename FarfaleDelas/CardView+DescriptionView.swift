@@ -41,13 +41,13 @@ extension CardView {
                     )                    .lineLimit(...6)
                     .frame(width: 180, height: 40)
                     .cornerRadius(4)
+                Spacer()
                 
                 Button("Delete", action: actionForDeleteButton).foregroundColor(Color.red)
                 .buttonStyle(.plain)
 
-            }
+        }.frame(width: 338.88)
             .font(getFont(.cardInfoSmall))
             .opacity(descriptionOpacity())
-//        .frame(maxWidth: 420)
     }
 }

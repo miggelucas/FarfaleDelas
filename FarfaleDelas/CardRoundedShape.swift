@@ -20,7 +20,6 @@ struct CardRoundedShape: Shape {
         let w = rect.size.width
         let h = rect.size.height
         
-        // Make sure we do not exceed the size of the rectangle
         let tr = min(min(self.tr, h/2), w/2)
         let tl = min(min(self.tl, h/2), w/2)
         let bl = min(min(self.bl, h/2), w/2)

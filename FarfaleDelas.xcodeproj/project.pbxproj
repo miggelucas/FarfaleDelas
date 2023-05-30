@@ -98,9 +98,9 @@
 				D489671C2A25365B0061A739 /* CardView+Functions.swift */,
 				D4AE4FD62A265C2F009BBE52 /* CardView+Dimensions.swift */,
 				D489671E2A253E040061A739 /* CardRoundedShape.swift */,
-				D4AE4FD92A265D27009BBE52 /* Components */,
-				D4AE4FDB2A265D4B009BBE52 /* Header */,
 				D4E23EA92A204E500097F8B7 /* CardView+DescriptionView.swift */,
+				D4AE4FDB2A265D4B009BBE52 /* Header */,
+				D4AE4FD92A265D27009BBE52 /* Components */,
 			);
 			name = CardView;
 			sourceTree = "<group>";
