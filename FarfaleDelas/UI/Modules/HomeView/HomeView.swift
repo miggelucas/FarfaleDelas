@@ -15,9 +15,10 @@ struct HomeView: View {
         HStack(spacing: 0){
             ActivitiesList(activitiesList: $activitiesViewModel.cards){ type in
                 activitiesViewModel.addCardInformation(type: type)
-            }.preferredColorScheme(.light)
-            Rectangle().frame(width: 173, height: 596).foregroundColor(.black)
-        }
+            }
+            SideView()
+            
+        }.preferredColorScheme(.light)
     }
 }
 

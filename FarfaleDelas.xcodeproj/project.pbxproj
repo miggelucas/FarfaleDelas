@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		0DEE846A2A214446003BA0F8 /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE84692A214446003BA0F8 /* ColorConstant.swift */; };
 		0DEE846F2A21473B003BA0F8 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE846E2A21473B003BA0F8 /* StateManager.swift */; };
-		0DEE84732A214A8E003BA0F8 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE84722A214A8E003BA0F8 /* CommonButton.swift */; };
+		174410492A1FEBB900995EFB /* SideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174410482A1FEBB900995EFB /* SideView.swift */; };
+		1797FCF32A25390D000E0C3E /* ClockTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797FCF22A25390D000E0C3E /* ClockTimer.swift */; };
+		17BFF77A2A20361000349993 /* SideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFF7792A20361000349993 /* SideViewModel.swift */; };
+		17BFF77C2A20461200349993 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFF77B2A20461200349993 /* CommonButtonView.swift */; };
 		17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */; };
 		17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BD2A1FD51E0035662B /* ContentView.swift */; };
 		17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
 		17E479C32A1FD51F0035662B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479C22A1FD51F0035662B /* Preview Assets.xcassets */; };
+		17E479CB2A1FD8AB0035662B /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479CA2A1FD8AB0035662B /* ClockView.swift */; };
 		4721B4522A1FECB000C73A9C /* ButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4512A1FECB000C73A9C /* ButtonIcon.swift */; };
 		4721B4542A1FED8A00C73A9C /* ActivitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4532A1FED8A00C73A9C /* ActivitiesList.swift */; };
 		4721B4772A21251600C73A9C /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4762A21251600C73A9C /* CardInformation.swift */; };
@@ -31,13 +35,17 @@
 /* Begin PBXFileReference section */
 		0DEE84692A214446003BA0F8 /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
 		0DEE846E2A21473B003BA0F8 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
-		0DEE84722A214A8E003BA0F8 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		174410482A1FEBB900995EFB /* SideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideView.swift; sourceTree = "<group>"; };
+		1797FCF22A25390D000E0C3E /* ClockTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTimer.swift; sourceTree = "<group>"; };
+		17BFF7792A20361000349993 /* SideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewModel.swift; sourceTree = "<group>"; };
+		17BFF77B2A20461200349993 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
 		17E479B82A1FD51E0035662B /* FarfaleDelas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarfaleDelas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarfaleDelasApp.swift; sourceTree = "<group>"; };
 		17E479BD2A1FD51E0035662B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		17E479BF2A1FD51F0035662B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17E479C22A1FD51F0035662B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17E479C42A1FD51F0035662B /* FarfaleDelas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FarfaleDelas.entitlements; sourceTree = "<group>"; };
+		17E479CA2A1FD8AB0035662B /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		4721B4512A1FECB000C73A9C /* ButtonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIcon.swift; sourceTree = "<group>"; };
 		4721B4532A1FED8A00C73A9C /* ActivitiesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesList.swift; sourceTree = "<group>"; };
 		4721B4762A21251600C73A9C /* CardInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
@@ -89,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				47D703CA2A25286300B2A359 /* HomeView */,
+				17BFF77D2A20485900349993 /* SideView */,
 				0DEE846D2A21459E003BA0F8 /* StatusBar */,
 			);
 			path = Modules;
@@ -106,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				0DEE846E2A21473B003BA0F8 /* StateManager.swift */,
+				1797FCF22A25390D000E0C3E /* ClockTimer.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -132,9 +142,19 @@
 		0DEE84712A214A78003BA0F8 /* CommonButton */ = {
 			isa = PBXGroup;
 			children = (
-				0DEE84722A214A8E003BA0F8 /* CommonButton.swift */,
+				17BFF77B2A20461200349993 /* CommonButtonView.swift */,
 			);
 			path = CommonButton;
+			sourceTree = "<group>";
+		};
+		17BFF77D2A20485900349993 /* SideView */ = {
+			isa = PBXGroup;
+			children = (
+				174410482A1FEBB900995EFB /* SideView.swift */,
+				17E479CA2A1FD8AB0035662B /* ClockView.swift */,
+			);
+			name = SideView;
+			path = ../../SideView;
 			sourceTree = "<group>";
 		};
 		17E479AF2A1FD51E0035662B = {
@@ -222,6 +242,7 @@
 			children = (
 				47D703CD2A2529E900B2A359 /* HomeView.swift */,
 				47D703CB2A25287900B2A359 /* ActivitiesListViewModel.swift */,
+				17BFF7792A20361000349993 /* SideViewModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -314,13 +335,17 @@
 				4721B47E2A212A6600C73A9C /* CardView+ToggleButton.swift in Sources */,
 				4721B4542A1FED8A00C73A9C /* ActivitiesList.swift in Sources */,
 				4721B47F2A212A6600C73A9C /* CardView+ClosedCardView.swift in Sources */,
+				17E479CB2A1FD8AB0035662B /* ClockView.swift in Sources */,
+				174410492A1FEBB900995EFB /* SideView.swift in Sources */,
+				1797FCF32A25390D000E0C3E /* ClockTimer.swift in Sources */,
 				0DEE846A2A214446003BA0F8 /* ColorConstant.swift in Sources */,
 				0DEE846F2A21473B003BA0F8 /* StateManager.swift in Sources */,
-				0DEE84732A214A8E003BA0F8 /* CommonButton.swift in Sources */,
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
 				47D703CE2A2529E900B2A359 /* HomeView.swift in Sources */,
 				47D703CC2A25287900B2A359 /* ActivitiesListViewModel.swift in Sources */,
 				4721B4802A212A6600C73A9C /* CardInformation+Personalizations.swift in Sources */,
+				17BFF77A2A20361000349993 /* SideViewModel.swift in Sources */,
+				17BFF77C2A20461200349993 /* CommonButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

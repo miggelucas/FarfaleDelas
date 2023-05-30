@@ -9,6 +9,7 @@ import Foundation
 
 struct CardInformation: Identifiable{
     
+    
     let id = UUID()
     
     var atividadeText: String = "Nome da atividade"
