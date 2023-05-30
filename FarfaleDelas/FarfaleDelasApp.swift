@@ -12,7 +12,7 @@ struct FarfaleDelasApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         Settings{
-            EmptyView()
+            HomeView()
         }
     }
 }
@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         popover.behavior = .transient
         popover.animates = false
         popover.contentSize = NSSize(width: 632, height: 596)
-        popover.contentViewController = NSHostingController(rootView: ContentView())
+        popover.contentViewController = NSHostingController(rootView: HomeView())
         
         statusBar = StatusBarController(popover)
     }

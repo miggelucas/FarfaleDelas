@@ -33,10 +33,10 @@ class StatusBarController{
     }
     
     @objc func showApp(sender: AnyObject){
-        if popover.isShown {
+        if popover.isShown{
             popover.performClose(nil)
             isPopoverOpen = false
-        } else{
+        }else{
             popover.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
             NSRunningApplication.current.activate(options: [.activateIgnoringOtherApps])
             isPopoverOpen = true
