@@ -20,8 +20,8 @@ struct CardInformation {
     var atividadeText: String = "Nome da atividade"
     var setColor: String = ColorConstant.HIGHLIGHTED_ORANGE
     var description: String = "\nDescrição da atividade"
+    
     var startsOpen: Bool = true
-
             
     //opcoes de cores
     let colorOptions = [ColorConstant.HIGHLIGHTED_BLUE, ColorConstant.HIGHLIGHTED_RED, ColorConstant.HIGHLIGHTED_ORANGE]

@@ -39,12 +39,12 @@ extension CardView {
                             .stroke(Color.purple, lineWidth: 2)
                             .opacity((editingDesc) ? 0.4 : 0.1)
                     )                    .lineLimit(...6)
-                    .frame(width: 180, height: 40)
+                .frame(width: info.cardType == .activity ? 180 : 0, height: info.cardType == .activity ? 40 : 0)
                     .cornerRadius(4)
+                    .opacity(info.cardType == .activity ? 1.0 : 0.0)
                 Spacer()
                 
-                Button("Delete", action: actionForDeleteButton).foregroundColor(Color.red)
-                .buttonStyle(.plain)
+                deleteCardButton
 
         }.frame(width: 338.88)
             .font(getFont(.cardInfoSmall))
