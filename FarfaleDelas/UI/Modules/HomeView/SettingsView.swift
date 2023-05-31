@@ -65,8 +65,6 @@ struct SettingsView: View {
                 .pickerStyle(.menu)
                 
                 
-                
-                Spacer()
             }
             
             

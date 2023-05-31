@@ -105,7 +105,6 @@
 				47D703CA2A25286300B2A359 /* HomeView */,
 				17BFF77D2A20485900349993 /* SideView */,
 				0DEE846D2A21459E003BA0F8 /* StatusBar */,
-				178A14E32A26897C00DAC62E /* SettingsView.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -249,6 +248,7 @@
 		47D703CA2A25286300B2A359 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				178A14E32A26897C00DAC62E /* SettingsView.swift */,
 				47D703CD2A2529E900B2A359 /* HomeView.swift */,
 				47D703CB2A25287900B2A359 /* ActivitiesListViewModel.swift */,
 				17BFF7792A20361000349993 /* SideViewModel.swift */,
