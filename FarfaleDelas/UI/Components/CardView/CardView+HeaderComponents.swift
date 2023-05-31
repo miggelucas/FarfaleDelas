@@ -24,14 +24,14 @@ extension CardView {
             .disabled(info.cardType == .pause ? true : false)
             .font(getFont(.cardInfo))
             .textFieldStyle(.plain)
-            .foregroundColor(editingTitle ? .black : .gray)
+            .foregroundColor(editingTitle ? Color(ColorConstant.PRIMARY_BLACK) : .gray)
             .onHover { hover in
                             editingTitle = hover
                         }
 
             .background(
                 Rectangle()
-                    .stroke(editingTitle ? Color.purple : Color.clear, lineWidth: 1)
+                    .stroke(editingTitle ? Color(ColorConstant.SECONDARY_PINK) : Color.clear, lineWidth: 1)
                     .frame(width: 147, height: 18)
             )
             .frame(width: 147, height: 17)
@@ -55,7 +55,7 @@ extension CardView {
                 }.offset(y: -2)
             }.frame(width: 82, height: 19)
             .labelsHidden()
-            .accentColor(.purple)
+            .accentColor(Color(ColorConstant.SECONDARY_PINK))
         }
     }
     
@@ -75,10 +75,6 @@ extension CardView {
     
     var colorPicker: some View {
             ZStack {
-//                Circle()
-//                    .foregroundColor(.purple)
-//                    .frame(width: 14)
-//                    .opacity(hoveringColor ? 1.0 : 0.0)
                 
                 Circle()
                     .foregroundColor(Color(info.setColor))
@@ -106,12 +102,6 @@ extension CardView {
                             .onHover {hover in
                                 overlay = hover
                             }
-//                            .overlay(content: {
-//                                Circle()
-//                                    .foregroundColor(.black)
-//                                    .frame(width: 10)
-//                                    .opacity(overlay ? 0.8 : 0.0)
-//                            })
                         }
                     }
                 }

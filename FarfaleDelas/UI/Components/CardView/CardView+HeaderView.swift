@@ -39,7 +39,7 @@ extension CardView {
             }
         }
             .offset(y: headerYOffset())
-            .foregroundColor(.black)
+            .foregroundColor(Color(ColorConstant.PRIMARY_BLACK))
             .frame(width: 348)
     }
     
