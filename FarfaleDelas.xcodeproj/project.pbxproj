@@ -38,6 +38,7 @@
 		47D703E32A27BD9200B2A359 /* CardView+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703E22A27BD9200B2A359 /* CardView+Fonts.swift */; };
 		47D703E52A27BE0A00B2A359 /* CardView+HeaderComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703E42A27BE0A00B2A359 /* CardView+HeaderComponents.swift */; };
 		47D703E72A27BE2000B2A359 /* CardView+HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703E62A27BE2000B2A359 /* CardView+HeaderView.swift */; };
+		D4AE4FE22A27D7EE009BBE52 /* CardView+DeleteCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE4FE12A27D7EE009BBE52 /* CardView+DeleteCardButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		47D703E22A27BD9200B2A359 /* CardView+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Fonts.swift"; sourceTree = "<group>"; };
 		47D703E42A27BE0A00B2A359 /* CardView+HeaderComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+HeaderComponents.swift"; sourceTree = "<group>"; };
 		47D703E62A27BE2000B2A359 /* CardView+HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+HeaderView.swift"; sourceTree = "<group>"; };
+		D4AE4FE12A27D7EE009BBE52 /* CardView+DeleteCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+DeleteCardButton.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,12 +222,11 @@
 		47D703C32A25256C00B2A359 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
-				47D703E22A27BD9200B2A359 /* CardView+Fonts.swift */,
 				4721B4782A21256600C73A9C /* CardView.swift */,
-				47D703E62A27BE2000B2A359 /* CardView+HeaderView.swift */,
-				47D703DA2A27BCF300B2A359 /* CardView+Dimentions.swift */,
-				47D703D82A27BCD000B2A359 /* CardView+DescriptionView.swift */,
+				47D703E22A27BD9200B2A359 /* CardView+Fonts.swift */,
 				47D703DC2A27BD0B00B2A359 /* CardView+Functions.swift */,
+				47D703DA2A27BCF300B2A359 /* CardView+Dimentions.swift */,
+				D4AE4FDF2A27D580009BBE52 /* Header */,
 				D4AE4FDE2A27D09E009BBE52 /* Components */,
 			);
 			path = CardView;
@@ -282,9 +283,19 @@
 				47D703DE2A27BD3100B2A359 /* CardView+Strip.swift */,
 				47D703D62A27BC5300B2A359 /* CardRoundedShape.swift */,
 				4721B47B2A212A6600C73A9C /* CardView+ToggleButton.swift */,
-				47D703E42A27BE0A00B2A359 /* CardView+HeaderComponents.swift */,
+				47D703D82A27BCD000B2A359 /* CardView+DescriptionView.swift */,
+				D4AE4FE12A27D7EE009BBE52 /* CardView+DeleteCardButton.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		D4AE4FDF2A27D580009BBE52 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				47D703E62A27BE2000B2A359 /* CardView+HeaderView.swift */,
+				47D703E42A27BE0A00B2A359 /* CardView+HeaderComponents.swift */,
+			);
+			name = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47D703E32A27BD9200B2A359 /* CardView+Fonts.swift in Sources */,
+				D4AE4FE22A27D7EE009BBE52 /* CardView+DeleteCardButton.swift in Sources */,
 				4721B4792A21256600C73A9C /* CardView.swift in Sources */,
 				47D703C82A25268700B2A359 /* StatusBarController.swift in Sources */,
 				4721B4522A1FECB000C73A9C /* ButtonIcon.swift in Sources */,

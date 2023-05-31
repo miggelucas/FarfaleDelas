@@ -30,9 +30,13 @@ extension CardView {
                 
             }
             
-            colorPicker
-//                .opacity(info.cardType == .activity ? 1.0 : 0.0)
-                .offset(y: -4)
+            ZStack {
+                colorPicker
+                    .opacity(info.cardType == .activity ? 1.0 : 0.0)
+                    .offset(y: -4)
+                deleteCardButton
+                    .opacity(info.cardType == .pause ? 1.0 : 0.0)
+            }
         }
             .offset(y: headerYOffset())
             .foregroundColor(.black)
