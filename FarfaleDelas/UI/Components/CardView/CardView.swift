@@ -27,10 +27,10 @@ struct CardView: View {
             ZStack(alignment: .center) {
                 HStack(spacing: toggleSpacing()) {
                     leftStrip
-                        .offset(x: 2)
+                        .offset(x: info.startsOpen ? 18.5 : 16.5)
                     HStack(spacing: 7) {
                         toggleButton
-                            .offset(y: toggleOffset())
+                            .offset(x: 4.5, y: toggleOffset())
                         cardHeaderView
                     }
                 }.offset(x: -12)

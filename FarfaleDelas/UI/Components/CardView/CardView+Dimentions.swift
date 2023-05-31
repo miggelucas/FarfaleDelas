@@ -35,7 +35,7 @@ extension CardView {
         }
     
     func toggleSpacing() -> CGFloat {
-        return info.startsOpen ? 5 : 9
+        return info.startsOpen ? 16 : 18
     }
     
     func toggleOffset() -> CGFloat {
