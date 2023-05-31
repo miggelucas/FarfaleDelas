@@ -10,7 +10,7 @@ import SwiftUI
 
 extension CardView {
     var leftStrip: some View {
-        CardRoundedShape(tl: 0, tr: 0, bl: 100, br: 0)
+        CardRoundedShape(tl: 0, tr: 0, bl: 10, br: 0)
             .fill(isHovered ? Color(ColorConstant.SECONDARY_PINK) : Color(ColorConstant.SECONDARY_PINK_HOVER))
             .frame(width: 8, height: stripHeight())
     }

@@ -23,7 +23,7 @@ extension CardView {
         HStack(alignment: .bottom, spacing: 57) {
                 TextEditor(text: $info.description)
                     .lineSpacing(4.0)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color(ColorConstant.PRIMARY_BLACK))
                     .scrollContentBackground(.hidden)
                     .onTapGesture {
                         editingDesc = true
@@ -36,7 +36,7 @@ extension CardView {
                                 }
                     .background(
                         Rectangle()
-                            .stroke(Color.purple, lineWidth: 2)
+                            .stroke(Color(ColorConstant.SECONDARY_PINK_HOVER), lineWidth: 2)
                             .opacity((editingDesc) ? 0.4 : 0.1)
                     )                    .lineLimit(...6)
                 .frame(width: info.cardType == .activity ? 180 : 0, height: info.cardType == .activity ? 40 : 0)
