@@ -46,6 +46,7 @@
 		47D703E52A27BE0A00B2A359 /* CardView+HeaderComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703E42A27BE0A00B2A359 /* CardView+HeaderComponents.swift */; };
 		47D703E72A27BE2000B2A359 /* CardView+HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703E62A27BE2000B2A359 /* CardView+HeaderView.swift */; };
 		D4AE4FE22A27D7EE009BBE52 /* CardView+DeleteCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE4FE12A27D7EE009BBE52 /* CardView+DeleteCardButton.swift */; };
+		D4AE4FE52A27E0BC009BBE52 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE4FE42A27E0BC009BBE52 /* WidgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		47D703E42A27BE0A00B2A359 /* CardView+HeaderComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+HeaderComponents.swift"; sourceTree = "<group>"; };
 		47D703E62A27BE2000B2A359 /* CardView+HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+HeaderView.swift"; sourceTree = "<group>"; };
 		D4AE4FE12A27D7EE009BBE52 /* CardView+DeleteCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+DeleteCardButton.swift"; sourceTree = "<group>"; };
+		D4AE4FE42A27E0BC009BBE52 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +120,9 @@
 		0DEE84652A21436B003BA0F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D4AE4FE32A27E0B1009BBE52 /* Widget */,
 				47D703CF2A2533F700B2A359 /* PauseButton */,
 				47D703C62A25260700B2A359 /* ActivitiesList */,
-				47D703C32A25256C00B2A359 /* CardView */,
 				47D703C22A25252F00B2A359 /* ButtonIcon */,
 				0DEE84712A214A78003BA0F8 /* CommonButton */,
 			);
@@ -130,6 +132,7 @@
 		0DEE84662A214378003BA0F8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				47D703C32A25256C00B2A359 /* CardView */,
 				47D703CA2A25286300B2A359 /* HomeView */,
 				17BFF77D2A20485900349993 /* SideView */,
 				0DEE846D2A21459E003BA0F8 /* StatusBar */,
@@ -345,6 +348,14 @@
 			name = Header;
 			sourceTree = "<group>";
 		};
+		D4AE4FE32A27E0B1009BBE52 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				D4AE4FE42A27E0BC009BBE52 /* WidgetView.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -449,6 +460,7 @@
 				47D703E52A27BE0A00B2A359 /* CardView+HeaderComponents.swift in Sources */,
 				47D703CC2A25287900B2A359 /* HomeViewModel.swift in Sources */,
 				17BFF77A2A20361000349993 /* SideViewModel.swift in Sources */,
+				D4AE4FE52A27E0BC009BBE52 /* WidgetView.swift in Sources */,
 				17BFF77C2A20461200349993 /* CommonButtonView.swift in Sources */,
 				178A14E42A26897C00DAC62E /* SettingsView.swift in Sources */,
 				47D703DF2A27BD3100B2A359 /* CardView+Strip.swift in Sources */,
