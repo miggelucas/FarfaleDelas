@@ -22,55 +22,69 @@ struct SettingsView: View {
             Color(ColorConstant.PRIMARY_BLACK)
             
             VStack {
-                ZStack {
-                    Text("Configurações")
-                        .foregroundColor(Color(ColorConstant.PRIMARY_WHITE))
-                    
-                    HStack {
-                        Button {
-                            backButtonPressed()
-                        } label: {
-                            Image(systemName: "x.circle.fill")
-                                .foregroundColor(Color(ColorConstant.SECONDARY_PINK))
-                        }
-                        .buttonStyle(.plain)
-                        
-                        Spacer()
-                        
-                    }
-                    .padding()
-                }
                 
-                Form {
-                    Section("Preferências") {
-                        Toggle("Ativar touchBar", isOn: $userSettings.isTouchBarEnable)
-                        Toggle("Notificações", isOn: $userSettings.isNotificationsEnable)
-                        Toggle("Início automático do próximo timer", isOn: $userSettings.isAutoStartNextEnable)
-                        Toggle("Ativar Widget", isOn: $userSettings.iscClockWidgetEnable)
-                    }
-                    
-                    Section("Limite") {
-                        Picker("Tempo total de Trabalho em minutos", selection: $userSettings.workingMinutesTime) {
-                            ForEach(workingMinutesOptions, id: \.self) { option in
-                                Text(option.rawValue).tag(option.value)
-                                
-                            }
-                            
-                        }
-                    }
-                }
-                .tint(Color(ColorConstant.SECONDARY_PINK))
-                .foregroundColor(Color(ColorConstant.PRIMARY_WHITE))
-                .toggleStyle(.switch)
-                .formStyle(.grouped)
-                .pickerStyle(.menu)
+                SettignsHeader
                 
-                
+                settingsOptionsView
+         
             }
-            
             
             .frame(width: 632, height: 596)
         }
+    }
+    
+    
+    private var SettignsHeader: some View {
+        ZStack {
+            Text("Configurações")
+                .foregroundColor(Color(ColorConstant.PRIMARY_WHITE))
+            
+            HStack {
+                
+                Spacer()
+                
+                Button {
+                    backButtonPressed()
+                } label: {
+                    Image(systemName: "x.circle.fill")
+                        .foregroundColor(Color(ColorConstant.SECONDARY_PINK))
+                }
+                .buttonStyle(.plain)
+                
+ 
+                
+            }
+            .padding()
+        }
+    }
+    
+    
+    private var settingsOptionsView: some View {
+        Form {
+            Section("Preferências") {
+                Toggle("Ativar touchBar", isOn: $userSettings.isTouchBarEnable)
+                Toggle("Notificações", isOn: $userSettings.isNotificationsEnable)
+                Toggle("Início automático do próximo timer", isOn: $userSettings.isAutoStartNextEnable)
+                Toggle("Ativar Widget", isOn: $userSettings.iscClockWidgetEnable)
+            }
+            
+            Section("Limite") {
+                Picker("Tempo total de Trabalho em minutos", selection: $userSettings.workingMinutesTime) {
+                    ForEach(workingMinutesOptions, id: \.self) { option in
+                        Text(option.rawValue).tag(option.value)
+                        
+                    }
+                    
+                }
+            }
+        }
+        .tint(Color(ColorConstant.SECONDARY_PINK))
+        .foregroundColor(Color(ColorConstant.PRIMARY_WHITE))
+        .toggleStyle(.switch)
+        .formStyle(.grouped)
+        .pickerStyle(.menu)
+        .preferredColorScheme(.dark)
+
     }
 }
 
