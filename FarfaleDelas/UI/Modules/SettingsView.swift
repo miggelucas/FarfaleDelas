@@ -7,16 +7,12 @@
 
 import SwiftUI
 
+
 struct SettingsView: View {
     
-    @State var touchBarEnable: Bool = false
-    @State var notificationsEnable: Bool = true
-    @State var autoStartNextEnable: Bool = false
-    @State var clockWidgetEnable: Bool = true
+    @Binding var userSettings: UserSettingsProtocol
     
-    @State var workingMinutesTime: String = "30 min"
-    
-    let workingMinutesOptions: [WorkingMinutesOption] = WorkingMinutesOption.allCases
+    var backButtonPressed: () -> Void
     
     
     var body: some View {
@@ -31,9 +27,9 @@ struct SettingsView: View {
                     
                     HStack {
                         Button {
-                            //                        backButtonPressed()
+                            backButtonPressed()
                         } label: {
-                            Image(systemName: "chevron.left")
+                            Image(systemName: "x.circle.fill")
                                 .foregroundColor(Color(ColorConstant.SECONDARY_PINK))
                         }
                         .buttonStyle(.plain)
@@ -41,19 +37,20 @@ struct SettingsView: View {
                         Spacer()
                         
                     }
+                    .padding()
                 }
                 
                 Form {
                     Section("Preferências") {
-                        Toggle("Ativar touchBar", isOn: $touchBarEnable)
-                        Toggle("Notificações", isOn: $notificationsEnable)
-                        Toggle("Início automático do próximo timer", isOn: $autoStartNextEnable)
-                        Toggle("Ativar Widget", isOn: $clockWidgetEnable)
+                        Toggle("Ativar touchBar", isOn: $userSettings.touchBarEnable)
+                        Toggle("Notificações", isOn: $userSettings.notificationsEnable)
+                        Toggle("Início automático do próximo timer", isOn: $userSettings.autoStartNextEnable)
+                        Toggle("Ativar Widget", isOn: $userSettings.clockWidgetEnable)
                     }
                     
                     Section("Limite") {
-                        Picker("Tempo total de Trabalho em minutos", selection: $workingMinutesTime) {
-                            ForEach(workingMinutesOptions, id: \.self) { option in
+                        Picker("Tempo total de Trabalho em minutos", selection: $userSettings.workingMinutesTime) {
+                            ForEach(userSettings.workingMinutesOptions, id: \.self) { option in
                                 Text(option.rawValue).tag(option.value)
                                 
                             }
@@ -81,6 +78,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(userSettings: .constant(dummyUserSettings()), backButtonPressed: {})
     }
 }
