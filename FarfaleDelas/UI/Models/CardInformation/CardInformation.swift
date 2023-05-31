@@ -32,19 +32,21 @@ import SwiftUI
 struct CardInformation {
     // card basico
     let id = UUID()
-    var cardType = CardType.activity
+    var cardType: CardType
 
-    
-    var atividadeText = getCardType(t: CardType.activity)
     var duration: String = "30"
-    var setColor: Color = .pink
+    var atividadeText: String = "Nome da atividade"
+    var setColor: String = ColorConstant.HIGHLIGHTED_ORANGE
     var description: String = "\nDescrição da atividade"
+    var startsOpen: Bool = true
+
             
     //opcoes de cores
-    let colorOptions = [Color.pink, Color.blue, Color.green, Color.yellow]
+    let colorOptions = [ColorConstant.HIGHLIGHTED_BLUE, ColorConstant.HIGHLIGHTED_RED, ColorConstant.HIGHLIGHTED_ORANGE]
     
     //opcoes de personalizacao
     let timeBoxes = ["20", "30", "45", "60", "90", "120"]
+    let pauseBoxes = ["5", "10", "15", "20", "25", "30"]
     
 }
 

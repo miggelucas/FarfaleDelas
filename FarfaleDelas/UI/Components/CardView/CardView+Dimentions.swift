@@ -10,35 +10,35 @@ import SwiftUI
 
 extension CardView {
     func descriptionYOffset() -> CGFloat {
-        return isOpen ? 20 : 0
+        return info.startsOpen ? 20 : 0
     }
     
     func descriptionOpacity() -> Double {
-        return isOpen ? 1.0 : 0.0
+        return info.startsOpen ? 1.0 : 0.0
     }
     
     func headerYOffset() -> CGFloat {
-        return isOpen ? -20 : 0
+        return info.startsOpen ? -20 : 0
     }
     
     func cardHeight() -> CGFloat {
-        return isOpen ? 105 : 50
+        return info.startsOpen ? 105 : 50
     }
     
     func stripHeight() -> CGFloat {
-        return isOpen ? 105 :  50
+        return info.startsOpen ? 105 :  50
     }
     
     func toggleIcon() -> (Angle, CGFloat, CGFloat) {
             // text, width and height respectively
-        return (isOpen ? Angle(degrees: 90) : Angle(degrees: 0), isOpen ? 14 : 8.07, isOpen ? 8.07 : 14)
+        return (info.startsOpen ? Angle(degrees: 90) : Angle(degrees: 0), info.startsOpen ? 14 : 8.07, info.startsOpen ? 8.07 : 14)
         }
     
     func toggleSpacing() -> CGFloat {
-        return isOpen ? 5 : 9
+        return info.startsOpen ? 5 : 9
     }
     
     func toggleOffset() -> CGFloat {
-        return isOpen ? -20 : 0
+        return info.startsOpen ? -20 : 0
     }
 }

@@ -28,13 +28,14 @@ extension CardView {
             .onHover { hover in
                             editingTitle = hover
                         }
+
             .background(
                 Rectangle()
                     .stroke(editingTitle ? Color.purple : Color.clear, lineWidth: 1)
                     .frame(width: 147, height: 18)
             )
-            .frame(maxWidth: 147)
-        }.frame(height:23.72)
+            .frame(width: 147, height: 17)
+        }.frame(height:25)
     }
     
     
@@ -46,7 +47,7 @@ extension CardView {
                 .font(getFont(.cardInfoSmall))
             
             Picker("Duração", selection: $info.duration) {
-                ForEach(info.timeBoxes, id: \.self) {
+                ForEach(info.cardType == .pause ? info.pauseBoxes : info.timeBoxes, id: \.self) {
                     Text("\($0) min")
                         .foregroundColor(.black)
                         .font(getFont(.cardInfo))
@@ -74,13 +75,13 @@ extension CardView {
     
     var colorPicker: some View {
             ZStack {
-                Circle()
-                    .foregroundColor(.purple)
-                    .frame(width: 14)
-                    .opacity(hoveringColor ? 1.0 : 0.0)
+//                Circle()
+//                    .foregroundColor(.purple)
+//                    .frame(width: 14)
+//                    .opacity(hoveringColor ? 1.0 : 0.0)
                 
                 Circle()
-                    .foregroundColor(info.setColor)
+                    .foregroundColor(Color(ColorConstant.HIGHLIGHTED_ORANGE))
                     .frame(width: 12)
                     .onHover { hover in
                         hoveringColor = hover
@@ -100,7 +101,7 @@ extension CardView {
                                 editingColor.toggle()
                             })
                             .font(getFont(.cardInfo))
-                            .foregroundColor(color)
+                            .foregroundColor(Color(color))
                             .buttonStyle(.plain)
                             .onHover {hover in
                                 overlay = hover
@@ -114,7 +115,7 @@ extension CardView {
                         }
                     }
                 }
-            .offset(y: editingColor ? 22 : -10)
+            .offset(y: editingColor ? 18 : -10)
             .frame(height: editingColor ? 32 : 12)
             .opacity(editingColor ? 1.0 : 0.0)
             }

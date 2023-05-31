@@ -76,10 +76,10 @@ struct ActivitiesList: View {
 
 
 
-struct ActivitiesList_Previews: PreviewProvider {
-    static var previews: some View {
-        ActivitiesList(activitiesList: .constant([CardInformation()])){type in 
-            
-        }
-    }
-}
+//struct ActivitiesList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ActivitiesList(activitiesList: .constant([CardInformation()])){type in 
+//            
+//        }
+//    }
+//}

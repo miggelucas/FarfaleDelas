@@ -12,7 +12,9 @@ extension CardView {
     var toggleButton: some View {
         Button(action: {
             withAnimation(.easeInOut(duration: 0.25)) {
-                isOpen.toggle()
+                if info.cardType == .activity {
+                    info.startsOpen.toggle()
+                }
             }
         }, label: {
             VStack {
@@ -21,6 +23,7 @@ extension CardView {
                     .foregroundColor(.black)
             }.frame(width: toggleIcon().1, height: toggleIcon().2)
         })
+        .opacity(info.cardType == .pause ? 0.0 : 1.0)
         .buttonStyle(.plain)
         
     }
