@@ -12,8 +12,9 @@ struct SettingsView: View {
     
     @Binding var userSettings: UserSettingsProtocol
     
+    let workingMinutesOptions: [WorkingMinutesOption] = WorkingMinutesOption.allCases
     var backButtonPressed: () -> Void
-    
+
     
     var body: some View {
         
@@ -42,15 +43,15 @@ struct SettingsView: View {
                 
                 Form {
                     Section("Preferências") {
-                        Toggle("Ativar touchBar", isOn: $userSettings.touchBarEnable)
-                        Toggle("Notificações", isOn: $userSettings.notificationsEnable)
-                        Toggle("Início automático do próximo timer", isOn: $userSettings.autoStartNextEnable)
-                        Toggle("Ativar Widget", isOn: $userSettings.clockWidgetEnable)
+                        Toggle("Ativar touchBar", isOn: $userSettings.isTouchBarEnable)
+                        Toggle("Notificações", isOn: $userSettings.isNotificationsEnable)
+                        Toggle("Início automático do próximo timer", isOn: $userSettings.isAutoStartNextEnable)
+                        Toggle("Ativar Widget", isOn: $userSettings.iscClockWidgetEnable)
                     }
                     
                     Section("Limite") {
                         Picker("Tempo total de Trabalho em minutos", selection: $userSettings.workingMinutesTime) {
-                            ForEach(userSettings.workingMinutesOptions, id: \.self) { option in
+                            ForEach(workingMinutesOptions, id: \.self) { option in
                                 Text(option.rawValue).tag(option.value)
                                 
                             }

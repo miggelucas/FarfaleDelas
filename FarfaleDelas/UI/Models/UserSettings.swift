@@ -9,29 +9,29 @@ import Foundation
 
 
 protocol UserSettingsProtocol {
-    var touchBarEnable: Bool { get set }
-    var notificationsEnable: Bool { get set }
-    var autoStartNextEnable: Bool { get set }
-    var clockWidgetEnable: Bool { get set }
+    var isTouchBarEnable: Bool { get set }
+    var isNotificationsEnable: Bool { get set }
+    var isAutoStartNextEnable: Bool { get set }
+    var iscClockWidgetEnable: Bool { get set }
     
-    var workingMinutesTime: WorkingMinutesOption { get set }
-    var workingMinutesOptions: [WorkingMinutesOption] { get set }
+    var workingMinutesTime: Double { get set }
+    
+    
 }
 
 
 struct dummyUserSettings: UserSettingsProtocol {
     
-    var touchBarEnable: Bool = false
+    var isTouchBarEnable: Bool = false
     
-    var notificationsEnable: Bool = true
+    var isNotificationsEnable: Bool = true
     
-    var autoStartNextEnable: Bool = true
+    var isAutoStartNextEnable: Bool = true
     
-    var clockWidgetEnable: Bool = false
+    var iscClockWidgetEnable: Bool = false
     
-    var workingMinutesTime: WorkingMinutesOption = .min300
-    
-    var workingMinutesOptions: [WorkingMinutesOption] = WorkingMinutesOption.allCases
+    var workingMinutesTime: Double = WorkingMinutesOption.min240.value
+
     
     
 }
