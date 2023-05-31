@@ -81,7 +81,7 @@ extension CardView {
 //                    .opacity(hoveringColor ? 1.0 : 0.0)
                 
                 Circle()
-                    .foregroundColor(Color(ColorConstant.HIGHLIGHTED_ORANGE))
+                    .foregroundColor(Color(info.setColor))
                     .frame(width: 12)
                     .onHover { hover in
                         hoveringColor = hover
