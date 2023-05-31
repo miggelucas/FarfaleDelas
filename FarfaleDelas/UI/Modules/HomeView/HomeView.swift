@@ -22,7 +22,7 @@ struct HomeView: View {
             
             ZStack {
                 Color(ColorConstant.PRIMARY_BLACK)
-                SideView(settingsButtonPressed: {showingSettingsView = true})
+                SideView(taskList: $activitiesViewModel.cards, settingsButtonPressed: {showingSettingsView = true})
                     .padding(20)
             }
             

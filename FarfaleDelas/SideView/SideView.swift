@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SideView: View {
     
+    @Binding var taskList: [CardInformation]
+    
     @ObservedObject var viewModel: SideViewModel = SideViewModel()
     
     var settingsButtonPressed: () -> Void
@@ -166,9 +168,9 @@ struct SideView: View {
 
 
 
-
-struct SideView_Previews: PreviewProvider {
-    static var previews: some View {
-        SideView(settingsButtonPressed: {})
-    }
-}
+//
+//struct SideView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SideView(settingsButtonPressed: {})
+//    }
+//}
