@@ -9,21 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-protocol CardInformationProtocol {
-    var taskName: String { get set }
-    var taskDescription: String { get set }
-    var duration: String { get set }
-    var setColor: String { get set }
-    
-}
 
-struct DummyCardInformation: CardInformationProtocol {
-    var taskName: String = "Nome da atividade legal"
-    var taskDescription: String = "Detalhe da atividade Lorem ipsum dolor sit amet consectetur."
-    var duration: String = "30"
-    var setColor: String = "Greekljhdskljfhsdkjn"
-    
-}
 
 class SideViewModel: ObservableObject {
     enum State {
@@ -36,9 +22,9 @@ class SideViewModel: ObservableObject {
     @Published var currentTime: Date = .now
     @Published var timePlanExceeded: Bool = false
     
-    @Published private var cardInfo: CardInformationProtocol
+    @Published private var cardInfo: CardInformation
     
-    init(cardInfo: CardInformationProtocol = DummyCardInformation(), clock: ClockTimer = ClockTimer()) {
+    init(cardInfo: CardInformation = CardInformation(), clock: ClockTimer = ClockTimer()) {
         self.cardInfo = cardInfo
         self.clockTimer = clock
         self.clockTimer.objectWillChange
@@ -52,15 +38,15 @@ class SideViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     var currentTaskName: String {
-        cardInfo.taskName
+        cardInfo.atividadeText
     }
     
     var currentTaskDescription: String {
-        cardInfo.taskDescription
+        cardInfo.description
     }
     
     var taskTimeDuration: Double {
-        Double(cardInfo.duration) ?? Double(99)
+        Double(cardInfo.duration)!
     }
     
     var timeRatio: Float {
@@ -71,20 +57,8 @@ class SideViewModel: ObservableObject {
         clockTimer.timeRemainingFormatted(forTaskDuration: taskTimeDuration)
     }
     
-    var taskColor: Color {
-        switch cardInfo.setColor {
-            
-        case "Red":
-            return .red
-        case "Green":
-            return .green
-        case "Blue":
-            return .blue
-        case "yellow":
-            return .yellow
-        default:
-            return Color(ColorConstant.HIGHLIGHTED_BLUE)
-        }
+    var taskColor: String {
+        cardInfo.setColor
     }
     
         

@@ -11,6 +11,8 @@ import UniformTypeIdentifiers
 struct ActivitiesList: View {
     
     @Binding var activitiesList: [CardInformation]
+    
+    
     @State var draggedItem: String?
     let actionButtonAdd: (_ type: CardType)->()
     
@@ -46,7 +48,7 @@ struct ActivitiesList: View {
                                 Spacer()
                                 Image("dragIcon")
                                 CardView(info: activityInfo){
-                                    activitiesList.removeAll{
+                                    activitiesList.removeAll {
                                         $0.id == activityInfo.id
                                     }
                                 }
@@ -76,10 +78,10 @@ struct ActivitiesList: View {
 
 
 
-struct ActivitiesList_Previews: PreviewProvider {
-    static var previews: some View {
-        ActivitiesList(activitiesList: .constant([CardInformation()])){type in 
-            
-        }
-    }
-}
+//struct ActivitiesList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ActivitiesList(activitiesList: .constant([CardInformation()])){type in 
+//            
+//        }
+//    }
+//}

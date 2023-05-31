@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SideView: View {
     
+    @Binding var taskList: [CardInformation]
+    
     @ObservedObject var viewModel: SideViewModel = SideViewModel()
     
     var settingsButtonPressed: () -> Void
@@ -88,7 +90,7 @@ struct SideView: View {
         VStack {
             ClockView(timePassedRatio: viewModel.timeRatio,
                       remainingTime: viewModel.timeRemainingFormatted,
-                      strokeColor: viewModel.taskColor
+                      strokeColor: Color(viewModel.taskColor)
             )
             .frame(width: 105, height: 105)
             .padding(.bottom, 16)
@@ -166,9 +168,9 @@ struct SideView: View {
 
 
 
-
-struct SideView_Previews: PreviewProvider {
-    static var previews: some View {
-        SideView(settingsButtonPressed: {})
-    }
-}
+//
+//struct SideView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SideView(settingsButtonPressed: {})
+//    }
+//}

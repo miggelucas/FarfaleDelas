@@ -12,7 +12,7 @@ struct FarfaleDelasApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         Settings{
-            HomeView()
+            HomeView().accentColor(Color(ColorConstant.SECONDARY_PINK))
         }
     }
 }
