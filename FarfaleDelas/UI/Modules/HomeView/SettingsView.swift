@@ -28,6 +28,7 @@ struct SettingsView: View {
                 settingsOptionsView
          
             }
+            .padding()
             
             .frame(width: 632, height: 596)
         }
@@ -84,6 +85,7 @@ struct SettingsView: View {
         .formStyle(.grouped)
         .pickerStyle(.menu)
         .preferredColorScheme(.dark)
+        .padding()
 
     }
 }

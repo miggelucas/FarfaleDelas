@@ -35,7 +35,7 @@ struct ActivitiesList: View {
                 Spacer()
                 VStack{
                     Image("imageEmpty")
-                    Text("Adicione atividades usando o botão superior. Se lembre de programar pausas esporádicas no seu cronograma.").foregroundColor(.gray).frame(width: 307)
+                    Text("Adicione atividades usando o botão superior. Se lembre de programar pausas esporádicas no seu cronograma.").foregroundColor(Color(ColorConstant.PRIMARY_BLACK)).frame(width: 307)
                 }
                 
             }else{
@@ -65,7 +65,7 @@ struct ActivitiesList: View {
                 
             }
             Spacer()
-        }.background(.white)
+        }.background(Color(ColorConstant.PRIMARY_WHITE))
             .frame(width: 460, height: 596)
     }
     func move(from source: IndexSet, to destination: Int) {

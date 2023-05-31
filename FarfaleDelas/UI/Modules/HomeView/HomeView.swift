@@ -27,11 +27,10 @@ struct HomeView: View {
             }
             
             
-        }
-        .preferredColorScheme(.light)
-        .sheet(isPresented: $showingSettingsView) {
-            SettingsView(userSettings: $userSettings, backButtonPressed: {showingSettingsView = false})
-        }
+        }.preferredColorScheme(.light)
+            .sheet(isPresented: $showingSettingsView) {
+                SettingsView(userSettings: $userSettings, backButtonPressed: {showingSettingsView = false})
+            }
     }
 }
 
