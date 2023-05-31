@@ -31,6 +31,7 @@ extension CardView {
             }
             
             colorPicker
+//                .opacity(info.cardType == .activity ? 1.0 : 0.0)
                 .offset(y: -4)
         }
             .offset(y: headerYOffset())

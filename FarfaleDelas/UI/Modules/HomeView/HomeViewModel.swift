@@ -14,9 +14,9 @@ final class HomeViewModel:  ObservableObject {
     func addCardInformation(type: CardType){
         switch type{
         case .activity:
-            cards.append(CardInformation())
+            cards.append(CardInformation(cardType: .activity, atividadeText: "Nome da Atividade"))
         case .pause:
-            cards.append(CardInformation(atividadeText: "PAUSA"))
+            cards.append(CardInformation(cardType: .pause, atividadeText: "PAUSA", startsOpen: false))
         }
     }
 }

@@ -57,7 +57,7 @@ class SideViewModel: ObservableObject {
         clockTimer.timeRemainingFormatted(forTaskDuration: taskTimeDuration)
     }
     
-    var taskColor: Color {
+    var taskColor: String {
         cardInfo.setColor
     }
     
