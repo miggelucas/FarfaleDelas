@@ -21,7 +21,7 @@ struct DummyCardInformation: CardInformationProtocol {
     var taskName: String = "Nome da atividade legal"
     var taskDescription: String = "Detalhe da atividade Lorem ipsum dolor sit amet consectetur."
     var duration: String = "30"
-    var setColor: String = "Green"
+    var setColor: String = "Greekljhdskljfhsdkjn"
     
 }
 
@@ -83,7 +83,7 @@ class SideViewModel: ObservableObject {
         case "yellow":
             return .yellow
         default:
-            return .pink
+            return Color(ColorConstant.HIGHLIGHTED_BLUE)
         }
     }
     

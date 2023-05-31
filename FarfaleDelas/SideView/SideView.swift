@@ -12,6 +12,8 @@ struct SideView: View {
     
     @ObservedObject var viewModel: SideViewModel = SideViewModel()
     
+    var settingsButtonPressed: () -> Void
+    
     let primaryBlackColor = Color(ColorConstant.PRIMARY_BLACK)
     let primaryWhiteColor = Color(ColorConstant.PRIMARY_WHITE)
     let secundaryPinkColor = Color(ColorConstant.SECONDARY_PINK)
@@ -65,7 +67,7 @@ struct SideView: View {
                     Spacer()
                     
                     Button {
-                        viewModel.settingButtonPressed()
+                        settingsButtonPressed()
                     } label: {
                         Image(systemName: "gear")
                             .foregroundColor(secundaryPinkColor)
@@ -167,6 +169,6 @@ struct SideView: View {
 
 struct SideView_Previews: PreviewProvider {
     static var previews: some View {
-        SideView()
+        SideView(settingsButtonPressed: {})
     }
 }
