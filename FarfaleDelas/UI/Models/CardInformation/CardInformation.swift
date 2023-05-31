@@ -4,18 +4,59 @@
 //
 //  Created by ditthales on 26/05/23.
 //
+//
+//import Foundation
+//
+//struct CardInformation: Identifiable{
+//
+//
+//    let id = UUID()
+//
+//    var atividadeText: String = "Nome da atividade"
+//    var duration: String = "30"
+//    var setColor: String = "Green"
+//
+//    let colors = ["Red", "Green", "Blue", "Black", "Tartan"]
+//    let timeBoxes = ["20", "30", "45", "60", "90", "120"]
+//}
 
+//
+//  CardInformation.swift
+//  FarfaleDelas
+//
+//  Created by Bof on 25/05/23.
+//
 import Foundation
+import SwiftUI
 
-struct CardInformation: Identifiable{
-    
-    
+struct CardInformation {
+    // card basico
     let id = UUID()
-    
-    var atividadeText: String = "Nome da atividade"
-    var duration: String = "30"
-    var setColor: String = "Green"
+    var cardType = CardType.activity
 
-    let colors = ["Red", "Green", "Blue", "Black", "Tartan"]
+    
+    var atividadeText = getCardType(t: CardType.activity)
+    var duration: String = "30"
+    var setColor: Color = .pink
+    var description: String = "\nDescrição da atividade"
+            
+    //opcoes de cores
+    let colorOptions = [Color.pink, Color.blue, Color.green, Color.yellow]
+    
+    //opcoes de personalizacao
     let timeBoxes = ["20", "30", "45", "60", "90", "120"]
+    
+}
+
+enum CardType {
+    case pause, activity
+}
+
+func getCardType(t: CardType) -> String {
+    switch t {
+    case .pause:
+        return "Pausa"
+    case .activity:
+        return "Nome da atividade"
+    }
 }

@@ -12,7 +12,7 @@ struct ActivitiesList: View {
     
     @Binding var activitiesList: [CardInformation]
     @State var draggedItem: String?
-    let actionButtonAdd: (_ type: String)->()
+    let actionButtonAdd: (_ type: CardType)->()
     
     var body: some View {
         VStack(alignment: .center){
@@ -26,7 +26,7 @@ struct ActivitiesList: View {
                 HStack{
                     Spacer()
                     ButtonIcon(buttonType: .add) {
-                        actionButtonAdd("activity")
+                        actionButtonAdd(.activity)
                     }
                 }.padding()
             }
@@ -56,7 +56,7 @@ struct ActivitiesList: View {
                         HStack {
                             Spacer()
                             PauseButton(){
-                                actionButtonAdd("pause")
+                                actionButtonAdd(.pause)
                             }
                             Spacer()
                         }
