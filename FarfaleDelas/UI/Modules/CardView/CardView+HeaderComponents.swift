@@ -21,17 +21,21 @@ extension CardView {
                 "Nomeie sua atividade",
                 text: $info.atividadeText
             )
-            .disabled(info.cardType == .pause ? true : false)
+            .disabled(info.cardType == .activity ? false : true)
             .font(getFont(.cardInfo))
             .textFieldStyle(.plain)
-            .foregroundColor(editingTitle ? Color(ColorConstant.PRIMARY_BLACK) : .gray)
+            .foregroundColor(Color(ColorConstant.PRIMARY_BLACK))
+            .opacity(editingTitle ? 1.0 : 0.8)
             .onHover { hover in
-                            editingTitle = hover
-                        }
+                if info.cardType == .activity {
+                    editingTitle = hover
+                }
+             }
 
             .background(
                 Rectangle()
                     .stroke(editingTitle ? Color(ColorConstant.SECONDARY_PINK) : Color.clear, lineWidth: 1)
+                    .opacity(0.4)
                     .frame(width: 147, height: 18)
             )
             .frame(width: 147, height: 17)

@@ -16,9 +16,7 @@ extension NSTextView {
     }
 }
 
-extension CardView {
-    // Card Aberto
-    
+extension CardView {    
     var cardDescriptionView: some View {
         HStack(alignment: .bottom, spacing: 57) {
                 TextEditor(text: $info.description)
