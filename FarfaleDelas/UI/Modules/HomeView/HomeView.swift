@@ -9,20 +9,20 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var activitiesViewModel = ActivitiesListViewModel()
+    @StateObject var homeViewModel = HomeViewModel()
     
     @State var showingSettingsView: Bool = false
     @State var userSettings: UserSettingsProtocol = dummyUserSettings()
     
     var body: some View {
         HStack(spacing: 0){
-            ActivitiesList(activitiesList: $activitiesViewModel.cards){ type in
-                activitiesViewModel.addCardInformation(type: type)
+            ActivitiesList(activitiesList: $homeViewModel.cards){ type in
+                homeViewModel.addCardInformation(type: type)
             }
             
             ZStack {
                 Color(ColorConstant.PRIMARY_BLACK)
-                SideView(taskList: $activitiesViewModel.cards, settingsButtonPressed: {showingSettingsView = true})
+                SideView(taskList: $homeViewModel.cards, settingsButtonPressed: {showingSettingsView = true})
                     .padding(20)
             }
             
