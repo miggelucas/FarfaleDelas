@@ -27,7 +27,7 @@
 		4721B4792A21256600C73A9C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4782A21256600C73A9C /* CardView.swift */; };
 		4721B47E2A212A6600C73A9C /* CardView+ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B47B2A212A6600C73A9C /* CardView+ToggleButton.swift */; };
 		47D703C82A25268700B2A359 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703C72A25268700B2A359 /* StatusBarController.swift */; };
-		47D703CC2A25287900B2A359 /* ActivitiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703CB2A25287900B2A359 /* ActivitiesListViewModel.swift */; };
+		47D703CC2A25287900B2A359 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703CB2A25287900B2A359 /* HomeViewModel.swift */; };
 		47D703CE2A2529E900B2A359 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703CD2A2529E900B2A359 /* HomeView.swift */; };
 		47D703D12A25340A00B2A359 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703D02A25340A00B2A359 /* PauseButton.swift */; };
 		47D703D72A27BC5300B2A359 /* CardRoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703D62A27BC5300B2A359 /* CardRoundedShape.swift */; };
@@ -63,7 +63,7 @@
 		4721B4782A21256600C73A9C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4721B47B2A212A6600C73A9C /* CardView+ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+ToggleButton.swift"; sourceTree = "<group>"; };
 		47D703C72A25268700B2A359 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
-		47D703CB2A25287900B2A359 /* ActivitiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewModel.swift; sourceTree = "<group>"; };
+		47D703CB2A25287900B2A359 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		47D703CD2A2529E900B2A359 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		47D703D02A25340A00B2A359 /* PauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
 		47D703D62A27BC5300B2A359 /* CardRoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRoundedShape.swift; sourceTree = "<group>"; };
@@ -167,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				174410482A1FEBB900995EFB /* SideView.swift */,
+				17BFF7792A20361000349993 /* SideViewModel.swift */,
 				17E479CA2A1FD8AB0035662B /* ClockView.swift */,
 			);
 			name = SideView;
@@ -262,8 +263,7 @@
 			children = (
 				178A14E32A26897C00DAC62E /* SettingsView.swift */,
 				47D703CD2A2529E900B2A359 /* HomeView.swift */,
-				47D703CB2A25287900B2A359 /* ActivitiesListViewModel.swift */,
-				17BFF7792A20361000349993 /* SideViewModel.swift */,
+				47D703CB2A25287900B2A359 /* HomeViewModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -381,7 +381,7 @@
 				17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */,
 				47D703CE2A2529E900B2A359 /* HomeView.swift in Sources */,
 				47D703E52A27BE0A00B2A359 /* CardView+HeaderComponents.swift in Sources */,
-				47D703CC2A25287900B2A359 /* ActivitiesListViewModel.swift in Sources */,
+				47D703CC2A25287900B2A359 /* HomeViewModel.swift in Sources */,
 				17BFF77A2A20361000349993 /* SideViewModel.swift in Sources */,
 				17BFF77C2A20461200349993 /* CommonButtonView.swift in Sources */,
 				178A14E42A26897C00DAC62E /* SettingsView.swift in Sources */,
@@ -515,7 +515,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
+				DEVELOPMENT_TEAM = 5M8NVJZA75;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -543,7 +543,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
+				DEVELOPMENT_TEAM = 5M8NVJZA75;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

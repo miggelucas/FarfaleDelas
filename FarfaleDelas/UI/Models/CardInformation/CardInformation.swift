@@ -14,7 +14,7 @@ struct CardInformation {
     
     // card basico
     let id = UUID()
-    var cardType: CardType
+    var cardType: CardType = .activity
 
     var duration: String = "30"
     var atividadeText: String = "Nome da atividade"

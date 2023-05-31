@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ActivitiesListViewModel:  ObservableObject {
+final class HomeViewModel:  ObservableObject {
     
     @Published var cards: [CardInformation] = []
     
