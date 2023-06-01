@@ -168,9 +168,9 @@ struct SideView: View {
 
 
 
-//
-//struct SideView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SideView(settingsButtonPressed: {})
-//    }
-//}
+
+struct SideView_Previews: PreviewProvider {
+    static var previews: some View {
+        SideView(taskList: .constant([CardInformation()]), settingsButtonPressed: {})
+    }
+}

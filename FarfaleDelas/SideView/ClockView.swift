@@ -45,7 +45,6 @@ struct ClockView: View {
             }
             
         }
-        .padding()
 
     }
 }
