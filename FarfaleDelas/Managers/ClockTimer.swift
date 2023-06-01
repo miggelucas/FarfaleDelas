@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import UserNotifications
 
 final class ClockTimer: ObservableObject {
+    
+    var notificationManager = NotificationManager.shared
     
     @Published private var timer: Timer?
     
@@ -39,6 +42,8 @@ final class ClockTimer: ObservableObject {
             } else {
                 self.isRunning = false
                 self.timer?.invalidate()
+                
+                self.notificationManager.sendNotification()
             }
         }
     }

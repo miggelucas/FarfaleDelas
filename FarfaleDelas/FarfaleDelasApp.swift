@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct FarfaleDelasApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    var notificationCenter = NotificationManager.shared
+    
     var body: some Scene {
         Settings{
             HomeView().accentColor(Color(ColorConstant.SECONDARY_PINK))
@@ -21,6 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     static private(set) var instance: AppDelegate!
     var popover = NSPopover.init()
     var statusBar: StatusBarController?
+    var notificationManager = NotificationManager.shared
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         AppDelegate.instance = self
@@ -28,6 +31,14 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         popover.animates = false
         popover.contentSize = NSSize(width: 632, height: 596)
         popover.contentViewController = NSHostingController(rootView: HomeView())
+        
+        notificationManager.notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted {
+                print("Permissão concedida para enviar notificações.")
+            } else {
+                print("Permissão negada para enviar notificações.")
+            }
+        }
         
         statusBar = StatusBarController(popover)
     }
