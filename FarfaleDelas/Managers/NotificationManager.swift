@@ -29,6 +29,7 @@ class NotificationManager: NSObject {
         content.sound = UNNotificationSound.default
         content.categoryIdentifier = "myCategory"
         
+        
         let request = UNNotificationRequest(identifier: "NotificacaoID", content: content, trigger: nil)
         
         UNUserNotificationCenter.current().add(request) { (error) in
@@ -39,26 +40,7 @@ class NotificationManager: NSObject {
             }
         }
     }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        if response.actionIdentifier == "openAppAction" {
-            if NSApp.activationPolicy() == .accessory {
-                // Ativa o aplicativo
-                NSApp.activate(ignoringOtherApps: true)
-                
-                // Mostra a view desejada
-                print("alo")
-            } else {
-                // Define a política de ativação do aplicativo para acessório
-                NSApp.setActivationPolicy(.accessory)
-                
-                // Mostra a view desejada
-                print("alo alo")
-            }
-        }
-        
-        completionHandler()
-    }
+
 
    
 
