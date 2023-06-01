@@ -60,7 +60,7 @@ struct SideView: View {
         VStack {
             ZStack {
                 Text("Informações")
-                    .font(.headline)
+                    .font(.customPrimary(.h2))
                     .foregroundColor(primaryWhiteColor)
         
                 HStack {
@@ -97,12 +97,12 @@ struct SideView: View {
             
             Text(viewModel.currentTaskName)
                 .foregroundColor(primaryWhiteColor)
-                .font(.callout)
+                .font(.custumSecondary(.h4))
                 .padding(.bottom, 8)
             
             Text(viewModel.currentTaskDescription)
                 .foregroundColor(primaryWhiteColor)
-                .font(.caption)
+                .font(.custumSecondary(.text))
                 .padding(.horizontal)
         }
         .multilineTextAlignment(.center)
@@ -114,7 +114,7 @@ struct SideView: View {
             ZStack {
                 Text(taskList.last?.eta.formatted(date: .complete, time: .complete) ?? "")
                     .foregroundColor(primaryWhiteColor)
-                    .font(.title)
+                    .font(.custumSecondary(.h3))
                 
                 if viewModel.timePlanExceeded {
                     Image(systemName: "exclamationmark.circle.fill")
@@ -127,10 +127,11 @@ struct SideView: View {
             
             Text("Horário de Término")
                 .foregroundColor(primaryWhiteColor)
+                .font(.custumSecondary(.subTitle))
             
             if viewModel.timePlanExceeded {
                 Button {
-                    //                viewModel.changeTimePlan(
+                    settingsButtonPressed()
                 } label: {
                     Text("Alterar tempo Planejado")
                         .foregroundColor(secundaryPinkColor)
@@ -167,9 +168,9 @@ struct SideView: View {
 
 
 
-//
-//struct SideView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SideView(settingsButtonPressed: {})
-//    }
-//}
+
+struct SideView_Previews: PreviewProvider {
+    static var previews: some View {
+        SideView(taskList: .constant([CardInformation()]), settingsButtonPressed: {})
+    }
+}

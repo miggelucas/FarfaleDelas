@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import UserNotifications
 
 final class ClockTimer: ObservableObject {
+    
+    var notificationManager = NotificationManager.shared
     
     @Published private var timer: Timer?
     
     @Published var isRunning: Bool = false
-    @Published var secondsPassed: Double = 0
+    @Published var secondsPassed: Double = 20
     @Published var currentTime: Date = .now
     
     var timerDuration: Double?
@@ -39,6 +42,8 @@ final class ClockTimer: ObservableObject {
             } else {
                 self.isRunning = false
                 self.timer?.invalidate()
+                
+                self.notificationManager.sendNotification()
             }
         }
     }
@@ -64,7 +69,7 @@ final class ClockTimer: ObservableObject {
         let estimatedDoneTime = currentTime.addingTimeInterval(timeRemaining)
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
+        formatter.dateFormat = "HH:mm"
         
         return formatter.string(from: estimatedDoneTime)
     }

@@ -16,14 +16,12 @@ extension NSTextView {
     }
 }
 
-extension CardView {
-    // Card Aberto
-    
+extension CardView {    
     var cardDescriptionView: some View {
         HStack(alignment: .bottom, spacing: 57) {
                 TextEditor(text: $info.description)
                     .lineSpacing(4.0)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color(ColorConstant.PRIMARY_BLACK))
                     .scrollContentBackground(.hidden)
                     .onTapGesture {
                         editingDesc = true
@@ -36,15 +34,15 @@ extension CardView {
                                 }
                     .background(
                         Rectangle()
-                            .stroke(Color.purple, lineWidth: 2)
+                            .stroke(Color(ColorConstant.SECONDARY_PINK_HOVER), lineWidth: 2)
                             .opacity((editingDesc) ? 0.4 : 0.1)
                     )                    .lineLimit(...6)
-                    .frame(width: 180, height: 40)
+                .frame(width: info.cardType == .activity ? 180 : 0, height: info.cardType == .activity ? 40 : 0)
                     .cornerRadius(4)
+                    .opacity(info.cardType == .activity ? 1.0 : 0.0)
                 Spacer()
                 
-                Button("Delete", action: actionForDeleteButton).foregroundColor(Color.red)
-                .buttonStyle(.plain)
+                deleteCardButton
 
         }.frame(width: 338.88)
             .font(getFont(.cardInfoSmall))
