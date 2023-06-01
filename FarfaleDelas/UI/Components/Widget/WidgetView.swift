@@ -12,17 +12,13 @@ struct WidgetView: View {
     @ObservedObject var clock: ClockTimer = ClockTimer()
     @ObservedObject var viewModel: SideViewModel = SideViewModel()
 
-
-    @State var isActive: Bool = true
-
     var body: some View {
         
         ClockView(timePassedRatio: viewModel.timeRatio,
                   remainingTime: viewModel.timeRemainingFormatted,
                   strokeColor: viewModel.taskColor
         )
+        .background(.clear)
         .frame(width: 105, height: 105)
-        .padding(.bottom, 16)
-        
     }
 }

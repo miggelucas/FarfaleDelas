@@ -66,7 +66,7 @@ struct SettingsView: View {
                 Toggle("Ativar touchBar", isOn: $userSettings.isTouchBarEnable)
                 Toggle("Notificações", isOn: $userSettings.isNotificationsEnable)
                 Toggle("Início automático do próximo timer", isOn: $userSettings.isAutoStartNextEnable)
-                Toggle("Ativar Widget", isOn: $userSettings.iscClockWidgetEnable)
+                Toggle("Ativar Widget", isOn: $userSettings.isClockWidgetEnable)
             }
             
             Section("Limite") {

@@ -15,8 +15,8 @@ struct FarfaleDelasApp: App {
             HomeView().accentColor(Color(ColorConstant.SECONDARY_PINK))
         }
         WindowGroup {
-            WidgetView()
-        }
+            WidgetView().frame(width: 105, height: 105)
+        }.windowResizability(.contentSize)
     }
 }
 

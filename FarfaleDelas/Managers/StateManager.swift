@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct StateManager {
-    
+class StateManager: ObservableObject {
+    @Published var widgetEnabled: Bool = true
 }

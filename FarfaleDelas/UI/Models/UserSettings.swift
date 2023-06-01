@@ -12,7 +12,7 @@ protocol UserSettingsProtocol {
     var isTouchBarEnable: Bool { get set }
     var isNotificationsEnable: Bool { get set }
     var isAutoStartNextEnable: Bool { get set }
-    var iscClockWidgetEnable: Bool { get set }
+    var isClockWidgetEnable: Bool { get set }
     
     var workingMinutesTime: Double { get set }
     
@@ -28,7 +28,7 @@ struct dummyUserSettings: UserSettingsProtocol {
     
     var isAutoStartNextEnable: Bool = true
     
-    var iscClockWidgetEnable: Bool = false
+    var isClockWidgetEnable: Bool = false
     
     var workingMinutesTime: Double = WorkingMinutesOption.min240.value
 
