@@ -30,12 +30,17 @@ extension CardView {
                 
             }
             
-            colorPicker
-//                .opacity(info.cardType == .activity ? 1.0 : 0.0)
-                .offset(y: -4)
+            ZStack {
+                colorPicker
+                    .opacity(info.cardType == .activity ? 1.0 : 0.0)
+                    .offset(y: -4)
+                deleteCardButton
+                    .opacity(info.cardType == .pause && info.isOngoing ? 1.0 : 0.0)
+            }
         }
             .offset(y: headerYOffset())
-            .foregroundColor(.black)
+            .foregroundColor(info.isOngoing ? Color(ColorConstant.PRIMARY_BLACK) : Color(ColorConstant.SECONDARY_PINK_HOVER))
+            .frame(width: 348)
     }
     
 }

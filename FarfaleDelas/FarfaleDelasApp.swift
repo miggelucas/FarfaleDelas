@@ -18,6 +18,9 @@ struct FarfaleDelasApp: App {
         Settings{
             HomeView().accentColor(Color(ColorConstant.SECONDARY_PINK))
         }
+        WindowGroup {
+            WidgetView()
+        }
     }
 }
 

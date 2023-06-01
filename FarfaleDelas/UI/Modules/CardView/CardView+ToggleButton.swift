@@ -20,7 +20,7 @@ extension CardView {
             VStack {
                 Text("􀆊")
                     .rotationEffect(toggleIcon().0)
-                    .foregroundColor(.black)
+                    .foregroundColor(info.isOngoing ? Color(ColorConstant.PRIMARY_BLACK) : Color(ColorConstant.SECONDARY_PINK_HOVER))
             }.frame(width: toggleIcon().1, height: toggleIcon().2)
         })
         .opacity(info.cardType == .pause ? 0.0 : 1.0)
