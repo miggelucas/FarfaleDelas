@@ -21,8 +21,13 @@ struct CardInformation {
     var setColor: String = ColorConstant.HIGHLIGHTED_ORANGE
     var description: String = "\nDescrição da atividade"
     var startsOpen: Bool = true
+    
+    var now: Date = .now
+    
+    var eta: Date {
+        return now.addingTimeInterval(Double(duration)! * 60)
+    }
 
-            
     //opcoes de cores
     let colorOptions = [ColorConstant.HIGHLIGHTED_BLUE, ColorConstant.HIGHLIGHTED_RED, ColorConstant.HIGHLIGHTED_ORANGE]
     

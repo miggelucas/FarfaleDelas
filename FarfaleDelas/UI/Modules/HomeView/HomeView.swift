@@ -16,8 +16,11 @@ struct HomeView: View {
     
     var body: some View {
         HStack(spacing: 0){
-            ActivitiesList(activitiesList: $homeViewModel.cards){ type in
+            ActivitiesList(activitiesList: $homeViewModel.cards, triggerUpdate: {
+                homeViewModel.updateTimes()
+            }){ type in
                 homeViewModel.addCardInformation(type: type)
+                homeViewModel.updateTimes()
             }
             
             ZStack {

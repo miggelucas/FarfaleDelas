@@ -19,4 +19,15 @@ final class HomeViewModel:  ObservableObject {
             cards.append(CardInformation(cardType: .pause, atividadeText: "PAUSA", startsOpen: false))
         }
     }
+    
+    func updateTimes(){
+        
+        if cards.count == 1 { return }
+        
+        for index in 1..<cards.count {
+            cards[index].now = cards[index-1].eta
+        }
+        print(cards)
+        
+    }
 }

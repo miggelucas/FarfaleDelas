@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 extension CardView {
+    
     func dateFormatter() -> DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
@@ -16,7 +17,7 @@ extension CardView {
     }
     
     func calculateETA() -> some View {
-        let updateEta: Date = .now.addingTimeInterval(Double(info.duration)! * 60)
+        let updateEta: Date = info.eta
         var etaDisplay: some View {
             Text("\(updateEta, formatter: dateFormatter())")
                 .font(getFont(.cardInfo))

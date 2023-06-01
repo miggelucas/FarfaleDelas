@@ -70,7 +70,7 @@ extension CardView {
             calculateETA()
                 .font(getFont(.cardInfo))
             
-        }
+        }.opacity(0)
     }
     
     var colorPicker: some View {

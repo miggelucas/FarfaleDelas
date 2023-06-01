@@ -9,6 +9,10 @@ import Foundation
 import SwiftUI
 
 struct CardView: View {
+    
+    var triggerUpdate: (()->())
+    
+    
     @State var info: CardInformation
     
     @State var isHovered: Bool = false // altera cor do strip
@@ -19,7 +23,11 @@ struct CardView: View {
     @State var hoveringColor: Bool = false
     @State var editingColor: Bool = false
 
-    @State var eta: Date = .now
+    @State var eta: Date = .now {
+        didSet {
+            self.info.now = eta
+        }
+    }
     
     let actionForDeleteButton: () -> ()
     
@@ -42,6 +50,10 @@ struct CardView: View {
                         }
             .frame(width: 379, height: cardHeight())
             .overlay(CardRoundedShape(tl: 0, tr: 10, bl: 10, br: 10).stroke(Color.black, lineWidth:1))
+            .onChange(of: info.duration){ _ in
+                triggerUpdate()
+                
+            }
     }
     
 }

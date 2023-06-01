@@ -12,6 +12,8 @@ struct ActivitiesList: View {
     
     @Binding var activitiesList: [CardInformation]
     
+    var triggerUpdate: (()->())
+    
     
     @State var draggedItem: String?
     let actionButtonAdd: (_ type: CardType)->()
@@ -47,7 +49,7 @@ struct ActivitiesList: View {
                             HStack(alignment: .top){
                                 Spacer()
                                 Image("dragIcon")
-                                CardView(info: activityInfo){
+                                CardView(triggerUpdate: triggerUpdate, info: activityInfo){
                                     activitiesList.removeAll {
                                         $0.id == activityInfo.id
                                     }
