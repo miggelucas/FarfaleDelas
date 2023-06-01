@@ -35,7 +35,7 @@ extension CardView {
                     .opacity(info.cardType == .activity ? 1.0 : 0.0)
                     .offset(y: -4)
                 deleteCardButton
-                    .opacity(info.cardType == .pause ? 1.0 : 0.0)
+                    .opacity(info.cardType == .pause && info.isOngoing ? 1.0 : 0.0)
             }
         }
             .offset(y: headerYOffset())

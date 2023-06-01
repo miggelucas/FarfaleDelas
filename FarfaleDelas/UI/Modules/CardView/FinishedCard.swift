@@ -13,14 +13,14 @@ extension CardView {
         ZStack(alignment: .center) {
             HStack(spacing: toggleSpacing()) {
                 leftStrip
-                    .offset(x: 7)
+                    .offset(x: info.cardType == .pause ? 4 : 7)
                 HStack(spacing: 7) {
                     toggleButton
                         .disabled(true)
                         .offset(x: 4.5, y: toggleOffset())
                     cardHeaderView
                 }
-                .offset(y: 20)
+                .offset(y: info.cardType == .activity ? 20 : 0)
             }
         }
         .frame(width: 379, height: 50)
