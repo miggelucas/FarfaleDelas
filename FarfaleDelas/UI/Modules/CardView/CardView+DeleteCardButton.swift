@@ -13,5 +13,6 @@ extension CardView {
         Button("Delete", action: actionForDeleteButton).foregroundColor(Color.red)
             .buttonStyle(.plain)
             .font(getFont(.cardInfo))
+            .disabled(info.isOngoing ? false : true)
     }
 }

@@ -45,6 +45,8 @@
 		47D703E32A27BD9200B2A359 /* CardView+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703E22A27BD9200B2A359 /* CardView+Fonts.swift */; };
 		47D703E52A27BE0A00B2A359 /* CardView+HeaderComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703E42A27BE0A00B2A359 /* CardView+HeaderComponents.swift */; };
 		47D703E72A27BE2000B2A359 /* CardView+HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703E62A27BE2000B2A359 /* CardView+HeaderView.swift */; };
+		D426C7252A2915DF0032886D /* FinishedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D426C7242A2915DF0032886D /* FinishedCard.swift */; };
+		D426C7272A291F870032886D /* OngoingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D426C7262A291F870032886D /* OngoingCard.swift */; };
 		D4AE4FE22A27D7EE009BBE52 /* CardView+DeleteCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE4FE12A27D7EE009BBE52 /* CardView+DeleteCardButton.swift */; };
 		D4AE4FE52A27E0BC009BBE52 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE4FE42A27E0BC009BBE52 /* WidgetView.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,8 @@
 		47D703E22A27BD9200B2A359 /* CardView+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Fonts.swift"; sourceTree = "<group>"; };
 		47D703E42A27BE0A00B2A359 /* CardView+HeaderComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+HeaderComponents.swift"; sourceTree = "<group>"; };
 		47D703E62A27BE2000B2A359 /* CardView+HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+HeaderView.swift"; sourceTree = "<group>"; };
+		D426C7242A2915DF0032886D /* FinishedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedCard.swift; sourceTree = "<group>"; };
+		D426C7262A291F870032886D /* OngoingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingCard.swift; sourceTree = "<group>"; };
 		D4AE4FE12A27D7EE009BBE52 /* CardView+DeleteCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+DeleteCardButton.swift"; sourceTree = "<group>"; };
 		D4AE4FE42A27E0BC009BBE52 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -274,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				4721B4782A21256600C73A9C /* CardView.swift */,
+				D426C7262A291F870032886D /* OngoingCard.swift */,
+				D426C7242A2915DF0032886D /* FinishedCard.swift */,
 				47D703E22A27BD9200B2A359 /* CardView+Fonts.swift */,
 				47D703DC2A27BD0B00B2A359 /* CardView+Functions.swift */,
 				47D703DA2A27BCF300B2A359 /* CardView+Dimentions.swift */,
@@ -443,6 +449,7 @@
 				47D703DD2A27BD0B00B2A359 /* CardView+Functions.swift in Sources */,
 				47D703D72A27BC5300B2A359 /* CardRoundedShape.swift in Sources */,
 				17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */,
+				D426C7272A291F870032886D /* OngoingCard.swift in Sources */,
 				4721B4772A21251600C73A9C /* CardInformation.swift in Sources */,
 				47D703D92A27BCD000B2A359 /* CardView+DescriptionView.swift in Sources */,
 				4721B47E2A212A6600C73A9C /* CardView+ToggleButton.swift in Sources */,
@@ -462,6 +469,7 @@
 				17BFF77A2A20361000349993 /* SideViewModel.swift in Sources */,
 				D4AE4FE52A27E0BC009BBE52 /* WidgetView.swift in Sources */,
 				17BFF77C2A20461200349993 /* CommonButtonView.swift in Sources */,
+				D426C7252A2915DF0032886D /* FinishedCard.swift in Sources */,
 				178A14E42A26897C00DAC62E /* SettingsView.swift in Sources */,
 				47D703DF2A27BD3100B2A359 /* CardView+Strip.swift in Sources */,
 			);
@@ -593,7 +601,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = 5M8NVJZA75;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -622,7 +630,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = 5M8NVJZA75;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

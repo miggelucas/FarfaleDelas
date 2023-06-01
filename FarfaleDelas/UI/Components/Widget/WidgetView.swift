@@ -19,7 +19,7 @@ struct WidgetView: View {
         
         ClockView(timePassedRatio: viewModel.timeRatio,
                   remainingTime: viewModel.timeRemainingFormatted,
-                  strokeColor: viewModel.taskColor
+                  strokeColor: Color(viewModel.taskColor)
         )
         .frame(width: 105, height: 105)
         .padding(.bottom, 16)

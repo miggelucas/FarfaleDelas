@@ -26,12 +26,12 @@ extension CardView {
     }
     
     func stripHeight() -> CGFloat {
-        return info.startsOpen ? 105 :  50
+        return info.startsOpen && info.isOngoing ? 105 :  50
     }
     
     func toggleIcon() -> (Angle, CGFloat, CGFloat) {
             // text, width and height respectively
-        return (info.startsOpen ? Angle(degrees: 90) : Angle(degrees: 0), info.startsOpen ? 14 : 8.07, info.startsOpen ? 8.07 : 14)
+        return (info.startsOpen ? info.isOngoing ? Angle(degrees: 90) : Angle(degrees: 0) : Angle(degrees: 0), info.startsOpen ? 14 : 8.07, info.startsOpen ? 8.07 : 14)
         }
     
     func toggleSpacing() -> CGFloat {
