@@ -62,8 +62,7 @@ struct SideView: View {
                 Text("Informações")
                     .font(.customPrimary(.h2))
                     .foregroundColor(primaryWhiteColor)
-                
-                
+        
                 HStack {
                     
                     Spacer()
@@ -113,7 +112,7 @@ struct SideView: View {
         VStack(spacing: 4) {
             
             ZStack {
-                Text(viewModel.estimatedDoneTime)
+                Text(taskList.last?.eta.formatted(date: .complete, time: .complete) ?? "")
                     .foregroundColor(primaryWhiteColor)
                     .font(.custumSecondary(.h3))
                 
