@@ -132,7 +132,7 @@ struct SideView: View {
             
             if viewModel.timePlanExceeded {
                 Button {
-                    //                viewModel.changeTimePlan(
+                    settingsButtonPressed()
                 } label: {
                     Text("Alterar tempo Planejado")
                         .foregroundColor(secundaryPinkColor)
