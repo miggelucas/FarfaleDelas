@@ -40,7 +40,7 @@ struct ClockView: View {
                 
                 
                 Text(remainingTime)
-                    .font(.subheadline)
+                    .font(.customPrimary(.h1))
                     .foregroundColor(Color(ColorConstant.PRIMARY_WHITE))
             }
             

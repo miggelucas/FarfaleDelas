@@ -69,7 +69,7 @@ final class ClockTimer: ObservableObject {
         let estimatedDoneTime = currentTime.addingTimeInterval(timeRemaining)
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
+        formatter.dateFormat = "HH:mm"
         
         return formatter.string(from: estimatedDoneTime)
     }
