@@ -74,19 +74,18 @@ struct CommonButtonView: View {
     private var fillStyleLabel: some View {
         Text(label)
             .foregroundColor(primaryWhiteColor)
-            .font(.headline)
+            .font(.custumSecondary(.button1))
             .fontWeight(.regular)
             .frame(width: 136, height: 36)
             .background(isHovered ? secundaryPinkColor : primaryPinkColor)
             .cornerRadius(10)
-            .shadow(color: .black, radius: 2, y: 1)
         
     }
     
     
     private var borderdStyleLabel: some View {
         Text(label)
-            .font(.headline)
+            .font(.custumSecondary(.button1))
             .fontWeight(.black)
             .foregroundColor(isHovered ? secundaryPinkColor : primaryPinkColor)
             .frame(width: 136, height: 36)
@@ -94,7 +93,6 @@ struct CommonButtonView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(isHovered ? secundaryPinkColor : primaryPinkColor, lineWidth: 1)
             )
-            .shadow(color: .black, radius: 2, y: 1)
     }
     
     
