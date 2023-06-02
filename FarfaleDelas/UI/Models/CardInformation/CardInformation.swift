@@ -15,7 +15,7 @@ struct CardInformation {
     // card basico
     let id = UUID()
     var cardType: CardType = .activity
-    var isOngoing: Bool = false
+    var isOngoing: Bool = true
 
     var duration: String = "30"
     var atividadeText: String = "Nome da atividade"
