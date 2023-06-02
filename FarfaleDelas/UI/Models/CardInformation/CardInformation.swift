@@ -10,8 +10,6 @@ import Foundation
 import SwiftUI
 
 struct CardInformation {
-
-    
     // card basico
     let id = UUID()
     var cardType: CardType = .activity
