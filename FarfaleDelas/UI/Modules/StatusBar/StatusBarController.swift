@@ -26,7 +26,7 @@ class StatusBarController{
         if let button = statusItem.button {
             
             button.image = NSImage(named: .logo)
-            button.image?.size = CGSizeMake(20, 20)
+            button.image?.size = CGSizeMake(24, 24)
             button.action = #selector(showApp(sender:))
             button.target = self
             
