@@ -15,7 +15,7 @@ final class ClockTimer: ObservableObject {
     @Published private var timer: Timer?
     
     @Published var isRunning: Bool = false
-    @Published var secondsPassed: Double = 20
+    @Published var secondsPassed: Double = 0
     @Published var currentTime: Date = .now
     
     var timerDuration: Double?

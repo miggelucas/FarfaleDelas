@@ -108,11 +108,18 @@ struct SideView: View {
         .multilineTextAlignment(.center)
     }
     
+    var estimatedDoneTome: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+    
+        return formatter.string(from: taskList.last?.eta ?? Date.now)
+    }
+    
     private var estimatedDoneTime: some View {
         VStack(spacing: 4) {
             
             ZStack {
-                Text(taskList.last?.eta.formatted(date: .complete, time: .complete) ?? "")
+                Text(estimatedDoneTome )
                     .foregroundColor(primaryWhiteColor)
                     .font(.custumSecondary(.h3))
                 
