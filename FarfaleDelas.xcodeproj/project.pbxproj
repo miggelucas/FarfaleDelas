@@ -26,7 +26,6 @@
 		17BFF77C2A20461200349993 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFF77B2A20461200349993 /* CommonButtonView.swift */; };
 		17E479BC2A1FD51E0035662B /* FarfaleDelasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BB2A1FD51E0035662B /* FarfaleDelasApp.swift */; };
 		17E479BE2A1FD51E0035662B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479BD2A1FD51E0035662B /* ContentView.swift */; };
-		17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
 		17E479C32A1FD51F0035662B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479C22A1FD51F0035662B /* Preview Assets.xcassets */; };
 		17E479CB2A1FD8AB0035662B /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E479CA2A1FD8AB0035662B /* ClockView.swift */; };
 		4721B4522A1FECB000C73A9C /* ButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721B4512A1FECB000C73A9C /* ButtonIcon.swift */; };
@@ -48,6 +47,7 @@
 		47D703E72A27BE2000B2A359 /* CardView+HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D703E62A27BE2000B2A359 /* CardView+HeaderView.swift */; };
 		D426C7252A2915DF0032886D /* FinishedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D426C7242A2915DF0032886D /* FinishedCard.swift */; };
 		D426C7272A291F870032886D /* OngoingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D426C7262A291F870032886D /* OngoingCard.swift */; };
+		D426C7282A2A4EBE0032886D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E479BF2A1FD51F0035662B /* Assets.xcassets */; };
 		D4AE4FE22A27D7EE009BBE52 /* CardView+DeleteCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE4FE12A27D7EE009BBE52 /* CardView+DeleteCardButton.swift */; };
 		D4AE4FE52A27E0BC009BBE52 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE4FE42A27E0BC009BBE52 /* WidgetView.swift */; };
 /* End PBXBuildFile section */
@@ -428,8 +428,8 @@
 				178ACC6A2A27E20100C7DAF0 /* Quicksand-Bold.ttf in Resources */,
 				178ACC742A27E2C800C7DAF0 /* Montserrat-Regular.ttf in Resources */,
 				178ACC752A27E2C800C7DAF0 /* Montserrat-Medium.ttf in Resources */,
-				17E479C02A1FD51F0035662B /* Assets.xcassets in Resources */,
 				178ACC772A27E2C800C7DAF0 /* Montserrat-SemiBold.ttf in Resources */,
+				D426C7282A2A4EBE0032886D /* Assets.xcassets in Resources */,
 				178ACC762A27E2C800C7DAF0 /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,7 +606,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = 5M8NVJZA75;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -636,7 +636,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FarfaleDelas/Preview Content\"";
-				DEVELOPMENT_TEAM = 5M8NVJZA75;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

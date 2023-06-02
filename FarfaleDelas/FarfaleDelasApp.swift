@@ -30,8 +30,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     var statusBar: StatusBarController?
     var notificationManager = NotificationManager.shared
     
-    
-    
     func applicationDidFinishLaunching(_ notification: Notification) {
         AppDelegate.instance = self
         notificationManager.notificationCenter.delegate = self

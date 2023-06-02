@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+extension NSImage.Name {
+    static let logo = NSImage.Name("SettingsBarIcon")
+}
+
 class StatusBarController{
     private var statusBar: NSStatusBar
     private(set) var statusItem: NSStatusItem
@@ -21,7 +25,8 @@ class StatusBarController{
         
         if let button = statusItem.button {
             
-            button.image = NSImage(systemSymbolName: "house", accessibilityDescription: nil)
+            button.image = NSImage(named: .logo)
+            button.image?.size = CGSizeMake(20, 20)
             button.action = #selector(showApp(sender:))
             button.target = self
             
